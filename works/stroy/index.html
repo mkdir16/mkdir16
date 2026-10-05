@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>СтройДом — строительство и ремонт под ключ</title>
+<style>
+:root{--navy:#0f2040;--navy2:#1a335c;--orange:#ff6b00;--light:#f4f6fa;--gray:#6b7a90;--border:#e1e6ef}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;color:#222;background:#fff;line-height:1.5}
+header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:10}
+.top{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;position:relative}
+.logo{font-weight:800;font-size:20px}
+.logo span{color:var(--orange)}
+nav{display:flex;gap:18px}
+nav a{color:#fff;text-decoration:none;font-size:15px}
+nav a:hover{color:var(--orange)}
+.phone{font-weight:700;color:var(--orange);text-decoration:none}
+.burger{display:none;background:none;border:0;font-size:26px;color:#fff;cursor:pointer}
+.hero{background:linear-gradient(135deg,var(--navy) 60%,var(--navy2));color:#fff;padding:60px 20px}
+.hero-in{max-width:1100px;margin:auto;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+.hero h1{font-size:36px;margin-bottom:12px;line-height:1.2}
+.hero h1 span{color:var(--orange)}
+.hero p{color:#cbd5e6;margin-bottom:14px}
+.hero-list{list-style:none;margin-bottom:20px;color:#dbe4f3;font-size:15px}
+.hero-list li{margin-bottom:4px}
+.btn{display:inline-block;background:var(--orange);color:#fff;padding:12px 26px;border-radius:6px;
+text-decoration:none;font-weight:700;border:0;cursor:pointer;font-size:16px}
+.btn:hover{background:#e05e00}
+.calc{background:#fff;color:#222;border-radius:12px;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.calc h3{margin-bottom:12px;color:var(--navy)}
+.calc label{display:block;font-size:14px;margin:10px 0 4px}
+.calc input,.calc select{width:100%;padding:10px;border:1px solid #ccd4e0;border-radius:6px;font-size:15px}
+.calc output{display:block;margin-top:14px;background:var(--light);border-left:4px solid var(--orange);
+padding:12px;border-radius:6px;font-weight:800;color:var(--navy);font-size:18px}
+.calc small{display:block;margin-top:8px;color:var(--gray);font-size:12px}
+section{padding:55px 20px}
+.wrap{max-width:1100px;margin:auto}
+h2{text-align:center;color:var(--navy);font-size:28px;margin-bottom:8px}
+.sub{text-align:center;color:var(--gray);margin-bottom:30px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--light);border-radius:10px;padding:22px;border-top:4px solid var(--orange)}
+.card .ico{font-size:32px}
+.card h3{margin:10px 0 6px;color:var(--navy);font-size:18px}
+.card p{font-size:14px;color:#444}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step{background:var(--navy);color:#fff;border-radius:10px;padding:20px;text-align:center}
+.step b{display:inline-block;background:var(--orange);width:36px;height:36px;line-height:36px;border-radius:50%;margin-bottom:10px}
+.step p{font-size:14px;color:#cbd5e6}
+.objs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.obj{border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.obj-top{height:130px;display:flex;align-items:center;justify-content:center;font-size:60px;
+background:linear-gradient(135deg,#dce6f5,#b9cdf0)}
+.obj-body{padding:16px}
+.obj-body h3{color:var(--navy);margin-bottom:4px}
+.obj-body p{font-size:14px;color:var(--gray)}
+.revs{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.rev{background:#fff;border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:8px;
+padding:18px;font-size:14px}
+.rev b{color:var(--navy)}
+.contacts{background:var(--navy);color:#fff}
+.contacts h2{color:#fff}
+.contacts .sub{color:#aebdd4}
+.c-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;max-width:1100px;margin:auto;align-items:start}
+.c-info p{margin-bottom:10px}
+form{background:#fff;border-radius:12px;padding:22px;color:#222}
+form input,form textarea{width:100%;padding:10px;margin-bottom:12px;border:1px solid #ccd4e0;
+border-radius:6px;font-size:15px;font-family:inherit}
+.err{color:#d00;font-size:13px;min-height:18px;margin-bottom:6px}
+footer{background:#0a1730;color:#8fa0bb;text-align:center;padding:18px;font-size:14px}
+footer a{color:var(--orange);text-decoration:none}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal-box{background:#fff;border-radius:12px;padding:30px;text-align:center;max-width:340px}
+.modal-box .ok{font-size:50px}
+@media(max-width:768px){
+nav{display:none;flex-direction:column;background:var(--navy);position:absolute;top:58px;left:0;right:0;padding:16px 20px}
+nav.open{display:flex}
+.burger{display:block}
+.phone{display:none}
+.hero-in,.grid,.objs,.revs,.c-grid,.steps{grid-template-columns:1fr}
+.hero{padding:36px 16px}
+.hero h1{font-size:26px}
+section{padding:36px 16px}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="top">
+<div class="logo">🏗️ Строй<span>Дом</span></div>
+<nav id="nav">
+<a href="#services">Услуги</a>
+<a href="#steps">Этапы</a>
+<a href="#objects">Объекты</a>
+<a href="#reviews">Отзывы</a>
+<a href="#contacts">Контакты</a>
+</nav>
+<a class="phone" href="tel:+998935076473">+998 93 507-64-73</a>
+<button class="burger" id="burger" aria-label="Меню">☰</button>
+</div>
+</header>
+<div class="hero">
+<div class="hero-in">
+<div>
+<h1>Строим дома и делаем ремонт <span>под ключ</span></h1>
+<p>12 лет опыта • договор • гарантия 5 лет • бесплатный замер и смета за 24 часа.</p>
+<ul class="hero-list">
+<li>✅ Фиксированная смета без доплат</li>
+<li>✅ Фотоотчёты каждую неделю</li>
+<li>✅ Оплата по этапам работ</li>
+</ul>
+<a class="btn" href="#contacts">Оставить заявку</a>
+</div>
+<div class="calc">
+<h3>🧮 Калькулятор стоимости</h3>
+<label>Площадь, м²: <b id="sqVal">50</b></label>
+<input type="range" id="sq" min="20" max="300" value="50">
+<label for="type">Тип ремонта</label>
+<select id="type">
+<option value="1000000">Косметический — 1 000 000 сум/м²</option>
+<option value="1700000" selected>Капитальный — 1 700 000 сум/м²</option>
+<option value="2700000">Евроремонт — 2 700 000 сум/м²</option>
+</select>
+<output id="price">85 000 000 сум</output>
+<small>* Предварительный расчёт. Точную смету составит замерщик.</small>
+</div>
+</div>
+</div>
+<section id="services">
+<div class="wrap">
+<h2>Наши услуги</h2>
+<p class="sub">Полный цикл строительных работ</p>
+<div class="grid">
+<div class="card"><div class="ico">🏠</div><h3>Строительство домов</h3><p>Каркасные, кирпичные и газобетонные дома от проекта до ключей.</p></div>
+<div class="card"><div class="ico">🔨</div><h3>Капитальный ремонт</h3><p>Квартиры, офисы и коттеджи с заменой всех коммуникаций.</p></div>
+<div class="card"><div class="ico">🎨</div><h3>Косметический ремонт</h3><p>Быстрое обновление интерьера за 2–3 недели.</p></div>
+<div class="card"><div class="ico">🛁</div><h3>Ванные под ключ</h3><p>Гидроизоляция, плитка и сантехника с гарантией.</p></div>
+<div class="card"><div class="ico">⚡</div><h3>Электрика и сантехника</h3><p>Монтаж и замена проводки и труб строго по СНиП.</p></div>
+<div class="card"><div class="ico">📐</div><h3>Дизайн-проект</h3><p>3D-визуализация, смета и подбор материалов.</p></div>
+</div>
+</div>
+</section>
+<section id="steps" style="background:var(--light)">
+<div class="wrap">
+<h2>Этапы работы</h2>
+<p class="sub">Прозрачно и строго по договору</p>
+<div class="steps">
+<div class="step"><b>1</b><h3>Заявка</h3><p>Звонок и бесплатный замер</p></div>
+<div class="step"><b>2</b><h3>Смета</h3><p>Фиксированная цена за 24 часа</p></div>
+<div class="step"><b>3</b><h3>Работы</h3><p>Фотоотчёты каждую неделю</p></div>
+<div class="step"><b>4</b><h3>Сдача</h3><p>Приёмка и гарантия 5 лет</p></div>
+</div>
+</div>
+</section>
+<section id="objects">
+<div class="wrap">
+<h2>Готовые объекты</h2>
+<p class="sub">Более 240 сданных проектов</p>
+<div class="objs">
+<div class="obj"><div class="obj-top">🏡</div><div class="obj-body"><h3>Дом 140 м², Ташкент</h3><p>Газобетон, отделка под ключ • 4 месяца • 740 млн сум</p></div></div>
+<div class="obj"><div class="obj-top">🏢</div><div class="obj-body"><h3>Квартира 68 м², ЖК «Новый»</h3><p>Евроремонт • 2,5 месяца • 175 млн сум</p></div></div>
+<div class="obj"><div class="obj-top">🏘️</div><div class="obj-body"><h3>Коттедж 210 м²</h3><p>Капитальный ремонт • 5 месяцев • 400 млн сум</p></div></div>
+</div>
+</div>
+</section>
+<section id="reviews" style="background:var(--light)">
+<div class="wrap">
+<h2>Отзывы клиентов</h2>
+<p class="sub">Нам доверяют самое ценное — свой дом</p>
+<div class="revs">
+<div class="rev">⭐⭐⭐⭐⭐<br>«Сделали ремонт двушки за 2 месяца. Смета не выросла ни на сум!»<br><b>— Марат, Ташкент</b></div>
+<div class="rev">⭐⭐⭐⭐⭐<br>«Построили дом за сезон. Присылали фото каждую неделю, всё чётко.»<br><b>— семья Галеевых</b></div>
+</div>
+</div>
+</section>
+<section class="contacts" id="contacts">
+<div class="wrap">
+<h2>Контакты</h2>
+<p class="sub">Оставьте заявку — перезвоним за 15 минут</p>
+</div>
+<div class="c-grid">
+<div class="c-info">
+<p>📞 <b>+998 93 507-64-73</b></p>
+<p>✉️ info@stroydom.uz</p>
+<p>📍 г. Ташкент, ул. Строителей, 12</p>
+<p>🕘 Пн–Сб: 9:00–19:00</p>
+</div>
+<form id="form" novalidate>
+<input id="name" type="text" placeholder="Ваше имя">
+<input id="tel" type="tel" placeholder="Телефон: +998 ___ ___-__-__">
+<textarea id="msg" rows="3" placeholder="Что нужно построить / отремонтировать?"></textarea>
+<div class="err" id="err"></div>
+<button class="btn" type="submit">Отправить заявку</button>
+</form>
+</div>
+</section>
+<footer>Демо-работа • Сверстал Эдуард Журавлёв • <a href="https://t.me/mkdir16">t.me/mkdir16</a></footer>
+<div class="modal" id="modal">
+<div class="modal-box">
+<div class="ok">✅</div>
+<h3>Заявка отправлена!</h3>
+<p>Менеджер свяжется с вами в течение 15 минут.</p>
+<br>
+<button class="btn" id="close">Отлично</button>
+</div>
+</div>
+<script>
+// Бургер-меню
+const burger = document.getElementById('burger');
+const nav = document.getElementById('nav');
+burger.onclick = () => nav.classList.toggle('open');
+nav.querySelectorAll('a').forEach(a => {
+a.onclick = () => nav.classList.remove('open');
+});
+// Калькулятор: площадь * тип = цена (live)
+const sq = document.getElementById('sq');
+const type = document.getElementById('type');
+const price = document.getElementById('price');
+const sqVal = document.getElementById('sqVal');
+function fmt(n) {
+return n.toLocaleString('ru-RU') + ' сум';
+}
+function calc() {
+const s = +sq.value;
+const p = s * (+type.value);
+sqVal.textContent = s;
+price.textContent = fmt(p);
+}
+sq.oninput = calc;
+type.onchange = calc;
+calc();
+// Форма: валидация + модалка успеха
+const form = document.getElementById('form');
+const modal = document.getElementById('modal');
+form.onsubmit = e => {
+e.preventDefault();
+const n = document.getElementById('name').value.trim();
+const t = document.getElementById('tel').value.trim();
+const err = document.getElementById('err');
+if (n.length < 2) {
+err.textContent = 'Введите имя (минимум 2 символа).';
+return;
+}
+if (!/^\+?[0-9\s\-()]{10,17}$/.test(t)) {
+err.textContent = 'Введите корректный телефон.';
+return;
+}
+err.textContent = '';
+modal.classList.add('open');
+form.reset();
+calc();
+};
+document.getElementById('close').onclick = () => modal.classList.remove('open');
+modal.onclick = e => {
+if (e.target === modal) modal.classList.remove('open');
+};
+</script>
+</body>
+</html>

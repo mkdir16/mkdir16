@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloom — магазин цветов</title>
+<style>
+:root{--pink:#f9c5d5;--pink2:#fde7ef;--cream:#fff9f3;--green:#5a8a6a;--green2:#e8f3ec;--dark:#4a3f3f;--accent:#d45f85;--shadow:0 8px 24px rgba(214,120,150,.15)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;background:var(--cream);color:var(--dark);line-height:1.6}
+a{text-decoration:none;color:inherit}
+header{background:#fff;box-shadow:var(--shadow);position:sticky;top:0;z-index:50}
+.nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;position:relative}
+.logo{font-size:24px;font-weight:800;color:var(--accent)}
+.logo span{color:var(--green)}
+.links{display:flex;gap:22px;font-weight:600}
+.links a:hover{color:var(--accent)}
+.burger{display:none;font-size:28px;background:none;border:none;cursor:pointer}
+.btn{background:var(--accent);color:#fff;border:none;padding:12px 26px;border-radius:30px;font-size:16px;font-weight:700;cursor:pointer;transition:.2s;display:inline-block}
+.btn:hover{background:#b84a70;transform:translateY(-1px)}
+.hero{background:linear-gradient(135deg,var(--pink2),#fff,var(--green2));padding:70px 20px;text-align:center;border-radius:0 0 40px 40px}
+.hero .emoji{font-size:54px;margin-bottom:10px}
+.hero h1{font-size:42px;margin-bottom:12px;line-height:1.2}
+.hero h1 span{color:var(--accent)}
+.hero p{font-size:18px;color:#6b5d5d}
+.promo{display:inline-block;background:#fff;border:2px dashed var(--accent);border-radius:20px;padding:12px 24px;margin:18px 0 24px;font-weight:700}
+section{max-width:1100px;margin:auto;padding:60px 20px}
+h2{text-align:center;font-size:32px;margin-bottom:8px}
+.sub{text-align:center;color:#8a7a7a;margin-bottom:30px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#fff;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);transition:.2s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-5px)}
+.pic{height:150px;display:flex;align-items:center;justify-content:center;font-size:72px}
+.p1{background:linear-gradient(135deg,#ffd1dc,#ff9eb5)}
+.p2{background:linear-gradient(135deg,#ffe9c9,#ffcf9e)}
+.p3{background:linear-gradient(135deg,#e2f0d9,#b9dcae)}
+.p4{background:linear-gradient(135deg,#f9c5d5,#d8b4e2)}
+.p5{background:linear-gradient(135deg,#fff3b0,#ffc6c6)}
+.p6{background:linear-gradient(135deg,#c9e7ff,#ffc9de)}
+.info{padding:20px;flex:1;display:flex;flex-direction:column}
+.info h3{font-size:20px;margin-bottom:6px}
+.info p{font-size:14px;color:#8a7a7a;flex:1}
+.price{font-size:22px;font-weight:800;color:var(--green);margin:12px 0}
+.order{width:100%;background:var(--green);color:#fff;border:none;padding:12px;border-radius:16px;font-size:16px;font-weight:700;cursor:pointer}
+.order:hover{background:#48705a}
+.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.feat{background:#fff;border-radius:24px;padding:28px;text-align:center;box-shadow:var(--shadow)}
+.feat .ic{font-size:44px;margin-bottom:10px}
+.feat h3{margin-bottom:8px;color:var(--accent)}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev{background:#fff;border-radius:24px;padding:24px;box-shadow:var(--shadow);font-style:italic}
+.rev b{display:block;margin-top:12px;font-style:normal;color:var(--green)}
+.contacts{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.cinfo{background:#fff;border-radius:24px;padding:30px;box-shadow:var(--shadow)}
+.cinfo p{margin:10px 0;font-size:18px}
+.map{background:var(--green2);border-radius:24px;min-height:240px;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--green);border:2px dashed var(--green);text-align:center;padding:20px;line-height:1.8}
+footer{background:#4a3f3f;color:#fff;text-align:center;padding:22px;font-size:14px}
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;align-items:center;justify-content:center;padding:20px}
+.modal-bg.open{display:flex}
+.modal{background:#fff;border-radius:24px;padding:32px;max-width:400px;width:100%;position:relative}
+.modal h3{font-size:24px;margin-bottom:6px}
+.modal .bname{color:var(--accent);font-weight:700;margin-bottom:16px}
+.modal label{display:block;margin:12px 0 4px;font-weight:600}
+.modal input{width:100%;padding:12px;border:2px solid #eee;border-radius:14px;font-size:16px}
+.modal input.err{border-color:#e74c3c}
+.err-msg{color:#e74c3c;font-size:13px;display:none;margin-top:4px}
+.close{position:absolute;top:12px;right:16px;background:none;border:none;font-size:26px;cursor:pointer}
+.success{display:none;text-align:center;padding:10px 0}
+.success .big{font-size:56px}
+@media(max-width:768px){
+.links{display:none;position:absolute;top:62px;left:0;right:0;background:#fff;flex-direction:column;padding:20px;text-align:center;box-shadow:var(--shadow)}
+.links.open{display:flex}
+.burger{display:block}
+.hero h1{font-size:30px}
+.grid,.feats,.revs,.contacts{grid-template-columns:1fr}
+section{padding:40px 16px}
+}
+</style>
+</head>
+<body>
+<header>
+<nav class="nav">
+<div class="logo">🌸 BloomShop</div>
+<div class="links" id="links">
+<a href="#catalog">Каталог</a>
+<a href="#feats">Преимущества</a>
+<a href="#revs">Отзывы</a>
+<a href="#contacts">Контакты</a>
+</div>
+<button class="burger" id="burger">☰</button>
+</nav>
+</header>
+<div class="hero">
+<div class="emoji">🌸🌹🌷</div>
+<h1>Свежие цветы <span>с доставкой за 2 часа</span></h1>
+<p>Букеты с любовью каждый день с 8:00 до 22:00</p>
+<div class="promo">🎁 Акция: −20% на все букеты до 12 октября по промокоду NEZHNO</div>
+<br>
+<a href="#catalog" class="btn">Выбрать букет</a>
+</div>
+<section id="catalog">
+<h2>Каталог букетов</h2>
+<p class="sub">Каждый букет упаковываем бесплатно + открытка в подарок</p>
+<div class="grid">
+<div class="card">
+<div class="pic p1">🌹</div>
+<div class="info">
+<h3>«Нежность»</h3>
+<p>11 розовых роз + эвкалипт</p>
+<div class="price">249 000 сум</div>
+<button class="order" data-name="«Нежность»">Заказать</button>
+</div>
+</div>
+<div class="card">
+<div class="pic p2">🌷</div>
+<div class="info">
+<h3>«Весенний»</h3>
+<p>15 тюльпанов микс + крафт</p>
+<div class="price">189 000 сум</div>
+<button class="order" data-name="«Весенний»">Заказать</button>
+</div>
+</div>
+<div class="card">
+<div class="pic p3">🌸</div>
+<div class="info">
+<h3>«Полевой»</h3>
+<p>Ромашки, лаванда, зелень</p>
+<div class="price">159 000 сум</div>
+<button class="order" data-name="«Полевой»">Заказать</button>
+</div>
+</div>
+<div class="card">
+<div class="pic p4">💐</div>
+<div class="info">
+<h3>«Мечта»</h3>
+<p>Пионы 9 шт + гортензия</p>
+<div class="price">379 000 сум</div>
+<button class="order" data-name="«Мечта»">Заказать</button>
+</div>
+</div>
+<div class="card">
+<div class="pic p5">🌻</div>
+<div class="info">
+<h3>«Солнце»</h3>
+<p>Подсолнухи + солидаго</p>
+<div class="price">209 000 сум</div>
+<button class="order" data-name="«Солнце»">Заказать</button>
+</div>
+</div>
+<div class="card">
+<div class="pic p6">💜</div>
+<div class="info">
+<h3>«Лаванда»</h3>
+<p>Лаванда + розы + хлопок</p>
+<div class="price">279 000 сум</div>
+<button class="order" data-name="«Лаванда»">Заказать</button>
+</div>
+</div>
+</div>
+</section>
+<section id="feats">
+<h2>Почему мы?</h2>
+<p class="sub">Заботимся о цветах и о вас</p>
+<div class="feats">
+<div class="feat">
+<div class="ic">🚚</div>
+<h3>Быстрая доставка</h3>
+<p>Привезём за 2 часа по городу. Бесплатно от 300 000 сум.</p>
+</div>
+<div class="feat">
+<div class="ic">🌿</div>
+<h3>Всегда свежие</h3>
+<p>Поставки каждое утро. Стоят от 7 дней — гарантия.</p>
+</div>
+<div class="feat">
+<div class="ic">💌</div>
+<h3>С заботой</h3>
+<p>Открытка и фото букета перед отправкой.</p>
+</div>
+</div>
+</section>
+<section id="revs">
+<h2>Отзывы</h2>
+<p class="sub">Нас уже выбрали 2000+ клиентов</p>
+<div class="revs">
+<div class="rev">
+«Букет “Нежность” — восторг! Цветы свежие, доставили за час.»
+<b>— Анна ⭐⭐⭐⭐⭐</b>
+</div>
+<div class="rev">
+«Заказывала маме на день рождения. Прислали фото перед доставкой.»
+<b>— Мария ⭐⭐⭐⭐⭐</b>
+</div>
+<div class="rev">
+«Лучший магазин в городе. Пионы стояли две недели!»
+<b>— Ольга ⭐⭐⭐⭐⭐</b>
+</div>
+</div>
+</section>
+<section id="contacts">
+<h2>Контакты</h2>
+<p class="sub">Ждём вас каждый день</p>
+<div class="contacts">
+<div class="cinfo">
+<p>📍 ул. Цветочная, 12, Ташкент</p>
+<p>📞 +998 93 507-64-73</p>
+<p>⏰ Ежедневно 8:00 – 22:00</p>
+<p>✉️ hello@bloomshop.uz</p>
+</div>
+<div class="map">
+🗺️ Карта-заглушка<br>
+ст. м. Цветочная, выход 2
+</div>
+</div>
+</section>
+<footer>Демо-работа • Сверстал Эдуард Журавлёв • t.me/mkdir16</footer>
+<div class="modal-bg" id="modalBg">
+<div class="modal">
+<button class="close" id="closeBtn">×</button>
+<div id="formWrap">
+<h3>Оформление заказа</h3>
+<div class="bname" id="bname">Букет «Нежность»</div>
+<label>Ваше имя</label>
+<input type="text" id="fname" placeholder="Например, Анна">
+<label>Телефон</label>
+<input type="tel" id="fphone" placeholder="+998 (__) ___-__-__">
+<div class="err-msg" id="errMsg">Введите корректный телефон (минимум 10 цифр)</div>
+<button class="btn" id="sendBtn" style="width:100%;margin-top:18px">Подтвердить заказ</button>
+</div>
+<div class="success" id="success">
+<div class="big">🎉</div>
+<h3>Спасибо!</h3>
+<p id="successText">Заказ принят.</p>
+</div>
+</div>
+</div>
+<script>
+var bg = document.getElementById('modalBg');
+var bname = document.getElementById('bname');
+var fname = document.getElementById('fname');
+var fphone = document.getElementById('fphone');
+var errMsg = document.getElementById('errMsg');
+var formWrap = document.getElementById('formWrap');
+var success = document.getElementById('success');
+var successText = document.getElementById('successText');
+document.querySelectorAll('.order').forEach(function(b) {
+b.addEventListener('click', function() {
+bname.textContent = 'Букет ' + b.dataset.name;
+formWrap.style.display = 'block';
+success.style.display = 'none';
+fname.value = '';
+fphone.value = '';
+fphone.classList.remove('err');
+errMsg.style.display = 'none';
+bg.classList.add('open');
+});
+});
+document.getElementById('closeBtn').onclick = function() {
+bg.classList.remove('open');
+};
+bg.addEventListener('click', function(e) {
+if (e.target === bg) bg.classList.remove('open');
+});
+document.getElementById('sendBtn').onclick = function() {
+var digits = fphone.value.replace(/\D/g, '');
+if (fname.value.trim() === '' || digits.length < 10) {
+fphone.classList.add('err');
+errMsg.style.display = 'block';
+return;
+}
+fphone.classList.remove('err');
+errMsg.style.display = 'none';
+formWrap.style.display = 'none';
+success.style.display = 'block';
+successText.textContent = fname.value.trim() + ', ваш ' + bname.textContent + ' уже собираем! Перезвоним на ' + fphone.value + '.';
+};
+var burger = document.getElementById('burger');
+var links = document.getElementById('links');
+burger.onclick = function() { links.classList.toggle('open'); };
+links.querySelectorAll('a').forEach(function(a) {
+a.onclick = function() { links.classList.remove('open'); };
+});
+document.addEventListener('keydown', function(e) {
+if (e.key === 'Escape') bg.classList.remove('open');
+});
+</script>
+</body>
+</html>

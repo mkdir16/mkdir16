@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NovaCode — IT-студия</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a12;--card:#14141f;--vio:#8b5cf6;--cyan:#22d3ee;--text:#e8e8f0;--mut:#9a9ab0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(10,10,18,.9);backdrop-filter:blur(10px);border-bottom:1px solid #22223a}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;font-size:1.3rem;background:linear-gradient(90deg,var(--vio),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.links{display:flex;gap:22px;font-size:.95rem}
+.links a:hover{color:var(--cyan)}
+.btn{display:inline-block;padding:10px 22px;border-radius:30px;border:0;cursor:pointer;font-weight:700;color:#fff;background:linear-gradient(90deg,var(--vio),var(--cyan));transition:.3s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(139,92,246,.4)}
+.burger{display:none;font-size:1.6rem;background:none;border:0;color:#fff;cursor:pointer}
+/* hero */
+.hero{position:relative;overflow:hidden;text-align:center;padding:90px 20px 70px}
+.hero::before{content:"";position:absolute;inset:-40%;background:radial-gradient(circle at 30% 30%,rgba(139,92,246,.35),transparent 50%),radial-gradient(circle at 70% 60%,rgba(34,211,238,.3),transparent 50%);animation:grad 8s ease-in-out infinite alternate}
+@keyframes grad{from{transform:rotate(0) scale(1)}to{transform:rotate(20deg) scale(1.2)}}
+.hero h1{font-size:2.8rem;position:relative;line-height:1.2}
+.hero h1 span{background:linear-gradient(90deg,var(--vio),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mut);max-width:600px;margin:16px auto 26px;position:relative}
+.stats{display:flex;gap:16px;justify-content:center;margin-top:44px;position:relative;flex-wrap:wrap}
+.stat{background:var(--card);border:1px solid #26263e;border-radius:14px;padding:20px 34px;min-width:150px}
+.stat b{font-size:1.8rem;background:linear-gradient(90deg,var(--vio),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{display:block;color:var(--mut);font-size:.85rem}
+/* sections */
+section{padding:64px 0}
+h2{text-align:center;font-size:2rem;margin-bottom:8px}
+.sub{text-align:center;color:var(--mut);margin-bottom:32px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);border:1px solid #26263e;border-radius:16px;padding:26px;transition:.3s}
+.card:hover{transform:translateY(-5px);border-color:var(--vio);box-shadow:0 12px 30px rgba(139,92,246,.2)}
+.card .ico{font-size:2rem;margin-bottom:10px}
+.card h3{margin-bottom:8px;font-size:1.1rem}
+.card p,.card li{color:var(--mut);font-size:.92rem}
+.card ul{list-style:none}
+.price{font-size:2rem;font-weight:800;margin:12px 0}
+.price span{font-size:.9rem;color:var(--mut);font-weight:400}
+.tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.tag{padding:8px 18px;border-radius:20px;background:#191928;border:1px solid #2c2c4d;font-size:.9rem}
+.tag:hover{border-color:var(--cyan);color:var(--cyan)}
+.team-ava{font-size:3rem;text-align:center;margin-bottom:10px}
+.role{color:var(--cyan);font-size:.85rem;margin-bottom:8px}
+/* contacts */
+.contacts{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+form{background:var(--card);border:1px solid #26263e;border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:12px}
+input,textarea{background:#0e0e18;border:1px solid #2c2c4d;color:#fff;border-radius:10px;padding:12px;font:inherit}
+input:focus,textarea:focus{outline:none;border-color:var(--cyan)}
+.info p{margin-bottom:12px;color:var(--mut)}
+footer{text-align:center;padding:28px;color:var(--mut);border-top:1px solid #22223a;font-size:.9rem}
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:.7s}
+.reveal.visible{opacity:1;transform:none}
+/* adaptive */
+@media(max-width:768px){
+.burger{display:block}
+.links{position:fixed;top:64px;right:0;left:0;background:#10101c;flex-direction:column;text-align:center;padding:20px;display:none}
+.links.open{display:flex}
+.hero h1{font-size:2rem}
+.grid3{grid-template-columns:1fr}
+.contacts{grid-template-columns:1fr}
+.stats{gap:10px}
+.stat{flex:1;min-width:120px;padding:16px}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap nav">
+<a class="logo" href="#top">💻 NovaCode</a>
+<nav class="links" id="menu">
+<a href="#services">Услуги</a>
+<a href="#cases">Кейсы</a>
+<a href="#stack">Стек</a>
+<a href="#team">Команда</a>
+<a href="#price">Тарифы</a>
+<a href="#contacts">Контакты</a>
+</nav>
+<button class="burger" id="burger" aria-label="Меню">☰</button>
+</div>
+</header>
+<div class="hero" id="top">
+<h1>Разрабатываем <span>сайты и приложения</span><br>для роста бизнеса 🚀</h1>
+<p>IT-студия полного цикла: дизайн, разработка, продвижение. Запускаем проекты за 14 дней.</p>
+<a href="#contacts" class="btn">Обсудить проект</a>
+<div class="stats">
+<div class="stat"><b><span class="num" data-target="120">0</span>+</b><span>проектов</span></div>
+<div class="stat"><b><span class="num" data-target="8">0</span> лет</b><span>на рынке</span></div>
+<div class="stat"><b><span class="num" data-target="98">0</span>%</b><span>довольных клиентов</span></div>
+<div class="stat"><b><span class="num" data-target="15">0</span></b><span>специалистов</span></div>
+</div>
+</div>
+<section id="services"><div class="wrap">
+<h2>Услуги 🛠</h2><p class="sub">Закрываем все задачи digital-проекта</p>
+<div class="grid3">
+<div class="card reveal"><div class="ico">🌐</div><h3>Лендинги</h3><p>Продающие одностраничники с конверсией до 12%. Дизайн + верстка + копирайтинг.</p></div>
+<div class="card reveal"><div class="ico">🏢</div><h3>Корп. сайты</h3><p>Многостраничные сайты компаний с CMS, SEO и аналитикой из коробки.</p></div>
+<div class="card reveal"><div class="ico">🛒</div><h3>Интернет-магазины</h3><p>Каталог, корзина, оплата и доставка. Интеграция с 1С и CRM.</p></div>
+<div class="card reveal"><div class="ico">📱</div><h3>Приложения</h3><p>Мобильные и веб-приложения на React + Node.js. MVP за 30 дней.</p></div>
+<div class="card reveal"><div class="ico">🤖</div><h3>Telegram-боты</h3><p>Боты для продаж, поддержки и автоматизации. Прием платежей.</p></div>
+<div class="card reveal"><div class="ico">📈</div><h3>SEO и реклама</h3><p>Продвижение в поиске и соцсетях. Рост трафика от x3 за полгода.</p></div>
+</div>
+</div></section>
+<section id="cases"><div class="wrap">
+<h2>Кейсы 📁</h2><p class="sub">Проекты, которыми гордимся</p>
+<div class="grid3">
+<div class="card reveal"><div class="ico">🍕</div><h3>Доставка «ВкусноЕд»</h3><p>Интернет-магазин + приложение. +180% заказов за 3 месяца.</p></div>
+<div class="card reveal"><div class="ico">🏋️</div><h3>Фитнес-клуб «Атлант»</h3><p>Лендинг + CRM. 450 заявок в первый месяц, конверсия 9%.</p></div>
+<div class="card reveal"><div class="ico">🎓</div><h3>Онлайн-школа «Знания»</h3><p>Платформа курсов + бот. 2000 учеников, автоплатежи.</p></div>
+</div>
+</div></section>
+<section id="stack"><div class="wrap">
+<h2>Стек ⚙️</h2><p class="sub">Технологии, которые используем</p>
+<div class="tags reveal">
+<span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Vue</span><span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span><span class="tag">Figma</span><span class="tag">Git</span><span class="tag">Nginx</span>
+</div>
+</div></section>
+<section id="team"><div class="wrap">
+<h2>Команда 👥</h2><p class="sub">Кто будет работать над проектом</p>
+<div class="grid3">
+<div class="card reveal"><div class="team-ava">🧑‍💻</div><h3>Алексей Громов</h3><p class="role">Frontend-разработчик</p><p>5 лет опыта, 60+ проектов на React.</p></div>
+<div class="card reveal"><div class="team-ava">👩‍🎨</div><h3>Мария Соколова</h3><p class="role">UI/UX-дизайнер</p><p>Дизайн-системы, прототипы в Figma.</p></div>
+<div class="card reveal"><div class="team-ava">🧔</div><h3>Дмитрий Волков</h3><p class="role">Backend-разработчик</p><p>Node.js, Python, высоконагрузки.</p></div>
+</div>
+</div></section>
+<section id="price"><div class="wrap">
+<h2>Тарифы 💰</h2><p class="sub">Честные цены без скрытых платежей</p>
+<div class="grid3">
+<div class="card reveal"><h3>🟢 Старт</h3><div class="price">3 500 000 сум</div><ul><li>✔ Лендинг за 7 дней</li><li>✔ Адаптивная верстка</li><li>✔ Форма заявки</li><li>✖ CMS и SEO</li></ul><br><a href="#contacts" class="btn">Выбрать</a></div>
+<div class="card reveal" style="border-color:var(--cyan)"><h3>🔵 Бизнес</h3><div class="price">9 500 000 сум</div><ul><li>✔ Корп. сайт / магазин</li><li>✔ CMS + SEO-база</li><li>✔ Интеграция CRM</li><li>✔ 3 мес. поддержки</li></ul><br><a href="#contacts" class="btn">Выбрать</a></div>
+<div class="card reveal"><h3>🟣 Максимум</h3><div class="price">18 000 000 сум <span>/ от</span></div><ul><li>✔ Приложение / портал</li><li>✔ Личный кабинет</li><li>✔ API и интеграции</li><li>✔ 6 мес. поддержки</li></ul><br><a href="#contacts" class="btn">Выбрать</a></div>
+</div>
+</div></section>
+<section id="contacts"><div class="wrap">
+<h2>Контакты 📩</h2><p class="sub">Оставьте заявку — ответим за 2 часа</p>
+<div class="contacts">
+<div class="info reveal">
+<p>📧 hello@novacode.ru</p>
+<p>📞 +998 93 507-64-73</p>
+<p>💬 Telegram: @mkdir16</p>
+<p>📍 Ташкент, ул. Примерная, 1</p>
+<p>Работаем по всему Узбекистану и СНГ. Бесплатная консультация и оценка проекта.</p>
+</div>
+<form id="form" class="reveal">
+<input type="text" placeholder="Ваше имя" required>
+<input type="tel" placeholder="Телефон или Telegram" required>
+<textarea rows="4" placeholder="Расскажите о проекте..."></textarea>
+<button class="btn" type="submit">Отправить заявку</button>
+</form>
+</div>
+</div></section>
+<footer>Демо-работа • Сверстал Эдуард Журавлёв • t.me/mkdir16</footer>
+<script>
+// бургер
+const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+burger.onclick=()=>menu.classList.toggle('open');
+menu.querySelectorAll('a').forEach(a=>a.onclick=()=>menu.classList.remove('open'));
+// плавный скролл
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}})});
+// reveal-анимации
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// счётчики цифр
+const nio=new IntersectionObserver(es=>es.forEach(e=>{
+if(!e.isIntersecting)return;nio.unobserve(e.target);
+const el=e.target,end=+el.dataset.target,t0=performance.now(),dur=1500;
+(function tick(t){const p=Math.min((t-t0)/dur,1);el.textContent=Math.round(end*p);if(p<1)requestAnimationFrame(tick)})(t0);
+}),{threshold:.5});
+document.querySelectorAll('.num').forEach(el=>nio.observe(el));
+// форма
+document.getElementById('form').onsubmit=e=>{e.preventDefault();alert('Спасибо! Мы свяжемся с вами soon 😊');e.target.reset();};
+</script>
+</body>
+</html>

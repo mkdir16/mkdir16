@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Эдуард Журавлёв — Верстальщик сайтов | HTML / CSS / JS</title>
+<meta name="description" content="Эдуард Журавлёв — верстка сайтов по макету Figma / PSD. Адаптивная, Pixel Perfect верстка лендингов, корпоративных сайтов и интернет-магазинов.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-glow"></div>
+
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="#top" class="logo">&lt;ЭЖ<span>/&gt;</span></a>
+    <nav class="nav" id="nav">
+      <a href="#about">Обо мне</a>
+      <a href="#services">Услуги</a>
+      <a href="#works">Работы</a>
+      <a href="#steps">Этапы</a>
+      <a href="#prices">Цены</a>
+      <a href="#contacts" class="nav-cta">Связаться</a>
+    </nav>
+    <div class="header-right">
+      <a href="https://t.me/mkdir16" target="_blank" class="btn btn-small">Telegram</a>
+      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero container">
+  <div class="hero-badge reveal">● доступен для заказов</div>
+  <h1 class="reveal">Эдуард <span class="grad">Журавлёв</span><br>верстаю сайты,<br>которые продают</h1>
+  <p class="hero-sub reveal">HTML-верстальщик. Делаю адаптивную верстку по макету Figma / PSD — Pixel Perfect, чистый код, быстрая загрузка. Лендинги, корпоративные сайты, интернет-магазины.</p>
+  <div class="hero-btns reveal">
+    <a href="#works" class="btn btn-primary">Смотреть работы</a>
+    <a href="https://t.me/mkdir16" target="_blank" class="btn btn-ghost">Написать в TG →</a>
+  </div>
+  <div class="hero-stats reveal">
+    <div class="stat"><b>15+</b><span>сверстанных<br>проектов</span></div>
+    <div class="stat"><b>100%</b><span>адаптив под<br>мобильные</span></div>
+    <div class="stat"><b>24ч</b><span>ответ и<br>оценка проекта</span></div>
+    <div class="stat"><b>Pixel<br>Perfect</b><span>точность<br>по макету</span></div>
+  </div>
+  <div class="hero-tags reveal">
+    <span>HTML5</span><span>CSS3 / SCSS</span><span>JavaScript</span><span>BEM</span><span>Flex / Grid</span><span>Figma</span><span>Адаптив</span><span>Кроссбраузерность</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section container">
+  <div class="section-head reveal"><span class="num">01</span><h2>Обо мне</h2></div>
+  <div class="about-grid">
+    <div class="about-card reveal">
+      <div class="avatar">ЭЖ</div>
+      <h3>Эдуард Аркадьевич Журавлёв</h3>
+      <p class="muted">HTML-верстальщик • Ташкент / удалённо</p>
+      <p>Верстаю сайты по готовому шаблону / макету. Переношу дизайн из Figma в живой сайт один в один: шрифты, отступы, анимации. Код чистый, по БЭМ, легко передать программисту.</p>
+      <div class="about-contacts">
+        <a href="https://t.me/mkdir16" target="_blank">✈ @mkdir16</a>
+        <a href="tel:+998935076473">📞 +998 93 507-64-73</a>
+      </div>
+    </div>
+    <div class="skills reveal">
+      <h3>Стек и навыки</h3>
+      <div class="skill"><div class="skill-top"><span>HTML5 + семантика</span><b>95%</b></div><div class="bar"><i style="width:95%"></i></div></div>
+      <div class="skill"><div class="skill-top"><span>CSS3 / SCSS / Анимации</span><b>90%</b></div><div class="bar"><i style="width:90%"></i></div></div>
+      <div class="skill"><div class="skill-top"><span>Адаптив / Mobile First</span><b>93%</b></div><div class="bar"><i style="width:93%"></i></div></div>
+      <div class="skill"><div class="skill-top"><span>JavaScript (слайдеры, бургер, модалки)</span><b>75%</b></div><div class="bar"><i style="width:75%"></i></div></div>
+      <div class="skill"><div class="skill-top"><span>Figma / Photoshop / Pixel Perfect</span><b>88%</b></div><div class="bar"><i style="width:88%"></i></div></div>
+      <div class="chips"><span>✔ Валидный код W3C</span><span>✔ Скорость / оптимизация</span><span>✔ SEO-база</span><span>✔ Натяжка на CMS / Tilda / WP</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section container">
+  <div class="section-head reveal"><span class="num">02</span><h2>Что я делаю</h2></div>
+  <div class="cards">
+    <div class="card reveal"><div class="ico">◈</div><h3>Верстка по макету</h3><p>Переношу Figma / PSD в HTML/CSS/JS. Точно по дизайну, все блоки, шрифты и отступы.</p><span class="price">Главная 0,8–1,5 млн • внутр. 200–450 тыс сум</span></div>
+    <div class="card reveal"><div class="ico">◎</div><h3>Лендинги</h3><p>Простые 3–5 блоков и сложные 6–12 блоков: анимации, слайдеры, формы, квизы.</p><span class="price">0,6 – 3 млн сум</span></div>
+    <div class="card reveal"><div class="ico">⬣</div><h3>Натяжка на CMS</h3><p>Figma → Tilda Zero Block + адаптив. Посадка HTML на WordPress + ACF.</p><span class="price">Tilda 0,8–2 млн • WP +1–2,5 млн сум</span></div>
+    <div class="card reveal"><div class="ico">▣</div><h3>Интернет-магазины (фронт)</h3><p>Каталог, карточки товара, корзина, фильтры. Подготовка под подключение backend.</p><span class="price">по смете — напиши в TG</span></div>
+    <div class="card reveal"><div class="ico">✦</div><h3>Адаптив и доработка</h3><p>Слайдер, форма, поехавший адаптив, скорость, баги. Почасовая $8–$15.</p><span class="price">150 – 500 тыс сум / задача</span></div>
+    <div class="card reveal"><div class="ico">✉</div><h3>Email-верстка</h3><p>Письма для рассылок, которые одинаково выглядят в Gmail, Outlook и на телефоне.</p><span class="price">от 350 000 сум</span></div>
+  </div>
+</section>
+
+<!-- WORKS -->
+<section id="works" class="section container">
+  <div class="section-head reveal"><span class="num">03</span><h2>Мои работы — 10 проектов</h2><p class="muted">Всё кликабельно — нажми «Открыть сайт»</p></div>
+  <div class="flagship-label reveal">★ ФЛАГМАНЫ — показывают, за что ты платишь</div>
+  <div class="works-grid flagship-grid" id="flagshipGrid">
+    <article class="work flagship reveal" data-cat="landing">
+      <div class="work-img g1"><span>ФЛАГМАН • ПРОСТОЙ ЛЕНДИНГ</span><b>Барбершоп «Цех»</b></div>
+      <div class="work-body"><h3>Простой лендинг — 4 блока</h3><p>Шапка, hero, услуги, мастера, запись. Базовый адаптив, минимум JS. Чисто и быстро.</p><div class="work-tags"><span>3–5 блоков</span><span>Бургер + форма</span></div><div class="flag-price">0,6 – 1,2 млн сум <small>• удалёнка $70–$130</small></div><a href="works/landing-simple/index.html" target="_blank" class="work-link">Открыть сайт →</a></div>
+    </article>
+    <article class="work flagship reveal" data-cat="landing">
+      <div class="work-img g4"><span>ФЛАГМАН • СЛОЖНЫЙ ЛЕНДИНГ</span><b>Курс «DesignPro»</b></div>
+      <div class="work-body"><h3>Сложный лендинг — 10 блоков</h3><p>Таймер, счётчики, программа, тарифы, квиз со скидкой, слайдер отзывов, FAQ, форма.</p><div class="work-tags"><span>Квиз</span><span>Слайдер</span><span>Таймер</span><span>Анимации</span></div><div class="flag-price">1,5 – 3 млн сум <small>• удалёнка $150–$250</small></div><a href="works/landing-pro/index.html" target="_blank" class="work-link">Открыть сайт →</a></div>
+    </article>
+    <article class="work flagship reveal" data-cat="corp">
+      <div class="work-img g5"><span>ФЛАГМАН • МНОГОСТРАНИЧНИК + CMS</span><b>«TransAsia» — логистика</b></div>
+      <div class="work-body"><h3>4 страницы + CMS-ready</h3><p>Главная, услуги, о компании, контакты. Калькулятор доставки, BEM, метки под ACF / Tilda.</p><div class="work-tags"><span>4 страницы</span><span>Калькулятор</span><span>CMS-ready</span></div><div class="flag-price">Главная 0,8–1,5 млн + внутр. 200–450 тыс <small>• Tilda 0,8–2 млн • WP +1–2,5 млн</small></div><a href="works/multipage/index.html" target="_blank" class="work-link">Открыть главную →</a></div>
+    </article>
+  </div>
+  <div class="flagship-label reveal" style="margin-top:34px">Остальные работы</div>
+  <div class="filters reveal">
+    <button class="filter active" data-filter="all">Все</button>
+    <button class="filter" data-filter="landing">Лендинги</button>
+    <button class="filter" data-filter="corp">Корпоративные</button>
+    <button class="filter" data-filter="shop">Магазины</button>
+  </div>
+  <div class="works-grid" id="worksGrid">
+    <article class="work reveal" data-cat="corp">
+      <div class="work-img g2"><span>РЕАЛЬНЫЙ ПРОЕКТ ✓</span><b>Психолог Валерия Макеева</b></div>
+      <div class="work-body"><h3>Сайт детского психолога — Ташкент</h3><p>Многосекционный сайт: hero, обо мне, образование, возраст 2–17 лет, этапы 7 шагов, приём пн/ср/пт, отзывы, FAQ, форма записи. Полный адаптив.</p><div class="work-tags"><span>HTML</span><span>CSS</span><span>JS</span><span>Адаптив</span></div><a href="works/psiholog/index.html" target="_blank" class="work-link">Открыть сайт →</a></div>
+    </article>
+    <article class="work reveal" data-cat="landing">
+      <div class="work-img g1"><span>LANDING ✓ ГОТОВ</span><b>Кофейня «Brew»</b></div>
+      <div class="work-body"><h3>Лендинг кофейни</h3><p>Меню из 6 напитков, бронь столика с попапом, отзывы, адаптив.</p><div class="work-tags"><span>HTML</span><span>CSS</span><span>JS</span></div><a href="works/coffee/index.html" target="_blank" class="work-link">Открыть сайт →</a></div>
+    </article>
+    <article class="work reveal" data-cat="corp">
+      <div class="work-img g2"><span>CORP ✓ ГОТОВ</span><b>СтройДом</b></div>
+      <div class="work-body"><h3>Сайт стройкомпании</h3><p>Live-калькулятор ремонта, услуги, этапы, объекты, заявка.</p><div class="work-tags"><span>HTML</span><span>Grid</span><span>JS</span></div><a href="works/stroy/index.html" target="_blank" class="work-link">Открыть сайт →</a></div>
+    </article>
+    <article class="work reveal" data-cat="shop">
+      <div class="work-img g3"><span>SHOP ✓ ГОТОВ</span><b>Sneaker Store</b></div>
+      <div class="work-body"><h3>Магазин кроссовок</h3><p>6 товаров, фильтры по бренду, корзина с localStorage.</p><div class="work-tags"><span>HTML</span><span>CSS</span><span>JS</span></div><a href="works/sneakers/index.html" target="_blank" class="work-link">Открыть сайт →</a></div>
+    </article>
+    <article class="work reveal" data-cat="landing">
+      <div class="work-img g4"><span>LANDING ✓ ГОТОВ</span><b>Фотограф</b></div>
+      <div class="work-body"><h3>Портфолио фотографа</h3><p>Галерея 8 работ, lightbox, пакеты цен, форма.</p><div class="work-tags"><span>Адаптив</span><span>Lightbox</span></div><a href="works/photographer/index.html" target="_blank" class="work-link">Открыть сайт →</a></div>
+    </article>
+    <article class="work reveal" data-cat="corp">
+      <div class="work-img g5"><span>CORP ✓ ГОТОВ</span><b>IT-студия</b></div>
+      <div class="work-body"><h3>Сайт IT-студии</h3><p>Тёмная тема, счётчики при скролле, кейсы, тарифы.</p><div class="work-tags"><span>HTML</span><span>CSS</span><span>Анимации</span></div><a href="works/it-studio/index.html" target="_blank" class="work-link">Открыть сайт →</a></div>
+    </article>
+    <article class="work reveal" data-cat="shop">
+      <div class="work-img g6"><span>SHOP ✓ ГОТОВ</span><b>Bloom — цветы</b></div>
+      <div class="work-body"><h3>Магазин цветов</h3><p>6 букетов, модалка заказа, доставка за 2 часа.</p><div class="work-tags"><span>HTML</span><span>CSS</span><span>JS</span></div><a href="works/flowers/index.html" target="_blank" class="work-link">Открыть сайт →</a></div>
+    </article>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section id="steps" class="section container">
+  <div class="section-head reveal"><span class="num">04</span><h2>Как проходит работа</h2></div>
+  <div class="steps">
+    <div class="step reveal"><b>01</b><h3>Заявка</h3><p>Пишешь в TG, скидываешь макет Figma + пожелания. Оцениваю за 24ч.</p></div>
+    <div class="step reveal"><b>02</b><h3>Верстка</h3><p>Делаю главную → показываю → доделываю остальные страницы и адаптив.</p></div>
+    <div class="step reveal"><b>03</b><h3>Проверка</h3><p>Тестирую на телефоне / планшете / ПК, Chrome, Safari. Чиню мелочи.</p></div>
+    <div class="step reveal"><b>04</b><h3>Сдача</h3><p>Передаю файлы + инструкцию. Помогаю залить на хостинг. 2 недели бесплатных правок.</p></div>
+  </div>
+</section>
+
+<!-- PRICES -->
+<section id="prices" class="section container">
+  <div class="section-head reveal"><span class="num">05</span><h2>Цены</h2><p class="muted">Ташкент / OLX / Telegram — в сумах. Удалёнка СНГ — в $ по курсу</p></div>
+  <div class="price-grid">
+    <div class="price-card reveal"><h3>Лендинг простой</h3><div class="p-price">0,6 – 1,2 млн сум</div><ul><li>3–5 блоков</li><li>Базовый адаптив</li><li>Минимальный JS</li><li>Срок 2–3 дня</li></ul><p class="muted small">Удалёнка: $70 – $130</p><a href="https://t.me/mkdir16" target="_blank" class="btn btn-ghost">Заказать</a></div>
+    <div class="price-card hot reveal"><div class="hot-badge">чаще берут</div><h3>Лендинг сложный</h3><div class="p-price">1,5 – 3 млн сум</div><ul><li>6–12 блоков</li><li>Анимации, слайдеры</li><li>Формы + квизы</li><li>Срок 3–5 дней</li></ul><p class="muted small">Удалёнка: $150 – $250</p><a href="https://t.me/mkdir16" target="_blank" class="btn btn-primary">Заказать</a></div>
+    <div class="price-card reveal"><h3>Многостраничник</h3><div class="p-price">от 0,8 млн сум</div><ul><li>Главная: 0,8 – 1,5 млн сум</li><li>Внутр. страница: 200 – 450 тыс</li><li>Pixel Perfect по Figma</li><li>Срок от 5 дней</li></ul><a href="https://t.me/mkdir16" target="_blank" class="btn btn-ghost">Заказать</a></div>
+    <div class="price-card reveal"><h3>Натяжка на CMS</h3><div class="p-price">0,8 – 2 млн сум</div><ul><li>Figma → Tilda Zero Block + адаптив</li><li>Посадка на WP: +1 – 2,5 млн сум</li><li>ACF, логика, формы</li><li>По смете проекта</li></ul><a href="https://t.me/mkdir16" target="_blank" class="btn btn-ghost">Заказать</a></div>
+    <div class="price-card reveal"><h3>Почасовая</h3><div class="p-price">$8 – $15 / час</div><ul><li>≈ 100 000 – 190 000 сум/час</li><li>Оплата по факту</li><li>Отчёты по времени</li><li>От 1 часа</li></ul><a href="https://t.me/mkdir16" target="_blank" class="btn btn-ghost">Заказать</a></div>
+    <div class="price-card reveal"><h3>Мелкие задачи</h3><div class="p-price">150 – 500 тыс сум</div><ul><li>Слайдер, форма, баг</li><li>Починить адаптив</li><li>$12 – $40 / задача</li><li>Срок 1–2 дня</li></ul><a href="https://t.me/mkdir16" target="_blank" class="btn btn-ghost">Заказать</a></div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section id="contacts" class="section container">
+  <div class="cta reveal">
+    <h2>Есть макет? <span class="grad">Сверстаю за пару дней</span></h2>
+    <p>Скинь ссылку на Figma в Telegram — бесплатно оценю стоимость и сроки. На связи каждый день 10:00–22:00 (Ташкент).</p>
+    <div class="cta-btns">
+      <a href="https://t.me/mkdir16" target="_blank" class="btn btn-primary big">✈ Написать: @mkdir16</a>
+      <a href="tel:+998935076473" class="btn btn-ghost big">📞 +998 93 507-64-73</a>
+    </div>
+    <p class="muted small">Эдуард Аркадьевич Журавлёв • HTML-верстальщик</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>© 2026 Эдуард Журавлёв — верстка сайтов</span>
+    <span><a href="https://t.me/mkdir16" target="_blank">Telegram</a> • <a href="tel:+998935076473">Телефон</a></span>
+  </div>
+</footer>
+
+<a href="https://t.me/mkdir16" target="_blank" class="tg-float" aria-label="Написать в Telegram">✈</a>
+
+<script src="script.js"></script>
+</body>
+</html>
