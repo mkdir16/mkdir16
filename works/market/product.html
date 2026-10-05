@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bazaar — Карточка товара</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="demo">ДЕМО • Маркетплейс • каталог + корзина + заказ • Эдуард Журавлёв t.me/mkdir16</div>
+<header class="header"><div class="container header__inner">
+<a class="logo" href="index.html">🛍️ <span>Bazaar</span></a>
+<nav class="nav" id="nav">
+<a href="index.html">Главная</a><a href="catalog.html">Каталог</a><a href="product.html" class="active">Товар</a><a href="cart.html">Корзина</a><a href="checkout.html">Оформление</a><a href="cabinet.html">Кабинет</a><a href="favorites.html">Избранное</a><a href="sellers.html">Продавцы</a><a href="promo.html">Акции</a><a href="help.html">Помощь</a>
+</nav>
+<div class="header__right">
+<a class="phone" href="tel:+998935076473">+998 93 507-64-73</a>
+<a class="cart-btn" href="cart.html">🛒 <b id="cartCount">0</b></a>
+<button class="burger" id="burger">☰</button>
+</div></div></header>
+
+<main class="container">
+<p style="margin:14px 0"><a href="catalog.html">← Назад в каталог</a> • <span class="small">Откройте с ?id=p2, p6, p11… чтобы увидеть другой товар</span></p>
+<section class="pdp" id="pdp">
+<div class="gallery">
+<div class="gallery__main g1" id="galMain">📱</div>
+<div class="gallery__thumbs" id="galThumbs"></div>
+<p class="small" style="margin-top:10px">🖼️ Галерея-превью: кликайте по миниатюрам (градиенты + эмодзи, без картинок).</p>
+</div>
+<div class="pdp__info">
+<div class="card__cat" id="pCat">Электроника</div>
+<h1 id="pTitle" style="font-size:24px;margin:6px 0">Смартфон Redmi Note 13 8/256 ГБ</h1>
+<div class="rating" id="pRating">★★★★★ 4.9</div>
+<div class="price" style="font-size:26px;margin:8px 0" id="pPrice">2 500 000 сум</div>
+<p id="pDesc" class="small" style="font-size:15px;color:#333">Описание…</p>
+<table class="spec">
+<tr><td>Бренд</td><td><b>Bazaar Select</b></td></tr>
+<tr><td>Гарантия</td><td><b>12 месяцев</b></td></tr>
+<tr><td>Доставка</td><td><b>Ташкент — сегодня, область — 1–2 дня</b></td></tr>
+<tr><td>Оплата</td><td><b>Click / Payme / наличные</b></td></tr>
+<tr><td>Возврат</td><td><b>14 дней без вопросов</b></td></tr>
+</table>
+<div class="qty"><span>Количество:</span><button id="qMinus">−</button><b id="pQty">1</b><button id="qPlus">+</button>
+<button class="fav" id="pFav" style="position:static;box-shadow:none;border:1px solid #ddd">♡</button></div>
+<p style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+<button class="btn btn-accent" id="pAdd" data-add="p1">Добавить в корзину 🛒</button>
+<a class="btn btn-primary" href="cart.html">Перейти в корзину →</a>
+</p>
+<p class="small">📞 Заказать по телефону: <a href="tel:+998935076473"><b>+998 93 507-64-73</b></a></p>
+</div>
+</section>
+
+<section class="section">
+<h2>Отзывы о товаре (3)</h2><br>
+<div class="grid reviews">
+<div class="rev"><b>⭐⭐⭐⭐⭐ Азиз</b><span class="small">12.09.2026 • Ташкент</span><p>«Всё как в описании, доставили в день заказа. Рекомендую продавца!»</p></div>
+<div class="rev"><b>⭐⭐⭐⭐⭐ Нигора</b><span class="small">28.08.2026 • Чиланзар</span><p>«Оплатила Payme, чек пришёл сразу. Упаковка отличная, гарантия есть.»</p></div>
+<div class="rev"><b>⭐⭐⭐⭐☆ Джасур</b><span class="small">05.08.2026 • Юнусабад</span><p>«Хорошее соотношение цены и качества. Один балл снял за долгую сборку, но в целом доволен.»</p></div>
+</div>
+</section>
+</main>
+
+<footer class="footer"><div class="container footer__grid">
+<div><h4>🛍️ Bazaar</h4><p>Карточка товара: галерея, характеристики, отзывы.</p></div>
+<div><h4>Навигация</h4><a href="catalog.html">Каталог</a><a href="favorites.html">Избранное</a><a href="sellers.html">Продавцы</a><a href="promo.html">Акции</a><a href="help.html">Помощь</a><a href="cart.html">Корзина</a><a href="checkout.html">Оформление</a></div>
+<div><h4>Контакты</h4><a href="tel:+998935076473">+998 93 507-64-73</a><a href="#">t.me/mkdir16 • Эдуард Журавлёв</a></div>
+</div></footer>
+<script src="script.js"></script>
+</body>
+</html>

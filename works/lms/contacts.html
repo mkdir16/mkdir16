@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Контакты SkillUp Ташкент: адрес кампуса на Амира Темура, телефон +998 93 507-64-73, реквизиты, форма обратной связи.">
+  <title>Контакты — SkillUp Ташкент</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Навигация на 10 страниц: компактные ссылки + прокрутка мобильного меню */
+    .nav__link { padding: 10px 12px; font-size: 14px; }
+    .nav--open { max-height: calc(100vh - var(--header-h)); overflow-y: auto; }
+    /* Карта-заглушка (без внешних картинок) */
+    .map-ph { background: linear-gradient(135deg, #1c2147 0%, #2a3180 60%, #0ea5e9 130%); color: #fff; border-radius: 22px; padding: 48px 28px; text-align: center; box-shadow: var(--shadow-lg); }
+    .map-ph__emoji { font-size: 64px; }
+    .map-ph__grid { display: inline-block; font-family: monospace; font-size: 13px; line-height: 1.1; color: rgba(255,255,255,.55); margin: 12px 0; }
+    /* Ошибки валидации формы */
+    .field-err { display: none; color: #dc2626; font-size: 13px; font-weight: 700; margin-top: 4px; }
+    .field-err--show { display: block; }
+    .form input[aria-invalid="true"], .form textarea[aria-invalid="true"] { border-color: #dc2626; }
+    /* Модалка успеха */
+    .modal { position: fixed; inset: 0; background: rgba(15, 18, 38, 0.62); display: none; align-items: center; justify-content: center; padding: 20px; z-index: 200; }
+    .modal--open { display: flex; }
+    .modal__box { background: #fff; border-radius: 22px; padding: 36px 32px; max-width: 440px; width: 100%; text-align: center; box-shadow: var(--shadow-lg); }
+    .modal__emoji { font-size: 56px; }
+  </style>
+</head>
+<body>
+
+  <!-- ============ ШАПКА (единая для всех 10 страниц) ============ -->
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="index.html" aria-label="SkillUp на главную">
+        <span class="logo__badge">🎓</span>
+        <span class="logo__text">SkillUp<small>Ташкент • LMS</small></span>
+      </a>
+      <nav class="nav" data-nav aria-label="Основная навигация">
+        <a class="nav__link" href="index.html">Главная</a>
+        <a class="nav__link" href="courses.html">Каталог</a>
+        <a class="nav__link" href="course.html">Курс</a>
+        <a class="nav__link" href="cabinet.html">Кабинет</a>
+        <a class="nav__link" href="teachers.html">Учителя</a>
+        <a class="nav__link" href="schedule.html">Расписание</a>
+        <a class="nav__link" href="news.html">Новости</a>
+        <a class="nav__link" href="about.html">О школе</a>
+        <a class="nav__link nav__link--active" href="contacts.html">Контакты</a>
+        <a class="nav__link" href="faq.html">FAQ</a>
+      </nav>
+      <a class="header__phone" href="tel:+998935076473">📞 +998 93 507-64-73</a>
+      <button class="burger" data-burger aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs"><a href="index.html">Главная</a> / Контакты</div>
+      <h1>Контакты 📞</h1>
+      <p style="color:#b9bde0; max-width:680px">Кампус в Ташкенте + онлайн по всему Узбекистану. Отвечаем ежедневно 9:00–20:00.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="align-items:start">
+
+        <div>
+          <div class="cab-card">
+            <h3 style="margin-top:0">📍 Реквизиты школы</h3>
+            <p><b>ООО «SkillUp Education»</b> <span class="muted">(демо-реквизиты портфолио)</span></p>
+            <p class="muted">
+              🏢 Ташкент, ул. Амира Темура, 15, 3-й этаж, каб. 301<br>
+              📞 <a href="tel:+998935076473"><b>+998 93 507-64-73</b></a> — звонки и Telegram<br>
+              ✉️ hello@skillup-tashkent.uz (демо-почта)<br>
+              🕘 Ежедневно 9:00–20:00, без обеда<br>
+              🧾 ИНН 309 876 543 (заглушка) • Лицензия № UZB-DEMO-2026-0715
+            </p>
+            <p><span class="pill">💳 Click</span> <span class="pill">💳 Payme</span> <span class="pill">💳 Uzum Bank</span> <span class="pill">💵 наличные</span></p>
+            <p class="muted" style="font-size:14px">Цены в сумах: курсы от 490 000 до 1 900 000 сум, рассрочка 0-0-6. Чеки на каждую оплату.</p>
+          </div>
+
+          <div class="map-ph mt">
+            <div class="map-ph__emoji">🗺️</div>
+            <h3 style="color:#fff">Мы здесь: Амира Темура, 15</h3>
+            <div class="map-ph__grid">+---+---+---+---+<br>| 🏫 | ☕ | 💻 | 🚇 |<br>+---+---+---+---+<br>| 🌳 | 🅿️ | 🏦 | 🚌 |<br>+---+---+---+---+</div>
+            <p style="color:#b9bde0">🚇 Метро «Амир Темур хиёбони» — 5 минут пешком<br>🚌 Автобусы 12, 24, 51 — ост. «ЦУМ»<br><small>Интерактивная карта отключена в демо (без внешних сервисов)</small></p>
+            <p><a class="btn btn--accent btn--sm" href="tel:+998935076473">Позвонить нам</a></p>
+          </div>
+        </div>
+
+        <div class="cab-card">
+          <form class="form" id="contactForm" novalidate>
+            <h3 style="margin-top:0">✉️ Написать нам</h3>
+            <p class="muted" style="font-size:14px">Ответим в течение часа в рабочее время. Поля со * обязательны.</p>
+            <label for="c-name">Ваше имя *</label>
+            <input id="c-name" name="name" type="text" placeholder="Например, Эдуард" autocomplete="name">
+            <small class="field-err" data-err-for="c-name">Введите имя (минимум 2 буквы).</small>
+            <label for="c-phone">Телефон *</label>
+            <input id="c-phone" name="phone" type="tel" placeholder="+998 __ ___-__-__" autocomplete="tel">
+            <small class="field-err" data-err-for="c-phone">Введите корректный номер: +998 и 9 цифр (например, +998 93 507-64-73).</small>
+            <label for="c-topic">Тема обращения</label>
+            <select id="c-topic" name="topic">
+              <option>Хочу на пробный урок</option>
+              <option>Вопрос про курс (490 000 – 1 900 000 сум)</option>
+              <option>Оплата и рассрочка</option>
+              <option>Сотрудничество</option>
+            </select>
+            <label for="c-msg">Сообщение</label>
+            <textarea id="c-msg" name="message" rows="4" placeholder="Расскажите, чему хотите научиться…"></textarea>
+            <small class="field-err" data-err-for="c-msg">Сообщение слишком короткое — добавьте деталей (от 10 символов) или оставьте пустым.</small>
+            <button class="btn btn--primary btn--block mt" type="submit">Отправить сообщение</button>
+            <small class="muted">Нажимая кнопку, вы соглашаетесь с политикой обработки данных (демо).</small>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Модалка успеха -->
+  <div class="modal" data-modal role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal__box">
+      <div class="modal__emoji">🎉</div>
+      <h3 id="modalTitle">Сообщение отправлено!</h3>
+      <p class="muted"><span data-modal-name>Друг</span>, спасибо за обращение! Это демо — данные никуда не ушли. Мы бы перезвонили с <b>+998 93 507-64-73</b> в течение часа.</p>
+      <button class="btn btn--primary btn--block" data-modal-close type="button">Отлично, жду звонка!</button>
+    </div>
+  </div>
+
+  <!-- ============ ФУТЕР (единый для всех 10 страниц) ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="logo" href="index.html" style="color:#fff"><span class="logo__badge">🎓</span><span class="logo__text" style="color:#fff">SkillUp<small style="color:#b9bde0">Ташкент • LMS</small></span></a>
+          <p style="margin-top:12px">Онлайн-школа: дизайн, вёрстка, Python, английский. Учим с нуля до работы с 2021 года.</p>
+          <p>📞 <a href="tel:+998935076473">+998 93 507-64-73</a><br>📍 Ташкент, ул. Амира Темура, 15</p>
+        </div>
+        <div>
+          <h4>Навигация</h4>
+          <p><a href="index.html">Главная</a><br><a href="courses.html">Каталог</a><br><a href="course.html">Курс</a><br><a href="cabinet.html">Кабинет</a><br><a href="teachers.html">Учителя</a><br><a href="schedule.html">Расписание</a><br><a href="news.html">Новости</a><br><a href="about.html">О школе</a><br><a href="contacts.html">Контакты</a><br><a href="faq.html">FAQ</a></p>
+        </div>
+        <div>
+          <h4>Направления</h4>
+          <p><a href="courses.html">Дизайн</a><br><a href="courses.html">Вёрстка</a><br><a href="courses.html">Python</a><br><a href="courses.html">Английский</a></p>
+        </div>
+        <div>
+          <h4>Студентам</h4>
+          <p><a href="cabinet.html">Прогресс</a><br><a href="schedule.html">Расписание</a><br><a href="course.html#tariffs">Тарифы</a><br><a href="faq.html">Вопросы и ответы</a><br><a href="tel:+998935076473">Поддержка</a></p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> SkillUp Ташкент • Демо-проект для портфолио</span>
+        <span>Вёрстка: Эдуард Журавлёв • t.me/mkdir16 • Цены в сумах (UZS)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Валидация формы контактов + модалка успеха (чистый JS)
+    (function () {
+      var form = document.getElementById("contactForm");
+      if (!form) return;
+      var modal = document.querySelector("[data-modal]");
+      var modalName = document.querySelector("[data-modal-name]");
+      var closeBtn = document.querySelector("[data-modal-close]");
+
+      function setErr(id, bad) {
+        var input = document.getElementById(id);
+        var err = form.querySelector('[data-err-for="' + id + '"]');
+        if (input) input.setAttribute("aria-invalid", bad ? "true" : "false");
+        if (err) err.classList.toggle("field-err--show", bad);
+        return !bad;
+      }
+      function openModal() { if (modal) { modal.classList.add("modal--open"); if (closeBtn) closeBtn.focus(); } }
+      function closeModal() { if (modal) modal.classList.remove("modal--open"); }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var name = document.getElementById("c-name").value.trim();
+        var phoneRaw = document.getElementById("c-phone").value.trim();
+        var msg = document.getElementById("c-msg").value.trim();
+        var digits = phoneRaw.replace(/\D/g, "");
+        if (digits.length === 12 && digits.indexOf("998") !== 0) digits = digits;
+        var phoneOk = /^998\d{9}$/.test(digits);
+
+        var okName = setErr("c-name", name.replace(/[^A-Za-zА-Яа-яЁёO'ʼ`]/g, "").length < 2);
+        var okPhone = setErr("c-phone", !phoneOk);
+        var okMsg = setErr("c-msg", msg.length > 0 && msg.length < 10);
+
+        ["c-name", "c-phone"].forEach(function (id) {
+          var input = document.getElementById(id);
+          input.addEventListener("input", function () {
+            setErr(id, false);
+          }, { once: true });
+        });
+
+        if (okName && okPhone && okMsg) {
+          if (modalName) modalName.textContent = name.split(" ")[0];
+          openModal();
+          form.reset();
+        }
+      });
+
+      if (closeBtn) closeBtn.addEventListener("click", closeModal);
+      if (modal) modal.addEventListener("click", function (e) { if (e.target === modal) closeModal(); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeModal(); });
+    })();
+  </script>
+</body>
+</html>

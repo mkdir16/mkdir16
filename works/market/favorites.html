@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bazaar — Избранное</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="demo">ДЕМО • Маркетплейс • каталог + корзина + заказ • Эдуард Журавлёв t.me/mkdir16</div>
+<header class="header"><div class="container header__inner">
+<a class="logo" href="index.html">🛍️ <span>Bazaar</span></a>
+<nav class="nav" id="nav">
+<a href="index.html">Главная</a><a href="catalog.html">Каталог</a><a href="product.html">Товар</a><a href="cart.html">Корзина</a><a href="checkout.html">Оформление</a><a href="cabinet.html">Кабинет</a><a href="favorites.html" class="active">Избранное</a><a href="sellers.html">Продавцы</a><a href="promo.html">Акции</a><a href="help.html">Помощь</a>
+</nav>
+<div class="header__right">
+<a class="phone" href="tel:+998935076473">+998 93 507-64-73</a>
+<a class="cart-btn" href="cart.html">🛒 <b id="cartCount">0</b></a>
+<button class="burger" id="burger" aria-label="Меню">☰</button>
+</div></div></header>
+
+<main class="container">
+<section class="section">
+<div class="section__head"><div><h2>Избранное ❤️</h2><p id="favCount">Товаров: 0</p></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-light" href="catalog.html">← В каталог</a><button class="btn btn-light" id="clearFav">Очистить</button></div></div>
+<div class="grid products" id="favGrid"></div>
+<div class="form-card" id="favEmpty" style="display:none;text-align:center">Пока пусто 🤍<br><br>Нажимайте ♡ на товарах, и они появятся здесь.<br><br><a class="btn btn-accent" href="catalog.html">Выбрать товары →</a></div>
+<p class="small" style="margin-top:12px">Избранное хранится в браузере (localStorage bazaar_fav). Тел: <a href="tel:+998935076473"><b>+998 93 507-64-73</b></a></p>
+</section>
+</main>
+
+<footer class="footer"><div class="container footer__grid">
+<div><h4>🛍️ Bazaar</h4><p>Демо-маркетплейс: каталог + корзина + заказ.<br>Электроника • Одежда • Дом.<br>Ташкент, Узбекистан.</p></div>
+<div><h4>Навигация</h4><a href="index.html">Главная</a><a href="catalog.html">Каталог</a><a href="favorites.html">Избранное</a><a href="sellers.html">Продавцы</a><a href="promo.html">Акции</a><a href="help.html">Помощь</a><a href="cart.html">Корзина</a><a href="cabinet.html">Личный кабинет</a></div>
+<div><h4>Контакты</h4><a href="tel:+998935076473">+998 93 507-64-73</a><a href="#">t.me/mkdir16</a><p class="small">ДЕМО • Эдуард Журавлёв</p></div>
+</div></footer>
+<script src="script.js"></script>
+<script>
+(function(){
+  function getFavs(){ try{return JSON.parse(localStorage.getItem('bazaar_fav')||'[]')}catch(e){return[]} }
+  function renderFav(){
+    var grid=document.getElementById('favGrid'); if(!grid) return;
+    var favs=getFavs();
+    var list=favs.map(function(id){return PRODUCTS.find(function(p){return p.id===id})}).filter(Boolean);
+    document.getElementById('favCount').textContent='Товаров: '+list.length;
+    document.getElementById('favEmpty').style.display=list.length?'none':'block';
+    grid.innerHTML=list.map(function(p){
+      return '<article class="card"><div class="thumb '+p.grad+'">'+p.emoji+(p.old?'<span class="hit">−'+Math.round((1-p.price/p.old)*100)+'%</span>':'')+'<button class="fav on" data-fav="'+p.id+'" title="Убрать из избранного">♥</button></div>'
+      +'<div class="card__body"><div class="card__cat">'+p.catRu+'</div>'
+      +'<a class="card__title" href="product.html?id='+p.id+'">'+p.name+'</a>'
+      +'<div class="rating">'+p.rating+'</div>'
+      +'<div class="price">'+fmt(p.price)+(p.old?'<s>'+fmt(p.old)+'</s>':'')+'</div>'
+      +'<div class="card__btns"><button class="btn btn-primary" style="flex:1" data-add="'+p.id+'">В корзину</button><a class="btn btn-light" href="product.html?id='+p.id+'">→</a></div>'
+      +'<button class="btn btn-light btn-block" data-unfav="'+p.id+'">Убрать ✕</button>'
+      +'</div></article>';
+    }).join('');
+    grid.querySelectorAll('[data-add]').forEach(function(b){b.addEventListener('click',function(){addToCart(b.dataset.add,1)})});
+    grid.querySelectorAll('[data-fav]').forEach(function(b){b.addEventListener('click',function(){toggleFav(b.dataset.fav);renderFav()})});
+    grid.querySelectorAll('[data-unfav]').forEach(function(b){b.addEventListener('click',function(){toggleFav(b.dataset.unfav);renderFav()})});
+  }
+  document.addEventListener('DOMContentLoaded',renderFav);
+  document.getElementById('clearFav').addEventListener('click',function(){
+    localStorage.setItem('bazaar_fav','[]'); paintFavs(); renderFav(); toast('Избранное очищено 🤍');
+  });
+})();
+</script>
+</body>
+</html>

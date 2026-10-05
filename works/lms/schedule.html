@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Расписание занятий SkillUp Ташкент: 7 дней в неделю, группы, время, кабинеты. Офлайн на Амира Темура и онлайн. Фильтр по направлению.">
+  <title>Расписание занятий — SkillUp Ташкент</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Навигация на 10 страниц: компактные ссылки + прокрутка мобильного меню */
+    .nav__link { padding: 10px 12px; font-size: 14px; }
+    .nav--open { max-height: calc(100vh - var(--header-h)); overflow-y: auto; }
+    /* Таблица расписания */
+    .sched-wrap { overflow-x: auto; background: #fff; border: 1px solid var(--border); border-radius: 18px; box-shadow: var(--shadow); }
+    .sched-table { width: 100%; border-collapse: collapse; min-width: 780px; font-size: 15px; }
+    .sched-table th { background: #1a1d33; color: #fff; text-align: left; padding: 14px 16px; font-size: 13px; letter-spacing: 0.6px; text-transform: uppercase; }
+    .sched-table td { padding: 13px 16px; border-top: 1px solid var(--border); }
+    .sched-table tbody tr:hover td { background: #f8f9ff; }
+    .tag { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 13px; font-weight: 800; background: #eef0ff; color: #3b3ddb; white-space: nowrap; }
+    .tag--off { background: #dcfce7; color: #15803d; }
+    .tag--on { background: #fef3c7; color: #92400e; }
+  </style>
+</head>
+<body>
+
+  <!-- ============ ШАПКА (единая для всех 10 страниц) ============ -->
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="index.html" aria-label="SkillUp на главную">
+        <span class="logo__badge">🎓</span>
+        <span class="logo__text">SkillUp<small>Ташкент • LMS</small></span>
+      </a>
+      <nav class="nav" data-nav aria-label="Основная навигация">
+        <a class="nav__link" href="index.html">Главная</a>
+        <a class="nav__link" href="courses.html">Каталог</a>
+        <a class="nav__link" href="course.html">Курс</a>
+        <a class="nav__link" href="cabinet.html">Кабинет</a>
+        <a class="nav__link" href="teachers.html">Учителя</a>
+        <a class="nav__link nav__link--active" href="schedule.html">Расписание</a>
+        <a class="nav__link" href="news.html">Новости</a>
+        <a class="nav__link" href="about.html">О школе</a>
+        <a class="nav__link" href="contacts.html">Контакты</a>
+        <a class="nav__link" href="faq.html">FAQ</a>
+      </nav>
+      <a class="header__phone" href="tel:+998935076473">📞 +998 93 507-64-73</a>
+      <button class="burger" data-burger aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs"><a href="index.html">Главная</a> / Расписание</div>
+      <h1>Расписание занятий 🗓</h1>
+      <p style="color:#b9bde0; max-width:680px">7 дней в неделю • 5 направлений • офлайн в кампусе и онлайн в Zoom. Отфильтруйте по направлению.</p>
+      <p>
+        <span class="hero__chip">📍 Амира Темура, 15 + онлайн</span>
+        <span class="hero__chip">👥 Группы до 14 человек</span>
+        <span class="hero__chip">📞 <a href="tel:+998935076473" style="color:#fff">+998 93 507-64-73</a></span>
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="Фильтр по направлению">
+          <button class="filter-btn filter-btn--active" data-group-btn="all" type="button">Все (14)</button>
+          <button class="filter-btn" data-group-btn="html" type="button">🧱 Вёрстка</button>
+          <button class="filter-btn" data-group-btn="js" type="button">⚡ JS + React</button>
+          <button class="filter-btn" data-group-btn="python" type="button">🐍 Python</button>
+          <button class="filter-btn" data-group-btn="design" type="button">🎨 Дизайн</button>
+          <button class="filter-btn" data-group-btn="english" type="button">🇬🇧 Английский</button>
+        </div>
+      </div>
+
+      <p class="muted" data-sched-count>Показано занятий: 14 из 14</p>
+
+      <div class="sched-wrap mt">
+        <table class="sched-table">
+          <thead>
+            <tr><th>День</th><th>Время</th><th>Группа / курс</th><th>Формат</th><th>Преподаватель</th><th>Кабинет</th></tr>
+          </thead>
+          <tbody>
+            <tr data-group-row data-group="html"><td><b>Пн</b></td><td>19:00–21:00</td><td>HTML-вечер • с нуля</td><td><span class="tag tag--off">офлайн</span></td><td>Тимур Х.</td><td>201</td></tr>
+            <tr data-group-row data-group="python"><td><b>Пн</b></td><td>10:00–12:00</td><td>Python-утро • с нуля</td><td><span class="tag tag--off">офлайн</span></td><td>Сардор К.</td><td>305</td></tr>
+            <tr data-group-row data-group="design"><td><b>Вт</b></td><td>18:30–20:30</td><td>UX/UI в Figma</td><td><span class="tag tag--off">офлайн</span></td><td>Азиза Ю.</td><td>204</td></tr>
+            <tr data-group-row data-group="english"><td><b>Вт</b></td><td>17:00–18:30</td><td>Английский для IT • A2</td><td><span class="tag tag--on">онлайн</span></td><td>Елена П.</td><td>Zoom</td></tr>
+            <tr data-group-row data-group="html"><td><b>Ср</b></td><td>19:00–21:00</td><td>HTML-вечер • разбор домашки</td><td><span class="tag tag--on">онлайн</span></td><td>Тимур Х.</td><td>Zoom</td></tr>
+            <tr data-group-row data-group="js"><td><b>Ср</b></td><td>18:00–20:00</td><td>JavaScript + React</td><td><span class="tag tag--off">офлайн</span></td><td>Отабек Ю.</td><td>201</td></tr>
+            <tr data-group-row data-group="python"><td><b>Чт</b></td><td>18:00–20:00</td><td>Python • функции и ООП</td><td><span class="tag tag--off">офлайн</span></td><td>Сардор К.</td><td>305</td></tr>
+            <tr data-group-row data-group="design"><td><b>Чт</b></td><td>16:00–18:00</td><td>Графический дизайн</td><td><span class="tag tag--off">офлайн</span></td><td>Азиза Ю.</td><td>204</td></tr>
+            <tr data-group-row data-group="js"><td><b>Пт</b></td><td>19:00–21:00</td><td>JavaScript + React • практика</td><td><span class="tag tag--on">онлайн</span></td><td>Отабек Ю.</td><td>Zoom</td></tr>
+            <tr data-group-row data-group="html"><td><b>Пт</b></td><td>15:00–17:00</td><td>Вёрстка школьникам 12–16</td><td><span class="tag tag--off">офлайн</span></td><td>Дильшод А.</td><td>201</td></tr>
+            <tr data-group-row data-group="english"><td><b>Сб</b></td><td>10:00–11:30</td><td>Speaking Club • бесплатно</td><td><span class="tag tag--on">онлайн</span></td><td>Елена П.</td><td>Zoom</td></tr>
+            <tr data-group-row data-group="design"><td><b>Сб</b></td><td>11:00–13:00</td><td>UX/UI • прототипы</td><td><span class="tag tag--off">офлайн</span></td><td>Азиза Ю.</td><td>204</td></tr>
+            <tr data-group-row data-group="python"><td><b>Вс</b></td><td>12:00–14:00</td><td>Telegram-боты на Python</td><td><span class="tag tag--on">онлайн</span></td><td>Сардор К.</td><td>Zoom</td></tr>
+            <tr data-group-row data-group="html"><td><b>Вс</b></td><td>14:00–16:00</td><td>Адаптивная вёрстка PRO</td><td><span class="tag tag--on">онлайн</span></td><td>Дильшод А.</td><td>Zoom</td></tr>
+            <tr data-sched-empty style="display:none"><td colspan="6" style="text-align:center; color:#6b7194">😴 В этот день занятий выбранного направления нет. Загляните в <a href="cabinet.html">кабинет</a> — там записи всех уроков.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid-2 mt">
+        <div class="cab-card">
+          <h3>ℹ️ Как читать расписание</h3>
+          <ul class="muted">
+            <li><span class="tag tag--off">офлайн</span> — кампус: Ташкент, ул. Амира Темура, 15;</li>
+            <li><span class="tag tag--on">онлайн</span> — ссылка на Zoom приходит в <a href="cabinet.html">личный кабинет</a>;</li>
+            <li>Пропустили занятие? Запись появится в кабинете в тот же вечер.</li>
+          </ul>
+        </div>
+        <div class="cab-card">
+          <h3>📝 Хотите в группу?</h3>
+          <p class="muted">Цены в сумах: от <b>490 000</b> до <b>1 190 000 сум</b> за курс, рассрочка 0% до 6 месяцев. Позвоните — подберём удобные дни.</p>
+          <p><b>📞 <a href="tel:+998935076473">+998 93 507-64-73</a></b></p>
+          <p><a class="btn btn--primary" href="courses.html">Выбрать курс</a> <a class="btn btn--ghost" href="contacts.html">Наши контакты</a></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ ФУТЕР (единый для всех 10 страниц) ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="logo" href="index.html" style="color:#fff"><span class="logo__badge">🎓</span><span class="logo__text" style="color:#fff">SkillUp<small style="color:#b9bde0">Ташкент • LMS</small></span></a>
+          <p style="margin-top:12px">Онлайн-школа: дизайн, вёрстка, Python, английский. Учим с нуля до работы с 2021 года.</p>
+          <p>📞 <a href="tel:+998935076473">+998 93 507-64-73</a><br>📍 Ташкент, ул. Амира Темура, 15</p>
+        </div>
+        <div>
+          <h4>Навигация</h4>
+          <p><a href="index.html">Главная</a><br><a href="courses.html">Каталог</a><br><a href="course.html">Курс</a><br><a href="cabinet.html">Кабинет</a><br><a href="teachers.html">Учителя</a><br><a href="schedule.html">Расписание</a><br><a href="news.html">Новости</a><br><a href="about.html">О школе</a><br><a href="contacts.html">Контакты</a><br><a href="faq.html">FAQ</a></p>
+        </div>
+        <div>
+          <h4>Направления</h4>
+          <p><a href="courses.html">Дизайн</a><br><a href="courses.html">Вёрстка</a><br><a href="courses.html">Python</a><br><a href="courses.html">Английский</a></p>
+        </div>
+        <div>
+          <h4>Студентам</h4>
+          <p><a href="cabinet.html">Прогресс</a><br><a href="schedule.html">Расписание</a><br><a href="course.html#tariffs">Тарифы</a><br><a href="faq.html">Вопросы и ответы</a><br><a href="tel:+998935076473">Поддержка</a></p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> SkillUp Ташкент • Демо-проект для портфолио</span>
+        <span>Вёрстка: Эдуард Журавлёв • t.me/mkdir16 • Цены в сумах (UZS)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Фильтр расписания по направлению (чистый JS, без библиотек)
+    (function () {
+      var btns = document.querySelectorAll("[data-group-btn]");
+      var rows = document.querySelectorAll("[data-group-row]");
+      var count = document.querySelector("[data-sched-count]");
+      var empty = document.querySelector("[data-sched-empty]");
+      function apply(group) {
+        var visible = 0;
+        rows.forEach(function (r) {
+          var show = group === "all" || r.getAttribute("data-group") === group;
+          r.style.display = show ? "" : "none";
+          if (show) visible++;
+        });
+        if (empty) empty.style.display = visible ? "none" : "";
+        if (count) count.textContent = "Показано занятий: " + visible + " из " + rows.length;
+      }
+      btns.forEach(function (b) {
+        b.addEventListener("click", function () {
+          btns.forEach(function (x) { x.classList.remove("filter-btn--active"); });
+          b.classList.add("filter-btn--active");
+          apply(b.getAttribute("data-group-btn"));
+        });
+      });
+      apply("all");
+    })();
+  </script>
+</body>
+</html>

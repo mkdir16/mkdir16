@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SotuvPro CRM — Помощь | 6 инструкций</title>
+<meta name="description" content="Помощь SotuvPro: 6 инструкций-аккордеон и форма обращения в поддержку.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brand-logo">📊</div><div><b>SotuvPro</b><small>CRM • Ташкент</small></div></div>
+    <nav class="nav">
+      <a href="index.html">📈 Дашборд</a>
+      <a href="leads.html">📋 Заявки</a>
+      <a href="deals.html">💼 Сделки</a>
+      <a href="clients.html">👥 Клиенты</a>
+      <a href="calendar.html">📅 Календарь</a>
+      <a href="reports.html">📊 Отчёты</a>
+      <a href="chat.html">💬 Чат</a>
+      <a href="tariffs.html">💳 Тарифы</a>
+      <a href="settings.html">⚙️ Настройки</a>
+      <a href="help.html" class="active">❓ Помощь</a>
+    </nav>
+    <div class="side-card"><h4>📞 Отдел продаж</h4><p>+998 93 507-64-73<br>Чиланзар, Ташкент</p><span class="demo-badge">ДЕМО</span></div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="burger" id="burger" aria-label="Меню">☰</button>
+      <div class="search">🔍 <input type="text" id="helpSearch" placeholder="Поиск по инструкциям…" aria-label="Поиск"></div>
+      <span class="plaque">ДЕМО • CRM • помощь • Эдуард Журавлёв t.me/mkdir16</span>
+      <div class="top-user"><div style="text-align:right"><b style="font-size:14px">Эдуард Журавлёв</b><small>Менеджер</small></div><div class="avatar">ЭЖ</div></div>
+    </header>
+
+    <main class="content">
+      <div class="page-title">
+        <div><h1>❓ Помощь</h1><p>6 инструкций • аккордеон на JS • поддержка: +998 93 507-64-73</p></div>
+        <a href="tariffs.html" class="btn ghost" style="text-decoration:none">💳 Тарифы →</a>
+      </div>
+
+      <section class="grid2">
+        <div class="card">
+          <h3>📖 Инструкции</h3>
+          <p class="sub">Нажмите на вопрос, чтобы раскрыть ответ</p>
+          <div id="accList">
+            <div class="acc open">
+              <button class="acc-btn">1️⃣ Как добавить заявку? <span>+</span></button>
+              <div class="acc-body">Откройте <b>Заявки → + Новая заявка</b>, заполните компанию, телефон и сумму в сумах, выберите статус. Заявка появится в таблице сверху и сохранится в localStorage. Свои заявки можно сбросить кнопкой «↺ Сбросить мои».</div>
+            </div>
+            <div class="acc">
+              <button class="acc-btn">2️⃣ Как двигать сделку по воронке? <span>+</span></button>
+              <div class="acc-body">Откройте <b>Сделки</b>: 4 колонки — Новые → Переговоры → Оплата → Закрыты. У каждой из 12 карточек есть кнопки <b>←</b> и <b>→</b>. Нажимайте «→», чтобы двигать вперёд. Этапы хранятся в localStorage и переживают перезагрузку.</div>
+            </div>
+            <div class="acc">
+              <button class="acc-btn">3️⃣ Как добавить клиента? <span>+</span></button>
+              <div class="acc-body">Откройте <b>Клиенты → + Новый клиент</b>: укажите компанию, контакт и сферу (ритейл, медицина, IT, производство, общепит). Работают поиск по названию и фильтр-чипы по сферам. Таблица — 10 компаний Ташкента.</div>
+            </div>
+            <div class="acc">
+              <button class="acc-btn">4️⃣ Как смотреть отчёты? <span>+</span></button>
+              <div class="acc-body">Откройте <b>Отчёты</b> и переключайте табы <b>Неделя / Месяц / Квартал</b>: выручка, сделки, заявки и конверсия пересчитываются скриптом, SVG-график перестраивается, топ-5 менеджеров обновляется. Лучший результат октября — Э. Журавлёв, 18 900 000 сум.</div>
+            </div>
+            <div class="acc">
+              <button class="acc-btn">5️⃣ Как работает внутренний чат? <span>+</span></button>
+              <div class="acc-body">Откройте <b>Чат</b>: слева 5 диалогов (отдел, коллеги, руководитель, поддержка). Кликните диалог, напишите сообщение и нажмите Enter — оно сохранится в localStorage. Собеседник ответит автоматически через секунду (демо).</div>
+            </div>
+            <div class="acc">
+              <button class="acc-btn">6️⃣ Как сменить тариф и оплатить? <span>+</span></button>
+              <div class="acc-body">Откройте <b>Тарифы</b>: Start — 0 сум, Pro — 299 000 сум/мес, Biznes — 790 000 сум/мес. Переключатель <b>Помесячно / На год</b> даёт скидку −20% (Pro — 239 200 сум/мес). Нажмите «Выбрать» — выбор запомнится. Счета для юрлиц: +998 93 507-64-73, Чиланзар, Ташкент.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>🛟 Написать в поддержку</h3>
+          <p class="sub">Ответим пн–сб 9:00–19:00 • Ташкент • t.me/mkdir16</p>
+          <form id="supportForm">
+            <div class="form-grid">
+              <div><label>Ваше имя<input type="text" name="name" required placeholder="Эдуард" maxlength="60"></label></div>
+              <div><label>Телефон<input type="tel" name="phone" placeholder="+998 93 …" value="+998 93 "></label></div>
+              <div class="full"><label>Тема<select name="topic"><option>Вопрос по заявкам</option><option>Сделки и воронка</option><option>Оплата тарифа</option><option>Ошибка / баг</option><option>Другое</option></select></label></div>
+              <div class="full"><label>Сообщение<textarea name="msg" rows="4" required placeholder="Опишите вопрос…" maxlength="1000"></textarea></label></div>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+              <button class="btn green" type="submit">Отправить →</button>
+              <a class="btn ghost" style="text-decoration:none" href="https://t.me/mkdir16" target="_blank" rel="noopener">Telegram: t.me/mkdir16</a>
+            </div>
+          </form>
+          <p class="sub" id="supportMsg" style="margin:10px 0 0"></p>
+          <div class="set-row" style="margin-top:12px"><div><b>📞 Горячая линия</b><br><small style="color:var(--muted)">+998 93 507-64-73 • Чиланзар, Ташкент</small></div><span class="demo-badge">ДЕМО</span></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><span>© <span data-year>2026</span> SotuvPro • Ташкент</span><span>ДЕМО • CRM • помощь • Эдуард Журавлёв t.me/mkdir16</span></footer>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+(function(){
+  "use strict";
+  // аккордеон
+  document.querySelectorAll("#accList .acc-btn").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      const item = btn.closest(".acc");
+      const wasOpen = item.classList.contains("open");
+      document.querySelectorAll("#accList .acc").forEach(a=>{ a.classList.remove("open"); const s=a.querySelector("span"); if(s) s.textContent="+"; });
+      if(!wasOpen){ item.classList.add("open"); const s = btn.querySelector("span"); if(s) s.textContent="−"; }
+    });
+  });
+  // поиск по инструкциям
+  const hs = document.getElementById("helpSearch");
+  if(hs) hs.addEventListener("input", ()=>{
+    const q = hs.value.toLowerCase().trim();
+    document.querySelectorAll("#accList .acc").forEach(a=>{
+      a.style.display = !q || a.textContent.toLowerCase().includes(q) ? "" : "none";
+    });
+  });
+  // форма поддержки (демо)
+  const form = document.getElementById("supportForm");
+  if(form) form.addEventListener("submit", e=>{
+    e.preventDefault();
+    const fd = new FormData(form);
+    const name = (fd.get("name")||"").toString().trim() || "Гость";
+    try{
+      const arr = JSON.parse(localStorage.getItem("sotuvpro_support_v1")||"[]");
+      arr.push({name:name, topic:(fd.get("topic")||"").toString(), time:new Date().toISOString()});
+      localStorage.setItem("sotuvpro_support_v1", JSON.stringify(arr));
+    }catch{}
+    document.getElementById("supportMsg").textContent = "✅ Спасибо, " + name + "! Обращение принято (демо №" + Math.floor(1000+Math.random()*9000) + "). Перезвоним: +998 93 507-64-73";
+    form.reset();
+  });
+})();
+</script>
+</body>
+</html>

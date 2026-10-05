@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bazaar — Каталог</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="demo">ДЕМО • Маркетплейс • каталог + корзина + заказ • Эдуард Журавлёв t.me/mkdir16</div>
+<header class="header"><div class="container header__inner">
+<a class="logo" href="index.html">🛍️ <span>Bazaar</span></a>
+<nav class="nav" id="nav">
+<a href="index.html">Главная</a><a href="catalog.html" class="active">Каталог</a><a href="product.html">Товар</a><a href="cart.html">Корзина</a><a href="checkout.html">Оформление</a><a href="cabinet.html">Кабинет</a><a href="favorites.html">Избранное</a><a href="sellers.html">Продавцы</a><a href="promo.html">Акции</a><a href="help.html">Помощь</a>
+</nav>
+<div class="header__right">
+<a class="phone" href="tel:+998935076473">+998 93 507-64-73</a>
+<a class="cart-btn" href="cart.html">🛒 <b id="cartCount">0</b></a>
+<button class="burger" id="burger">☰</button>
+</div></div></header>
+
+<main class="container">
+<section class="section">
+<div class="section__head"><div><h2>Каталог — 12 товаров</h2><p id="countLine">Найдено: 12 из 12</p></div><a class="btn btn-light" href="index.html">← Главная</a></div>
+<div class="toolbar">
+<div><label>🔍 Поиск</label><input id="fSearch" placeholder="Например: наушники, куртка…"></div>
+<div><label>📂 Категория</label><select id="fCat"><option value="all">Все</option><option value="electronics">Электроника</option><option value="clothes">Одежда</option><option value="home">Дом</option></select></div>
+<div><label>💰 Цена: <span id="priceOut">до 9 000 000 сум</span></label><input type="range" id="fPrice" min="300000" max="9000000" step="100000" value="9000000"></div>
+<div><label>↕️ Сортировка</label><select id="fSort"><option value="none">По умолчанию</option><option value="asc">Дешевле сначала</option><option value="desc">Дороже сначала</option><option value="rate">По рейтингу</option></select></div>
+</div>
+<div class="grid products" id="catalogGrid"></div>
+<p class="small" style="margin-top:12px">💡 Подсказка: попробуйте поиск «пылесос», фильтр «Одежда» или сортировку «Дешевле сначала». Промокод <b>SKIDKA10</b> — в корзине.</p>
+</section>
+</main>
+
+<footer class="footer"><div class="container footer__grid">
+<div><h4>🛍️ Bazaar</h4><p>Каталог: электроника, одежда, дом. Цены в сумах.</p></div>
+<div><h4>Навигация</h4><a href="index.html">Главная</a><a href="catalog.html">Каталог</a><a href="favorites.html">Избранное</a><a href="sellers.html">Продавцы</a><a href="promo.html">Акции</a><a href="help.html">Помощь</a><a href="cart.html">Корзина</a><a href="cabinet.html">Личный кабинет</a></div>
+<div><h4>Контакты</h4><a href="tel:+998935076473">+998 93 507-64-73</a><a href="#">t.me/mkdir16 • Эдуард Журавлёв</a></div>
+</div></footer>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Валерия Макеева — практикующий психолог | Очно и онлайн</title>
+<meta name="description" content="Валерия Макеева — практикующий психолог. Индивидуальные консультации очно и онлайн: тревога, самооценка, отношения, выгорание. Запись на консультацию.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF7F1;
+  --bg2:#FFFFFF;
+  --ink:#2B2E2A;
+  --muted:#6B7269;
+  --line:#E8E0D3;
+  --sage:#5B7A5E;
+  --sage-dark:#3E5A41;
+  --sage-soft:#E8EFE6;
+  --cream:#F2EAD9;
+  --terra:#C57A5A;
+  --terra-dark:#A75F42;
+  --gold:#C9A86A;
+  --radius:22px;
+  --shadow:0 20px 60px rgba(62,90,65,.12);
+  --shadow-sm:0 8px 28px rgba(43,46,42,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;overflow-x:hidden}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;line-height:1.12;font-weight:700}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+section{padding:84px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--sage-dark);background:var(--sage-soft);border:1px solid #D5E0D2;padding:8px 16px;border-radius:100px}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--sage);box-shadow:0 0 0 4px rgba(91,122,94,.18)}
+.h2{font-size:clamp(32px,4.4vw,52px);margin:18px 0 14px;letter-spacing:-.01em}
+.lead{color:var(--muted);font-size:17.5px;max-width:680px}
+.divider{width:72px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--sage),var(--gold));margin:18px 0}
+
+/* Topbar */
+.topbar{background:var(--ink);color:#EDE7D9;font-size:13.5px}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;padding-top:9px;padding-bottom:9px;gap:12px;flex-wrap:wrap}
+.topbar span.dot{opacity:.45;margin:0 10px}
+.topbar a{border-bottom:1px dashed rgba(255,255,255,.4)}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(250,247,241,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1180px;margin:0 auto}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-mark{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--sage-dark),var(--sage));color:#fff;display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700}
+.logo b{font-size:17px;display:block;line-height:1.1}
+.logo small{color:var(--muted);font-size:12.5px}
+.links{display:flex;gap:22px;font-size:14.5px;font-weight:600}
+.links a{opacity:.78;position:relative;padding:6px 0}
+.links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--sage);border-radius:2px;transition:.25s}
+.links a:hover{opacity:1}.links a:hover::after{width:100%}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;font-family:inherit;font-weight:800;font-size:15px;padding:15px 26px;border-radius:100px;transition:.25s;white-space:nowrap}
+.btn-primary{background:var(--ink);color:#fff}
+.btn-primary:hover{background:var(--sage-dark);transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+.btn-accent{background:var(--terra);color:#fff}
+.btn-accent:hover{background:var(--terra-dark);transform:translateY(-2px)}
+.btn-ghost{background:#fff;border:1.5px solid var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--sage)}
+.burger{display:none;background:#fff;border:1.5px solid var(--line);border-radius:12px;width:46px;height:46px;font-size:20px;cursor:pointer}
+
+/* Hero */
+.hero{position:relative;padding:56px 0 70px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(44px,6vw,74px);letter-spacing:-.02em}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--sage-dark)}
+.hero-sub{font-size:18px;color:var(--muted);margin:18px 0 26px;max-width:560px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+.hero-points{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;font-weight:600;color:var(--sage-dark)}
+.hero-points div{background:#fff;border:1px solid var(--line);padding:10px 16px;border-radius:100px;display:flex;gap:8px;align-items:center}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.stat{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:16px;text-align:center}
+.stat b{font-family:'Cormorant Garamond',serif;font-size:32px;display:block;line-height:1}
+.stat span{font-size:13px;color:var(--muted);font-weight:600}
+.photo-wrap{position:relative}
+.photo-card{background:#fff;border-radius:28px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);position:relative}
+.photo-card img{height:560px;width:100%;object-fit:cover;object-position:top}
+.photo-info{position:absolute;left:18px;right:18px;bottom:18px;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-radius:18px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.photo-info b{display:block;font-size:16px}
+.photo-info small{color:var(--muted);font-size:13.5px}
+.badge-exp{position:absolute;top:22px;left:22px;background:var(--ink);color:#fff;border-radius:16px;padding:12px 16px;text-align:center}
+.badge-exp b{font-family:'Cormorant Garamond',serif;font-size:26px;display:block;line-height:1}
+.badge-exp span{font-size:12px;opacity:.8}
+.float-card{position:absolute;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-sm);padding:12px 16px;font-size:13.5px;font-weight:700;display:flex;gap:10px;align-items:center}
+.float-1{top:90px;right:-14px}
+.float-2{bottom:120px;right:-10px}
+.pulse{width:10px;height:10px;border-radius:50%;background:#3FA45B;box-shadow:0 0 0 5px rgba(63,164,91,.18);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 9px rgba(63,164,91,.08)}}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none;z-index:-1}
+.blob1{width:480px;height:480px;background:#DCE8D8;top:-120px;left:-120px}
+.blob2{width:420px;height:420px;background:#F3DFC8;bottom:-140px;right:-80px}
+
+/* Standards */
+.standards{background:var(--ink);color:#F3EEE1;border-radius:28px;padding:38px;display:grid;grid-template-columns:270px 1fr;gap:32px;align-items:center}
+.standards h3{font-size:30px}
+.standards p{opacity:.72;font-size:15px;margin-top:10px}
+.std-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.std{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:18px}
+.std i{width:38px;height:38px;border-radius:11px;background:var(--gold);display:grid;place-items:center;font-style:normal;font-size:18px;margin-bottom:10px}
+.std b{display:block;font-size:14.5px;margin-bottom:4px}
+.std span{font-size:13px;opacity:.7}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:48px;align-items:start}
+.about-photo{border-radius:26px;overflow:hidden;position:relative;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.about-photo img{height:520px;width:100%;object-fit:cover;object-position:top}
+.about-photo figcaption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;padding:44px 22px 18px;font-size:14px}
+.timeline{margin-top:22px;border-left:2px solid var(--line);padding-left:22px;display:grid;gap:16px}
+.tl-item{position:relative}
+.tl-item::before{content:"";position:absolute;left:-30px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--sage);border:3px solid #fff;box-shadow:0 0 0 2px var(--sage)}
+.tl-item b{font-size:15px}
+.tl-item span{display:block;color:var(--muted);font-size:14px}
+.check-list{margin:20px 0;display:grid;gap:10px}
+.check-list li{list-style:none;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px;font-size:14.5px;display:flex;gap:10px}
+.check-list li::before{content:"✓";color:#fff;background:var(--sage);width:24px;height:24px;flex:0 0 24px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:800}
+
+/* Services */
+#services{background:linear-gradient(#fff,#FAF7F1);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:.3s;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#D5E0D2}
+.card .icon{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:26px;margin-bottom:16px;background:var(--sage-soft)}
+.card h3{font-size:24px;margin-bottom:8px}
+.card p{color:var(--muted);font-size:14.8px;flex:1}
+.card .tag{margin-top:16px;font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--terra-dark)}
+.card:nth-child(2) .icon{background:#FBEEDF}
+.card:nth-child(3) .icon{background:#E9EAFB}
+.card:nth-child(4) .icon{background:#FBE7E7}
+.card:nth-child(5) .icon{background:#E6F3F0}
+.card:nth-child(6) .icon{background:#F3EDDC}
+
+/* Docs */
+.docs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
+.doc{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;text-align:center}
+.doc .seal{width:62px;height:62px;margin:0 auto 12px;border-radius:50%;background:linear-gradient(135deg,var(--cream),#fff);border:2px dashed var(--gold);display:grid;place-items:center;font-size:26px}
+.doc b{font-size:15px;display:block}
+.doc span{font-size:13px;color:var(--muted)}
+.doc a{display:inline-block;margin-top:10px;font-size:13px;font-weight:800;color:var(--sage-dark);border-bottom:2px solid var(--sage-soft)}
+
+/* Steps */
+#steps{background:var(--sage-dark);color:#EFF4EC;border-radius:32px;margin:0 16px;padding:70px 40px;position:relative;overflow:hidden}
+#steps .eyebrow{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2);color:#fff}
+#steps .eyebrow::before{background:var(--gold)}
+#steps .lead{color:#C9D4C6}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+.step{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:20px}
+.step.full{grid-column:span 1}
+.step .n{font-family:'Cormorant Garamond',serif;font-size:38px;color:var(--gold);line-height:1}
+.step b{display:block;margin:8px 0 6px;font-size:15.5px}
+.step p{font-size:13.5px;opacity:.78}
+.steps-note{margin-top:20px;font-size:13.5px;opacity:.7;background:rgba(0,0,0,.22);padding:12px 18px;border-radius:12px}
+
+/* Price / hours */
+.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:32px;align-items:start}
+.hours{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.hours table{width:100%;border-collapse:collapse;font-size:14.5px}
+.hours th{background:var(--ink);color:#fff;text-align:left;padding:14px 20px;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.hours td{padding:13px 20px;border-top:1px solid var(--line)}
+.hours tr td:last-child{font-weight:800;text-align:right}
+.pill{display:inline-block;padding:4px 12px;border-radius:100px;font-size:12.5px;font-weight:800}
+.pill.ok{background:#DFF0E1;color:#2E6B34}
+.pill.off{background:#F1ECE0;color:#8A7A5C}
+.tariffs{display:grid;gap:14px}
+.tariff{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:22px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.tariff.hit{border-color:var(--sage);box-shadow:var(--shadow-sm);position:relative}
+.tariff.hit::after{content:"ПОПУЛЯРНО";position:absolute;top:-12px;right:18px;background:var(--sage);color:#fff;font-size:11px;font-weight:800;letter-spacing:.12em;padding:4px 12px;border-radius:100px}
+.tariff b{font-size:17px}
+.tariff small{color:var(--muted);display:block;font-size:13.5px}
+.tariff .price{font-family:'Cormorant Garamond',serif;font-size:30px;white-space:nowrap}
+.tariff .price small{font-family:'Manrope',sans-serif;font-size:12.5px}
+
+/* Reviews */
+.rev-wrap{position:relative;margin-top:32px}
+.rev-track{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:12px}
+.rev .stars{color:var(--gold);letter-spacing:3px;font-size:15px}
+.rev p{font-size:14.8px;color:#3d423c}
+.rev .who{display:flex;gap:12px;align-items:center;margin-top:auto}
+.avatar{width:44px;height:44px;border-radius:50%;background:var(--sage-soft);display:grid;place-items:center;font-weight:800;color:var(--sage-dark)}
+.rev .who small{color:var(--muted);display:block}
+.conf-note{margin-top:16px;font-size:13px;color:var(--muted);background:#fff;border:1px dashed var(--line);padding:12px 18px;border-radius:12px}
+
+/* FAQ */
+.faq{max-width:820px;margin:28px auto 0;display:grid;gap:12px}
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.faq-q{width:100%;background:none;border:0;font:inherit;font-weight:800;font-size:15.5px;text-align:left;padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-q span{width:32px;height:32px;flex:0 0 32px;border-radius:50%;background:var(--sage-soft);display:grid;place-items:center;font-size:18px;transition:.25s}
+.faq-item.open .faq-q span{transform:rotate(45deg);background:var(--sage);color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:.3s;color:var(--muted);font-size:14.8px}
+.faq-a div{padding:0 22px 20px}
+
+/* Contacts */
+#contacts{background:#fff;border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:32px}
+.form-card{background:var(--bg);border:1px solid var(--line);border-radius:24px;padding:32px}
+.form-card h3{font-size:28px}
+.form-card p{color:var(--muted);font-size:14.5px;margin:6px 0 18px}
+label{font-size:13px;font-weight:800;display:block;margin:14px 0 6px}
+input,select,textarea{width:100%;font:inherit;font-size:15px;padding:13px 16px;border-radius:12px;border:1.5px solid var(--line);background:#fff;outline:none;transition:.2s}
+input:focus,select:focus,textarea:focus{border-color:var(--sage);box-shadow:0 0 0 4px rgba(91,122,94,.14)}
+textarea{min-height:110px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:12.8px;color:var(--muted);margin:14px 0}
+.agree input{width:auto;margin-top:4px}
+.info-card{background:var(--ink);color:#EFE9D8;border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:16px}
+.info-card h3{font-size:28px}
+.c-row{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);padding:14px 16px;border-radius:14px}
+.c-row i{width:40px;height:40px;flex:0 0 40px;border-radius:12px;background:rgba(255,255,255,.12);display:grid;place-items:center;font-style:normal;font-size:19px}
+.c-row b{display:block;font-size:14.5px}
+.c-row span,.c-row a{font-size:14px;opacity:.85}
+.socials{display:flex;gap:10px;flex-wrap:wrap}
+.socials a{background:#fff;color:var(--ink);font-weight:800;font-size:13.5px;padding:10px 18px;border-radius:100px}
+
+/* Footer */
+footer{background:#22241F;color:#B9BBAE;padding:30px 0;font-size:13.5px}
+footer .container{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+
+/* Modal */
+.modal{position:fixed;inset:0;background:rgba(30,32,29,.55);backdrop-filter:blur(4px);display:none;place-items:center;z-index:99;padding:20px}
+.modal.show{display:grid}
+.modal-box{background:#fff;border-radius:24px;max-width:440px;width:100%;padding:38px;text-align:center;box-shadow:var(--shadow)}
+.modal-box .ok{width:72px;height:72px;border-radius:50%;background:#DFF0E1;display:grid;place-items:center;font-size:34px;margin:0 auto 16px}
+.modal-box h3{font-size:30px}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:980px){
+  .links{display:none}
+  .burger{display:block}
+  .links.mobile{display:flex;position:absolute;top:72px;left:12px;right:12px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;flex-direction:column;box-shadow:var(--shadow)}
+  .hero-grid,.about-grid,.price-grid,.contact-grid{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr 1fr}
+  .docs,.steps-grid,.rev-track{grid-template-columns:1fr 1fr}
+  .standards{grid-template-columns:1fr}
+  .std-grid{grid-template-columns:1fr 1fr}
+  .photo-card img{height:440px}
+  #steps{margin:0 8px;padding:50px 20px}
+  section{padding:60px 0}
+  .float-1,.float-2{right:8px}
+}
+@media(max-width:620px){
+  .cards,.docs,.steps-grid,.rev-track,.std-grid,.row2{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .topbar .hide-m{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <div>Принимаю очно в Санкт-Петербурге <span class="dot">•</span> онлайн по всему миру</div>
+    <div class="hide-m">Конфиденциально и бережно <span class="dot">•</span> <a href="#contacts">Записаться →</a></div>
+  </div>
+</div>
+
+<header>
+  <nav class="nav">
+    <a class="logo" href="#top">
+      <span class="logo-mark">В</span>
+      <span><b>Валерия Макеева</b><small>психолог · очно и онлайн</small></span>
+    </a>
+    <div class="links" id="navLinks">
+      <a href="#about">Обо мне</a>
+      <a href="#services">Направления</a>
+      <a href="#docs">Документы</a>
+      <a href="#steps">Этапы работы</a>
+      <a href="#hours">Часы приёма</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a href="#contacts" class="btn btn-primary" style="padding:12px 22px">Записаться</a>
+      <button class="burger" id="burger" aria-label="Меню">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="blob blob1"></div><div class="blob blob2"></div>
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Практикующий психолог · 12 лет опыта</span>
+      <h1>Валерия <em>Макеева</em><br>помогаю вернуть опору и спокойствие</h1>
+      <p class="hero-sub">Индивидуальные консультации для взрослых и подростков. Тревога, выгорание, самооценка, отношения, кризисы. Научно обоснованные методы, бережный подход, строгая конфиденциальность.</p>
+      <div class="hero-cta">
+        <a href="#contacts" class="btn btn-accent">Записаться на консультацию →</a>
+        <a href="#services" class="btn btn-ghost">С чем я работаю</a>
+      </div>
+      <div class="hero-points">
+        <div>◉ Первая встреча-знакомство — 20 минут бесплатно</div>
+        <div>◉ Очно и онлайн (Zoom / Telegram)</div>
+      </div>
+      <div class="stats">
+        <div class="stat"><b data-count="12">0</b><span>лет практики</span></div>
+        <div class="stat"><b><span data-count="1500">0</span>+</b><span>проведённых консультаций</span></div>
+        <div class="stat"><b><span data-count="320">0</span>+</b><span>клиентов в терапии</span></div>
+      </div>
+    </div>
+    <div class="photo-wrap reveal visible">
+      <div class="badge-exp"><b>12 лет</b><span>практики</span></div>
+      <div class="float-card float-1"><span class="pulse"></span> Сейчас доступна запись на эту неделю</div>
+      <div class="float-card float-2">★ 4,9 — средняя оценка клиентов</div>
+      <div class="photo-card">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=900&auto=format&fit=crop" alt="Психолог Валерия Макеева — деловое фото" onerror="this.style.display='none'">
+        <div class="photo-info">
+          <div><b>Валерия Макеева</b><small>психолог-консультант, член РПО</small></div>
+          <a href="#about" class="btn btn-primary" style="padding:10px 18px;font-size:13.5px">Обо мне</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STANDARDS -->
+<div class="container" style="padding-bottom:20px">
+  <div class="standards reveal">
+    <div>
+      <h3>Сайт создан по требованиям к работе психолога</h3>
+      <p>Лаконичность · научность · авторское право · конфиденциальность. Всё содержание соответствует учебной программе «Интернет-технологии в работе психолога».</p>
+    </div>
+    <div class="std-grid">
+      <div class="std"><i>◈</i><b>Лаконичность</b><span>Структура, которую легко понять за 1 минуту</span></div>
+      <div class="std"><i>◎</i><b>Научность</b><span>Только доказательные методы: КПТ, ACT, схема-терапия</span></div>
+      <div class="std"><i>©</i><b>Авторское право</b><span>Все материалы и тексты — авторские</span></div>
+      <div class="std"><i>◉</i><b>Конфиденциальность</b><span>Отзывы — с инициалами, данные — под защитой</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container about-grid">
+    <figure class="about-photo reveal">
+      <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=800&auto=format&fit=crop" alt="Валерия Макеева, психолог" onerror="this.style.display='none'">
+      <figcaption>Деловое фото · Валерия Макеева, практикующий психолог, г. Санкт-Петербург</figcaption>
+    </figure>
+    <div class="reveal">
+      <span class="eyebrow">Официальная информация о психологе</span>
+      <h2 class="h2">Здравствуйте! Я — Валерия Макеева</h2>
+      <div class="divider"></div>
+      <p class="lead">Я помогаю людям справляться с тревогой, усталостью и сложными решениями. Работаю спокойно, без оценок и «волшебных таблеток» — с опорой на науку и уважение к вашей истории.</p>
+      <div class="timeline">
+        <div class="tl-item"><b>2013 — СПбГУ, факультет психологии</b><span>Диплом с отличием, клиническая психология</span></div>
+        <div class="tl-item"><b>2016 — Повышение квалификации, КПТ</b><span>Когнитивно-поведенческая терапия, 256 часов</span></div>
+        <div class="tl-item"><b>2019 — Схема-терапия и работа с травмой</b><span>Сертификат международного образца</span></div>
+        <div class="tl-item"><b>2021 — настоящее время — частная практика</b><span>Очно и онлайн, супервизия, член Российского психологического общества</span></div>
+      </div>
+      <ul class="check-list">
+        <li>Работаю по этическому кодексу психолога: конфиденциально, без осуждения, с информированным согласием</li>
+        <li>Регулярно прохожу супервизию и личную терапию — это стандарт качественной практики</li>
+        <li>Не ставлю диагнозы онлайн и не назначаю препараты — при необходимости направляю к врачу</li>
+      </ul>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#docs" class="btn btn-ghost">Мои документы</a>
+        <a href="#contacts" class="btn btn-primary">Познакомиться на встрече →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <span class="eyebrow">Содержание видов деятельности</span>
+    <h2 class="h2">С чем ко мне обращаются</h2>
+    <p class="lead">Шесть основных направлений консультативной работы. Если вашей темы нет в списке — напишите, обсудим, смогу ли быть полезна.</p>
+    <div class="cards">
+      <div class="card reveal"><div class="icon">◍</div><h3>Тревога и стресс</h3><p>Панические атаки, навязчивые мысли, бессонница, постоянное напряжение. Учимся замечать триггеры и возвращать контроль.</p><span class="tag">КПТ · релаксация · экспозиция</span></div>
+      <div class="card reveal"><div class="icon">♡</div><h3>Самооценка и выгорание</h3><p>Самокритика, синдром самозванца, усталость от работы. Восстанавливаем энергию, границы и чувство «я могу».</p><span class="tag">Схема-терапия · ACT</span></div>
+      <div class="card reveal"><div class="icon">◐</div><h3>Отношения</h3><p>Конфликты, расставания, одиночество, сложности в паре и с родителями. Разбираем сценарии и учимся говорить о важном.</p><span class="tag">Парные и индивидуальные встречи</span></div>
+      <div class="card reveal"><div class="icon">✦</div><h3>Подростки 14+</h3><p>Учёба, буллинг, конфликты с родителями, поиск себя. Бережная поддержка и понятные договорённости с семьёй.</p><span class="tag">С согласия родителей</span></div>
+      <div class="card reveal"><div class="icon">⬢</div><h3>Кризисы и перемены</h3><p>Переезд, развод, потеря, смена профессии. Проживаем сложный период и строим план выхода из кризиса.</p><span class="tag">Краткосрочный фокус 6–10 встреч</span></div>
+      <div class="card reveal"><div class="icon">✎</div><h3>Профориентация</h3><p>Выбор вуза и профессии, смена карьеры. Тестирование, разбор сильных сторон и реалистичный маршрут.</p><span class="tag">Тесты + 2 консультации</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCS -->
+<section id="docs" style="padding-top:70px">
+  <div class="container">
+    <span class="eyebrow">Документация</span>
+    <h2 class="h2">Образование и сертификаты</h2>
+    <p class="lead">Оригиналы документов показываю на первой встрече. Копии дипломов и согласие на обработку данных — по запросу.</p>
+    <div class="docs">
+      <div class="doc reveal"><div class="seal">🎓</div><b>Диплом СПбГУ</b><span>Клиническая психология, 2013, с отличием</span><br><a href="#contacts">Запросить копию</a></div>
+      <div class="doc reveal"><div class="seal">📜</div><b>КПТ, 256 часов</b><span>Когнитивно-поведенческая терапия, 2016</span><br><a href="#contacts">Запросить копию</a></div>
+      <div class="doc reveal"><div class="seal">🛡</div><b>Схема-терапия</b><span>Работа с травмой, сертификат, 2019</span><br><a href="#contacts">Запросить копию</a></div>
+      <div class="doc reveal"><div class="seal">🤝</div><b>Член РПО</b><span>Российское психологическое общество, этический кодекс</span><br><a href="#contacts">Проверить статус</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section style="padding-top:20px">
+  <div id="steps" class="reveal">
+    <div class="container" style="padding:0">
+      <span class="eyebrow">Этапы работы с сайтом и в терапии</span>
+      <h2 class="h2" style="color:#fff">Как строится наша работа: 7 этапов</h2>
+      <p class="lead">Понятный маршрут — от первого обращения до устойчивого результата. Вы всегда знаете, на каком этапе мы находимся.</p>
+      <div class="steps-grid">
+        <div class="step"><div class="n">01</div><b>Первичная диагностика</b><p>Знакомимся 20 минут бесплатно, формулируем запрос, заполняем анкету.</p></div>
+        <div class="step"><div class="n">02</div><b>Организационный</b><p>Договор, согласие, формат встреч, частота и правила отмены.</p></div>
+        <div class="step"><div class="n">03</div><b>Информационный</b><p>Делюсь материалами: памятки, упражнения, статьи по вашей теме.</p></div>
+        <div class="step"><div class="n">04</div><b>Обучающий</b><p>Осваиваем навыки: дыхание, дневник мыслей, план самопомощи.</p></div>
+        <div class="step"><div class="n">05</div><b>Основной</b><p>Регулярные встречи 50 минут. Идём к цели, закрепляем изменения.</p></div>
+        <div class="step"><div class="n">06</div><b>Повторная диагностика</b><p>Замеряем прогресс шкалами и сравниваем с началом терапии.</p></div>
+        <div class="step"><div class="n">07</div><b>Корректировка</b><p>Подводим итоги, составляем план поддержки и профилактики.</p></div>
+        <div class="step"><div class="n">✦</div><b>Поддержка после</b><p>Раз в месяц — бесплатное короткое сопровождение в мессенджере.</p></div>
+      </div>
+      <div class="steps-note">Средняя длительность: точечный запрос — 6–8 встреч, глубинная работа — от 3 месяцев. Решение о завершении всегда принимаем вместе.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOURS + PRICE -->
+<section id="hours" style="padding-top:70px">
+  <div class="container">
+    <span class="eyebrow">Консультативные часы</span>
+    <h2 class="h2">Когда и сколько</h2>
+    <p class="lead">Принимаю по записи. Онлайн — по московскому времени. Очный кабинет: СПб, наб. Мойки, 42 (5 мин от м. Адмиралтейская).</p>
+    <div class="price-grid">
+      <div class="hours reveal">
+        <table>
+          <tr><th>День</th><th style="text-align:right">Время приёма</th></tr>
+          <tr><td>Понедельник</td><td><span class="pill ok">10:00 – 19:00</span></td></tr>
+          <tr><td>Вторник</td><td><span class="pill ok">10:00 – 19:00</span></td></tr>
+          <tr><td>Среда</td><td><span class="pill ok">12:00 – 20:00 · онлайн</span></td></tr>
+          <tr><td>Четверг</td><td><span class="pill ok">10:00 – 19:00</span></td></tr>
+          <tr><td>Пятница</td><td><span class="pill ok">10:00 – 17:00</span></td></tr>
+          <tr><td>Суббота</td><td><span class="pill ok">11:00 – 15:00 · онлайн</span></td></tr>
+          <tr><td>Воскресенье</td><td><span class="pill off">выходной</span></td></tr>
+        </table>
+        <div style="padding:16px 20px;font-size:13.5px;color:var(--muted);background:var(--cream)">Длительность встречи — 50 минут. Отмена бесплатно за 24 часа. При опоздании встреча не продлевается.</div>
+      </div>
+      <div class="tariffs">
+        <div class="tariff reveal"><div><b>Знакомство · 20 минут</b><small>Видео-звонок, определим запрос и подойдём ли друг другу</small></div><div class="price">0 ₽</div></div>
+        <div class="tariff hit reveal"><div><b>Индивидуальная консультация</b><small>Очно или онлайн · 50 минут · план и упражнения включены</small></div><div class="price">3 500 ₽</div></div>
+        <div class="tariff reveal"><div><b>Пакет «Опора» · 5 встреч</b><small>Фиксированные дни, сопровождение в мессенджере, скидка 10%</small></div><div class="price">15 750 ₽<br><small>вместо 17 500 ₽</small></div></div>
+        <a href="#contacts" class="btn btn-accent" style="width:100%">Выбрать время и записаться →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <span class="eyebrow">Отзывы клиентов</span>
+    <h2 class="h2">Тёплые слова (с разрешения)</h2>
+    <p class="lead">Имена изменены, детали опущены — так я берегу конфиденциальность каждого.</p>
+    <div class="rev-track">
+      <div class="rev reveal"><div class="stars">★★★★★</div><p>«Пришла с паническими атаками и страхом метро. Через 2 месяца уже ездила спокойно. Валерия всё объясняла простым языком, без давления.»</p><div class="who"><div class="avatar">А</div><div><b>Анна, 28 лет</b><small>10 встреч · тревога</small></div></div></div>
+      <div class="rev reveal"><div class="stars">★★★★★</div><p>«После выгорания не мог работать. Разобрали границы, сон, самокритику. Вернулся к жизни и сменил работу без чувства вины.»</p><div class="who"><div class="avatar">Д</div><div><b>Дмитрий, 35 лет</b><small>12 встреч · выгорание</small></div></div></div>
+      <div class="rev reveal"><div class="stars">★★★★★</div><p>«Ходили с дочерью-подростком. Валерия нашла подход и к ней, и к нам с мужем. Дома стало заметно спокойнее.»</p><div class="who"><div class="avatar">М</div><div><b>Марина, 42 года</b><small>семейные консультации</small></div></div></div>
+    </div>
+    <div class="conf-note">🔒 Конфиденциальность: отзывы публикуются только с письменного согласия клиентов, персональные данные изменены в соответствии с этическим кодексом психолога.</div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div style="text-align:center"><span class="eyebrow">Частые вопросы</span>
+    <h2 class="h2">Спрашивали? Отвечаю</h2></div>
+    <div class="faq">
+      <div class="faq-item"><button class="faq-q">Это конфиденциально? <span>+</span></button><div class="faq-a"><div>Да, полностью. Содержание встреч не разглашается никому, включая родственников. Исключение — угроза жизни, о чём мы договариваемся заранее в информированном согласии.</div></div></div>
+      <div class="faq-item"><button class="faq-q">Сколько встреч понадобится? <span>+</span></button><div class="faq-a"><div>Точечный запрос (стресс, решение) — обычно 6–8 встреч. Глубинные темы (самооценка, травма) — от 3 месяцев. Точный прогноз дам после первичной диагностики.</div></div></div>
+      <div class="faq-item"><button class="faq-q">Онлайн так же эффективно, как очно? <span>+</span></button><div class="faq-a"><div>Да, исследования показывают сопоставимую эффективность для большинства запросов. Нужны только тихое место, стабильный интернет и наушники.</div></div></div>
+      <div class="faq-item"><button class="faq-q">Вы ставите диагнозы и выписываете таблетки? <span>+</span></button><div class="faq-a"><div>Нет. Я психолог, а не психиатр: диагнозы не ставлю, препараты не назначаю. Если заподозрю состояние, требующее врача, бережно направлю к проверенному специалисту.</div></div></div>
+      <div class="faq-item"><button class="faq-q">Что будет на первой встрече? <span>+</span></button><div class="faq-a"><div>Познакомимся, обсудим ваш запрос и ожидания, договоримся о целях и формате. Никаких «разборов детства в лоб» — идём в вашем темпе.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section id="contacts">
+  <div class="container">
+    <span class="eyebrow">Контактная информация</span>
+    <h2 class="h2">Записаться на консультацию</h2>
+    <p class="lead">Оставьте заявку — отвечу в течение дня и предложу ближайшее свободное время. Или напишите напрямую в мессенджер.</p>
+    <div class="contact-grid">
+      <form class="form-card reveal" id="bookForm" novalidate>
+        <h3>Заявка на запись</h3>
+        <p>Это ни к чему не обязывает. Перезвоню, уточним запрос и подберём время.</p>
+        <div class="row2">
+          <div><label for="name">Ваше имя *</label><input id="name" name="name" placeholder="Как к вам обращаться" required></div>
+          <div><label for="phone">Телефон / Telegram *</label><input id="phone" name="phone" placeholder="+7 ___ ___-__-__" required></div>
+        </div>
+        <div class="row2">
+          <div><label for="format">Формат</label><select id="format" name="format"><option>Онлайн (Zoom)</option><option>Онлайн (Telegram)</option><option>Очно, Санкт-Петербург</option></select></div>
+          <div><label for="topic">Тема обращения</label><select id="topic" name="topic"><option>Тревога и стресс</option><option>Самооценка / выгорание</option><option>Отношения</option><option>Подросток 14+</option><option>Кризис / перемены</option><option>Другое</option></select></div>
+        </div>
+        <label for="msg">Пара слов о запросе</label>
+        <textarea id="msg" name="msg" placeholder="Например: последние месяцы тревожусь, плохо сплю..."></textarea>
+        <label class="agree"><input type="checkbox" id="agree" checked> Соглашаюсь на обработку персональных данных и принимаю условия конфиденциальности. Данные используются только для связи.</label>
+        <button type="submit" class="btn btn-accent" style="width:100%">Отправить заявку →</button>
+        <div id="formErr" style="display:none;color:#B3261E;font-size:13.5px;font-weight:700;margin-top:10px"></div>
+      </form>
+      <div class="info-card reveal">
+        <h3>Связаться напрямую</h3>
+        <div class="c-row"><i>✆</i><div><b>Телефон</b><a href="tel:+79110000000">+7 (911) 000-00-00</a><span> · Пн–Сб, 10:00–19:00</span></div></div>
+        <div class="c-row"><i>✉</i><div><b>Почта</b><a href="mailto:hello@makeeva-psy.ru">hello@makeeva-psy.ru</a><span> · отвечу в течение суток</span></div></div>
+        <div class="c-row"><i>◍</i><div><b>Кабинет</b><span>Санкт-Петербург, наб. Мойки, 42, каб. 305</span></div></div>
+        <div class="socials">
+          <a href="#" onclick="return false">Telegram</a>
+          <a href="#" onclick="return false">WhatsApp</a>
+          <a href="#" onclick="return false">VK</a>
+          <a href="#" onclick="return false">YouTube — лекции</a>
+        </div>
+        <div style="font-size:13px;opacity:.7;background:rgba(255,255,255,.07);padding:12px 16px;border-radius:12px">⚠ Если вы в остром кризисе и думаете о вреде себе — пожалуйста, позвоните на всероссийский телефон доверия <b>8-800-333-44-34</b> (круглосуточно, бесплатно).</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div>© <span id="year">2026</span> Валерия Макеева — психолог. Все материалы сайта авторские, копирование запрещено.</div>
+    <div>Сайт создан в учебных целях · «Интернет-технологии в работе психолога» · Конфиденциально</div>
+  </div>
+</footer>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <div class="ok">✓</div>
+    <h3>Заявка отправлена!</h3>
+    <p style="color:var(--muted);margin:10px 0 22px" id="modalText">Спасибо! Свяжусь с вами в ближайшее время.</p>
+    <button class="btn btn-primary" id="modalClose" style="width:100%">Хорошо, жду звонка</button>
+  </div>
+</div>
+
+<script>
+// Burger
+const burger = document.getElementById('burger');
+const links = document.getElementById('navLinks');
+burger.addEventListener('click', ()=> links.classList.toggle('mobile'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('mobile')));
+
+// Reveal on scroll
+const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('visible'); io.unobserve(e.target);} }),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Counters
+const cio = new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting) return; cio.unobserve(e.target);
+  const el=e.target, target=+el.dataset.count; let cur=0;
+  const step=Math.max(1,Math.round(target/60));
+  const t=setInterval(()=>{cur+=step; if(cur>=target){cur=target;clearInterval(t);} el.textContent=cur;},28);
+}),{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+// FAQ
+document.querySelectorAll('.faq-item').forEach(item=>{
+  const q=item.querySelector('.faq-q'), a=item.querySelector('.faq-a');
+  q.addEventListener('click',()=>{
+    const open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(o=>{o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight=null;});
+    if(!open){item.classList.add('open'); a.style.maxHeight=a.scrollHeight+'px';}
+  });
+});
+
+// Form
+const form=document.getElementById('bookForm');
+const err=document.getElementById('formErr');
+const modal=document.getElementById('modal');
+form.addEventListener('submit',e=>{
+  e.preventDefault(); err.style.display='none';
+  const name=document.getElementById('name').value.trim();
+  const phone=document.getElementById('phone').value.trim();
+  const agree=document.getElementById('agree').checked;
+  if(name.length<2){showErr('Пожалуйста, укажите имя.');return;}
+  if(phone.length<6){showErr('Проверьте телефон или ник в Telegram.');return;}
+  if(!agree){showErr('Нужно согласие на обработку данных, иначе я не смогу вам ответить.');return;}
+  document.getElementById('modalText').textContent = name+', спасибо! Я свяжусь с вами в течение дня и предложу время консультации.';
+  modal.classList.add('show'); form.reset();
+});
+function showErr(t){err.textContent=t; err.style.display='block';}
+document.getElementById('modalClose').addEventListener('click',()=>modal.classList.remove('show'));
+modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('show');});
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SkillUp — онлайн-школа в Ташкенте: дизайн, вёрстка, Python, английский. Каталог курсов, личный кабинет, обучение с нуля до работы.">
+  <title>SkillUp — онлайн-школа в Ташкенте | Дизайн, Вёрстка, Python, Английский</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Навигация на 10 страниц: компактные ссылки + прокрутка мобильного меню */
+    .nav__link { padding: 10px 12px; font-size: 14px; }
+    .nav--open { max-height: calc(100vh - var(--header-h)); overflow-y: auto; }
+  </style>
+</head>
+<body>
+
+  <!-- ДЕМО-плашка портфолио -->
+  <div class="demo-bar">
+    <span>ДЕМО • LMS • многостраничник + кабинет • Эдуард Журавлёв t.me/mkdir16</span>
+  </div>
+
+  <!-- ============ ШАПКА ============ -->
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="index.html" aria-label="SkillUp на главную">
+        <span class="logo__badge">🎓</span>
+        <span class="logo__text">SkillUp<small>Ташкент • LMS</small></span>
+      </a>
+      <nav class="nav" data-nav aria-label="Основная навигация">
+        <a class="nav__link nav__link--active" href="index.html">Главная</a>
+        <a class="nav__link" href="courses.html">Каталог</a>
+        <a class="nav__link" href="course.html">Курс</a>
+        <a class="nav__link" href="cabinet.html">Кабинет</a>
+        <a class="nav__link" href="teachers.html">Учителя</a>
+        <a class="nav__link" href="schedule.html">Расписание</a>
+        <a class="nav__link" href="news.html">Новости</a>
+        <a class="nav__link" href="about.html">О школе</a>
+        <a class="nav__link" href="contacts.html">Контакты</a>
+        <a class="nav__link" href="faq.html">FAQ</a>
+      </nav>
+      <a class="header__phone" href="tel:+998935076473">📞 +998 93 507-64-73</a>
+      <button class="burger" data-burger aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <span class="eyebrow">🚀 Онлайн-школа • Ташкент</span>
+        <h1>Освой <em>востребованную профессию</em> за 4–8 месяцев</h1>
+        <p class="hero__text">Дизайн, вёрстка, Python и английский. Живые занятия, проверка домашки, личный кабинет с прогрессом и помощь с трудоустройством.</p>
+        <div class="hero__meta">
+          <span class="hero__chip">📍 Ташкент + онлайн</span>
+          <span class="hero__chip">👨‍🏫 12 наставников</span>
+          <span class="hero__chip">🎓 2 400+ выпускников</span>
+          <span class="hero__chip">💼 Стажировки</span>
+        </div>
+        <div class="hero__actions">
+          <a class="btn btn--accent" href="courses.html">Выбрать курс</a>
+          <a class="btn btn--light" href="cabinet.html">Мой кабинет</a>
+        </div>
+        <div class="hero__stats">
+          <div class="hero__stat"><b>4.9 ★</b><span>средняя оценка</span></div>
+          <div class="hero__stat"><b>87%</b><span>доходят до конца</span></div>
+          <div class="hero__stat"><b>от 490 000</b><span>сум / курс</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="hero-card">
+          <div class="hero-card__top">
+            <div class="hero-card__avatar">👩‍💻</div>
+            <div>
+              <b>Моё обучение</b><br>
+              <span class="muted" style="font-size:14px">HTML + CSS • Урок 12 из 48</span>
+            </div>
+          </div>
+          <div class="hero-card__lesson"><span>✅ Flexbox и Grid</span><b>100%</b></div>
+          <div class="hero-card__lesson"><span>▶ Адаптивная вёрстка</span><b>68%</b></div>
+          <div class="hero-card__lesson"><span>🔒 Bootstrap 5</span><b>0%</b></div>
+          <div class="hero-card__progress"><div class="hero-card__bar"></div></div>
+          <small class="muted">Общий прогресс: 68% • Осталось 3 недели</small>
+          <a class="btn btn--primary btn--block mt" href="cabinet.html">Продолжить учиться</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ КАТАЛОГ-ПРЕВЬЮ: 6 курсов ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">📚 Каталог</span>
+        <h2 class="section__title">Популярные курсы</h2>
+        <p class="section__subtitle">Цены в сумах, рассрочка 0-0-6. Группы до 14 человек, занятия на русском.</p>
+      </div>
+      <div class="courses-grid">
+        <!-- 1 -->
+        <article class="course-card">
+          <div class="course-card__cover course-card__cover--layout">🧱<span class="course-card__tag">Вёрстка</span></div>
+          <div class="course-card__body">
+            <h3 class="course-card__title">HTML + CSS с нуля</h3>
+            <p class="course-card__desc">Семантика, Flexbox, Grid, адаптив, 5 сайтов в портфолио.</p>
+            <div class="course-card__meta"><i>⏱ 4 мес</i><i>📊 Beginner</i><i>👥 320 уч.</i></div>
+            <div class="course-card__foot">
+              <div class="price">690 000 сум<small>/мес 172 500 сум</small></div>
+              <a class="btn btn--dark btn--sm" href="course.html">Подробнее</a>
+            </div>
+          </div>
+        </article>
+        <!-- 2 -->
+        <article class="course-card">
+          <div class="course-card__cover course-card__cover--code">⚡<span class="course-card__tag">Frontend</span></div>
+          <div class="course-card__body">
+            <h3 class="course-card__title">JavaScript + React</h3>
+            <p class="course-card__desc">DOM, fetch, React-хуки, 3 SPA-проекта и собеседования.</p>
+            <div class="course-card__meta"><i>⏱ 6 мес</i><i>📊 Middle</i><i>👥 210 уч.</i></div>
+            <div class="course-card__foot">
+              <div class="price">1 190 000 сум<small>/мес 198 000 сум</small></div>
+              <a class="btn btn--dark btn--sm" href="course.html">Подробнее</a>
+            </div>
+          </div>
+        </article>
+        <!-- 3 -->
+        <article class="course-card">
+          <div class="course-card__cover course-card__cover--python">🐍<span class="course-card__tag">Python</span></div>
+          <div class="course-card__body">
+            <h3 class="course-card__title">Python-разработка</h3>
+            <p class="course-card__desc">Синтаксис, ООП, Django, Telegram-боты и парсинг.</p>
+            <div class="course-card__meta"><i>⏱ 6 мес</i><i>📊 С нуля</i><i>👥 280 уч.</i></div>
+            <div class="course-card__foot">
+              <div class="price">990 000 сум<small>/мес 165 000 сум</small></div>
+              <a class="btn btn--dark btn--sm" href="course.html">Подробнее</a>
+            </div>
+          </div>
+        </article>
+        <!-- 4 -->
+        <article class="course-card">
+          <div class="course-card__cover course-card__cover--design">🎨<span class="course-card__tag">Дизайн</span></div>
+          <div class="course-card__body">
+            <h3 class="course-card__title">UX/UI в Figma</h3>
+            <p class="course-card__desc">Композиция, типографика, прототипы, 4 кейса на Behance.</p>
+            <div class="course-card__meta"><i>⏱ 5 мес</i><i>📊 С нуля</i><i>👥 190 уч.</i></div>
+            <div class="course-card__foot">
+              <div class="price">890 000 сум<small>/мес 178 000 сум</small></div>
+              <a class="btn btn--dark btn--sm" href="course.html">Подробнее</a>
+            </div>
+          </div>
+        </article>
+        <!-- 5 -->
+        <article class="course-card">
+          <div class="course-card__cover course-card__cover--english">🇬🇧<span class="course-card__tag">Английский</span></div>
+          <div class="course-card__body">
+            <h3 class="course-card__title">Английский для IT</h3>
+            <p class="course-card__desc">A2→B2, speaking-клубы, лексика для собеседований.</p>
+            <div class="course-card__meta"><i>⏱ 8 мес</i><i>📊 A2–B2</i><i>👥 410 уч.</i></div>
+            <div class="course-card__foot">
+              <div class="price">490 000 сум<small>/мес 61 000 сум</small></div>
+              <a class="btn btn--dark btn--sm" href="course.html">Подробнее</a>
+            </div>
+          </div>
+        </article>
+        <!-- 6 -->
+        <article class="course-card">
+          <div class="course-card__cover course-card__cover--figma">🚀<span class="course-card__tag">Профи</span></div>
+          <div class="course-card__body">
+            <h3 class="course-card__title">Fullstack PRO</h3>
+            <p class="course-card__desc">HTML + JS + Python + деплой. Диплом и трудоустройство.</p>
+            <div class="course-card__meta"><i>⏱ 8 мес</i><i>📊 PRO</i><i>👥 95 уч.</i></div>
+            <div class="course-card__foot">
+              <div class="price">1 900 000 сум<small>/мес 237 500 сум</small></div>
+              <a class="btn btn--dark btn--sm" href="course.html">Подробнее</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <p class="mt" style="text-align:center">
+        <a class="btn btn--ghost" href="courses.html">Смотреть все 9 курсов →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ ЦИФРЫ ============ -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">📊 SkillUp в цифрах</span>
+        <h2 class="section__title">Нас выбирают в Ташкенте</h2>
+        <p class="section__subtitle">Офлайн-кампус на ул. Амира Темура + онлайн по всему Узбекистану.</p>
+      </div>
+      <div class="numbers">
+        <div class="number-card"><b>2 400+</b><span>выпускников с 2021 года</span></div>
+        <div class="number-card"><b>12</b><span>наставников-практиков</span></div>
+        <div class="number-card"><b>9</b><span>курсов: дизайн, код, язык</span></div>
+        <div class="number-card"><b>73%</b><span>работают по специальности</span></div>
+      </div>
+      <div class="grid-2 mt">
+        <div class="number-card" style="text-align:left">
+          <b style="font-size:22px">🏫 Как проходит обучение?</b>
+          <span>2 занятия в неделю по 2 часа • домашка с проверкой за 24 часа • созвоны, хакатоны и speaking-клубы. Все уроки остаются в кабинете навсегда.</span>
+        </div>
+        <div class="number-card" style="text-align:left">
+          <b style="font-size:22px">💳 Оплата в сумах</b>
+          <span>Click, Payme, Uzum Bank, наличные в кампусе. Рассрочка 0% до 6 месяцев. Возврат в первые 2 недели — без вопросов.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ОТЗЫВЫ ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">💬 Отзывы</span>
+        <h2 class="section__title">Что говорят студенты</h2>
+        <p class="section__subtitle">Реальные истории из Ташкента, Самарканда и онлайн-потоков.</p>
+      </div>
+      <div class="reviews">
+        <article class="review">
+          <div class="review__stars">★★★★★</div>
+          <p>«Пришла с нуля, через 4 месяца сверстала 5 сайтов. Сейчас стажируюсь в веб-студии на Юнусабаде за 4 млн сум!»</p>
+          <div class="review__author">
+            <div class="review__ava">👩</div>
+            <div><b>Малика А.</b><br><span class="muted" style="font-size:13px">HTML + CSS • Ташкент</span></div>
+          </div>
+        </article>
+        <article class="review">
+          <div class="review__stars">★★★★★</div>
+          <p>«Python давался тяжело, но наставник разбирал каждую ошибку. Написал Telegram-бота для магазина отца — теперь принимаем заказы!»</p>
+          <div class="review__author">
+            <div class="review__ava">👨</div>
+            <div><b>Жасур К.</b><br><span class="muted" style="font-size:13px">Python • Чиланзар</span></div>
+          </div>
+        </article>
+        <article class="review">
+          <div class="review__stars">★★★★☆</div>
+          <p>«Хожу на UX/UI очно. Figma, сетки, 4 кейса в портфолио. Кабинет с прогрессом очень мотивирует — видно каждый процент.»</p>
+          <div class="review__author">
+            <div class="review__ava">🧑‍🎨</div>
+            <div><b>Диёра Р.</b><br><span class="muted" style="font-size:13px">UX/UI • Мирзо-Улугбекский</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="cta">
+        <div>
+          <h2>Первый урок — бесплатно 🎉</h2>
+          <p>Приходите в кампус в Ташкенте или подключайтесь онлайн. Подберём курс под ваш уровень, покажем кабинет и ответим на вопросы.</p>
+          <p>📞 <b>+998 93 507-64-73</b> • 📍 Ташкент, ул. Амира Темура, 15<br>🕘 Ежедневно 9:00–20:00</p>
+          <a class="btn btn--dark" href="courses.html">Выбрать курс</a>
+        </div>
+        <div class="cta__box">
+          <form class="form" data-demo-form>
+            <h3 style="margin-top:0">Записаться на пробный урок</h3>
+            <label for="cta-name">Ваше имя</label>
+            <input id="cta-name" name="name" type="text" placeholder="Например, Эдуард" required>
+            <label for="cta-phone">Телефон</label>
+            <input id="cta-phone" name="phone" type="tel" placeholder="+998 __ ___-__-__" required>
+            <label for="cta-course">Курс</label>
+            <select id="cta-course" name="course">
+              <option>HTML + CSS с нуля — 690 000 сум</option>
+              <option>Python-разработка — 990 000 сум</option>
+              <option>UX/UI в Figma — 890 000 сум</option>
+              <option>Английский для IT — 490 000 сум</option>
+            </select>
+            <button class="btn btn--primary btn--block mt" type="submit">Хочу на пробный урок</button>
+            <p data-form-msg style="display:none; margin-top:12px; font-weight:700; color:#15803d"></p>
+            <small class="muted">Нажимая кнопку, вы соглашаетесь с политикой обработки данных.</small>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ФУТЕР ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="logo" href="index.html" style="color:#fff"><span class="logo__badge">🎓</span><span class="logo__text" style="color:#fff">SkillUp<small style="color:#b9bde0">Ташкент • LMS</small></span></a>
+          <p style="margin-top:12px">Онлайн-школа: дизайн, вёрстка, Python, английский. Учим с нуля до работы с 2021 года.</p>
+          <p>📞 <a href="tel:+998935076473">+998 93 507-64-73</a><br>📍 Ташкент, ул. Амира Темура, 15</p>
+        </div>
+        <div>
+          <h4>Навигация</h4>
+          <p><a href="index.html">Главная</a><br><a href="courses.html">Каталог</a><br><a href="course.html">Курс</a><br><a href="cabinet.html">Кабинет</a><br><a href="teachers.html">Учителя</a><br><a href="schedule.html">Расписание</a><br><a href="news.html">Новости</a><br><a href="about.html">О школе</a><br><a href="contacts.html">Контакты</a><br><a href="faq.html">FAQ</a></p>
+        </div>
+        <div>
+          <h4>Направления</h4>
+          <p><a href="courses.html">Дизайн</a><br><a href="courses.html">Вёрстка</a><br><a href="courses.html">Python</a><br><a href="courses.html">Английский</a></p>
+        </div>
+        <div>
+          <h4>Студентам</h4>
+          <p><a href="cabinet.html">Прогресс</a><br><a href="course.html#tariffs">Тарифы</a><br><a href="course.html#program">Программа</a><br><a href="tel:+998935076473">Поддержка</a></p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> SkillUp Ташкент • Демо-проект для портфолио</span>
+        <span>Вёрстка: Эдуард Журавлёв • t.me/mkdir16 • Цены в сумах (UZS)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

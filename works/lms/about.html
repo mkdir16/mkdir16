@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="О школе SkillUp Ташкент: история с 2021 года, 2 400 выпускников, лицензия, принципы обучения. Дизайн, вёрстка, Python, английский.">
+  <title>О школе — SkillUp Ташкент</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Навигация на 10 страниц: компактные ссылки + прокрутка мобильного меню */
+    .nav__link { padding: 10px 12px; font-size: 14px; }
+    .nav--open { max-height: calc(100vh - var(--header-h)); overflow-y: auto; }
+    .timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+    .timeline li { background: #f8f9ff; border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; }
+    .timeline b { color: var(--primary); }
+  </style>
+</head>
+<body>
+
+  <!-- ============ ШАПКА (единая для всех 10 страниц) ============ -->
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="index.html" aria-label="SkillUp на главную">
+        <span class="logo__badge">🎓</span>
+        <span class="logo__text">SkillUp<small>Ташкент • LMS</small></span>
+      </a>
+      <nav class="nav" data-nav aria-label="Основная навигация">
+        <a class="nav__link" href="index.html">Главная</a>
+        <a class="nav__link" href="courses.html">Каталог</a>
+        <a class="nav__link" href="course.html">Курс</a>
+        <a class="nav__link" href="cabinet.html">Кабинет</a>
+        <a class="nav__link" href="teachers.html">Учителя</a>
+        <a class="nav__link" href="schedule.html">Расписание</a>
+        <a class="nav__link" href="news.html">Новости</a>
+        <a class="nav__link nav__link--active" href="about.html">О школе</a>
+        <a class="nav__link" href="contacts.html">Контакты</a>
+        <a class="nav__link" href="faq.html">FAQ</a>
+      </nav>
+      <a class="header__phone" href="tel:+998935076473">📞 +998 93 507-64-73</a>
+      <button class="burger" data-burger aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs"><a href="index.html">Главная</a> / О школе</div>
+      <h1>О школе SkillUp 🏫</h1>
+      <p style="color:#b9bde0; max-width:680px">Учим жителей Ташкента и всего Узбекистана дизайну, вёрстке, Python и английскому с 2021 года — от первых шагов до оффера.</p>
+    </div>
+  </section>
+
+  <!-- Цифры-счётчики -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">📊 SkillUp в цифрах</span>
+        <h2 class="section__title">Результаты, а не обещания</h2>
+      </div>
+      <div class="numbers">
+        <div class="number-card"><b><span data-count-to="2400" data-suffix="+">2 400+</span></b><span>выпускников с 2021 года</span></div>
+        <div class="number-card"><b><span data-count-to="12">12</span></b><span>наставников-практиков</span></div>
+        <div class="number-card"><b><span data-count-to="9">9</span></b><span>курсов: дизайн, код, язык</span></div>
+        <div class="number-card"><b><span data-count-to="73" data-suffix="%">73%</span></b><span>работают по специальности</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="align-items:start">
+        <div>
+          <span class="eyebrow">📜 Наша история</span>
+          <h2 class="section__title">От Zoom-группы до кампуса</h2>
+          <ul class="timeline mt">
+            <li><b>2021</b> — первый поток: 12 студентов учат HTML по Zoom, занятия ведёт основатель из квартиры на Чиланзаре.</li>
+            <li><b>2022</b> — запускаем Python и дизайн, выпускников уже 300. Появляется личный кабинет с прогрессом.</li>
+            <li><b>2023</b> — открываем кампус на ул. Амира Темура, 15. Английский для IT и speaking-клубы по субботам.</li>
+            <li><b>2024</b> — 1 500 выпускников, запускаем стажировки с IT-компаниями Ташкента. Рассрочка 0-0-6.</li>
+            <li><b>2025</b> — хакатон «Ташкент верстает» на 20 команд, призовой фонд 5 000 000 сум.</li>
+            <li><b>2026</b> — нас 2 400+. Цены по-прежнему в сумах: курсы от 490 000 до 1 900 000 сум.</li>
+          </ul>
+        </div>
+        <div>
+          <span class="eyebrow">✅ Документы</span>
+          <h2 class="section__title">Лицензия и гарантии</h2>
+          <div class="cab-card mt">
+            <div style="font-size:48px">📜</div>
+            <h3>Лицензия на образовательную деятельность</h3>
+            <p class="muted">№ <b>UZB-DEMO-2026-0715</b> — номер заглушка для демо-проекта портфолио. В боевом проекте здесь публикуется скан лицензии и ссылка на реестр.</p>
+            <ul class="muted">
+              <li>Договор оферты перед оплатой;</li>
+              <li>Чеки Click / Payme / Uzum Bank на каждую оплату;</li>
+              <li>Возврат 100% в первые 2 недели без объяснения причин;</li>
+              <li>Сертификат + рекомендация лучшим студентам.</li>
+            </ul>
+            <p><span class="pill">🛡 возврат 2 недели</span> <span class="pill">🧾 чеки в сумах</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__head mt">
+        <span class="eyebrow">💡 Принципы</span>
+        <h2 class="section__title">Четыре правила SkillUp</h2>
+      </div>
+      <div class="reviews">
+        <article class="review">
+          <div class="review__stars">🧪</div>
+          <h3>80% — практика</h3>
+          <p class="muted">Никаких лекций ради лекций: каждый урок заканчивается задачей в портфолио. К диплому — 4–5 готовых проектов.</p>
+        </article>
+        <article class="review">
+          <div class="review__stars">👨‍🏫</div>
+          <h3>Наставник рядом</h3>
+          <p class="muted">Домашку проверяет живой человек за 24 часа. Вопросы в чате — с 10:00 до 19:00, созвоны 1-на-1 каждую неделю.</p>
+        </article>
+        <article class="review">
+          <div class="review__stars">📈</div>
+          <h3>Прозрачный прогресс</h3>
+          <p class="muted">Личный кабинет показывает каждый процент: уроки, streak, достижения. Родители школьников видят отчёты.</p>
+        </article>
+        <article class="review">
+          <div class="review__stars">💼</div>
+          <h3>Карьера до оффера</h3>
+          <p class="muted">Резюме, мок-собеседования и стажировки у партнёров. 73% выпускников работают по специальности.</p>
+        </article>
+      </div>
+
+      <div class="cab-card mt">
+        <h3>🎉 Приходите знакомиться</h3>
+        <p class="muted">Первый урок — бесплатно: кампус в Ташкенте или онлайн. Покажем кабинеты, познакомим с наставником и подберём курс под ваш уровень.</p>
+        <p><b>📞 <a href="tel:+998935076473">+998 93 507-64-73</a></b> <span class="muted">• ежедневно 9:00–20:00 • Ташкент, ул. Амира Темура, 15</span></p>
+        <p><a class="btn btn--primary" href="courses.html">Выбрать курс</a> <a class="btn btn--ghost" href="teachers.html">Наши учителя</a> <a class="btn btn--ghost" href="contacts.html">Контакты</a></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ ФУТЕР (единый для всех 10 страниц) ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="logo" href="index.html" style="color:#fff"><span class="logo__badge">🎓</span><span class="logo__text" style="color:#fff">SkillUp<small style="color:#b9bde0">Ташкент • LMS</small></span></a>
+          <p style="margin-top:12px">Онлайн-школа: дизайн, вёрстка, Python, английский. Учим с нуля до работы с 2021 года.</p>
+          <p>📞 <a href="tel:+998935076473">+998 93 507-64-73</a><br>📍 Ташкент, ул. Амира Темура, 15</p>
+        </div>
+        <div>
+          <h4>Навигация</h4>
+          <p><a href="index.html">Главная</a><br><a href="courses.html">Каталог</a><br><a href="course.html">Курс</a><br><a href="cabinet.html">Кабинет</a><br><a href="teachers.html">Учителя</a><br><a href="schedule.html">Расписание</a><br><a href="news.html">Новости</a><br><a href="about.html">О школе</a><br><a href="contacts.html">Контакты</a><br><a href="faq.html">FAQ</a></p>
+        </div>
+        <div>
+          <h4>Направления</h4>
+          <p><a href="courses.html">Дизайн</a><br><a href="courses.html">Вёрстка</a><br><a href="courses.html">Python</a><br><a href="courses.html">Английский</a></p>
+        </div>
+        <div>
+          <h4>Студентам</h4>
+          <p><a href="cabinet.html">Прогресс</a><br><a href="schedule.html">Расписание</a><br><a href="course.html#tariffs">Тарифы</a><br><a href="faq.html">Вопросы и ответы</a><br><a href="tel:+998935076473">Поддержка</a></p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> SkillUp Ташкент • Демо-проект для портфолио</span>
+        <span>Вёрстка: Эдуард Журавлёв • t.me/mkdir16 • Цены в сумах (UZS)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Анимация цифр-счётчиков при появлении в viewport
+    (function () {
+      function fmt(n) { return n.toLocaleString("ru-RU"); }
+      function anim(el) {
+        var to = parseInt(el.getAttribute("data-count-to"), 10) || 0;
+        var suf = el.getAttribute("data-suffix") || "";
+        var dur = 1200, t0 = null;
+        function step(t) {
+          if (!t0) t0 = t;
+          var p = Math.min(1, (t - t0) / dur);
+          var e = 1 - Math.pow(1 - p, 3);
+          el.textContent = fmt(Math.round(to * e)) + suf;
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+      var els = document.querySelectorAll("[data-count-to]");
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) { anim(en.target); io.unobserve(en.target); }
+          });
+        }, { threshold: 0.4 });
+        els.forEach(function (el) { io.observe(el); });
+      } else {
+        els.forEach(anim);
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bazaar — Помощь</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.faq details{background:#fff;border:1px solid #eee;border-radius:14px;box-shadow:0 8px 28px rgba(20,20,50,.08);margin-bottom:10px;overflow:hidden}
+.faq summary{cursor:pointer;padding:14px 16px;font-weight:800;list-style:none;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';font-size:22px;font-weight:900;color:#7c3aed}
+.faq details[open] summary::after{content:'−'}
+.faq details p{padding:0 16px 16px;color:#333}
+</style>
+</head>
+<body>
+<div class="demo">ДЕМО • Маркетплейс • каталог + корзина + заказ • Эдуард Журавлёв t.me/mkdir16</div>
+<header class="header"><div class="container header__inner">
+<a class="logo" href="index.html">🛍️ <span>Bazaar</span></a>
+<nav class="nav" id="nav">
+<a href="index.html">Главная</a><a href="catalog.html">Каталог</a><a href="product.html">Товар</a><a href="cart.html">Корзина</a><a href="checkout.html">Оформление</a><a href="cabinet.html">Кабинет</a><a href="favorites.html">Избранное</a><a href="sellers.html">Продавцы</a><a href="promo.html">Акции</a><a href="help.html" class="active">Помощь</a>
+</nav>
+<div class="header__right">
+<a class="phone" href="tel:+998935076473">+998 93 507-64-73</a>
+<a class="cart-btn" href="cart.html">🛒 <b id="cartCount">0</b></a>
+<button class="burger" id="burger" aria-label="Меню">☰</button>
+</div></div></header>
+
+<main class="container">
+<section class="section">
+<div class="section__head"><div><h2>Помощь ❓</h2><p>8 частых вопросов • поддержка 9:00–21:00</p></div><a class="btn btn-light" href="catalog.html">В каталог</a></div>
+<div class="faq">
+<details open><summary>🚚 Как быстро привезут заказ?</summary><p>По Ташкенту — в день заказа (3–6 часов), по области — 1–2 дня. Доставка заказов от 500 000 сум по городу — бесплатно. Статус видно в <a href="cabinet.html"><u>кабинете</u></a>.</p></details>
+<details><summary>💳 Как оплатить: Click, Payme или наличные?</summary><p>Онлайн — картой через Click / Payme при оформлении, либо наличными курьеру. Чек приходит сразу, цены в сумах включают все комиссии.</p></details>
+<details><summary>🎟️ Как применить промокод SKIDKA10?</summary><p>Откройте <a href="cart.html"><u>корзину</u></a>, введите SKIDKA10 в поле «Промокод» и нажмите ОК — скидка −10% посчитается автоматически. Подробнее — на странице <a href="promo.html"><u>акций</u></a>.</p></details>
+<details><summary>↩️ Как вернуть товар?</summary><p>14 дней без объяснения причин: позвоните <a href="tel:+998935076473"><b>+998 93 507-64-73</b></a>, курьер заберёт товар бесплатно, деньги вернём на карту за 1–3 дня.</p></details>
+<details><summary>🛡️ Есть ли гарантия?</summary><p>Да, 12 месяцев на электронику (чек + гарантийный талон в коробке). По браку — обмен в день обращения.</p></details>
+<details><summary>📱 Что за рассрочка 0-0-12?</summary><p>Телефон за 2 500 000 сум — по 208 400 сум в месяц 12 месяцев, без переплат. Нужны паспорт и карта Click / Payme, одобрение за 10 минут.</p></details>
+<details><summary>📍 Есть ли самовывоз?</summary><p>Да, пункт выдачи в Ташкенте работает 9:00–21:00 без выходных. Адрес назовёт оператор после оформления заказа.</p></details>
+<details><summary>❤️ Куда делось избранное?</summary><p>Избранное (♡) хранится в вашем браузере. Открыть его можно на странице <a href="favorites.html"><u>«Избранное»</u></a> или в <a href="cabinet.html"><u>кабинете</u></a>. При очистке браузера список пропадает.</p></details>
+</div>
+</section>
+
+<section class="section" style="display:grid;grid-template-columns:1fr 1fr;gap:16px" id="supportGrid">
+<div class="form-card">
+<h3>Контакты поддержки 📞</h3><br>
+<p>Телефон: <a href="tel:+998935076473"><b>+998 93 507-64-73</b></a></p>
+<p>Telegram: <b>t.me/mkdir16</b></p>
+<p>Часы: <b>ежедневно 9:00–21:00</b></p>
+<p class="small">Среднее время ответа: 5 минут. По заказам называйте номер (например BZ-1234).</p><br>
+<a class="btn btn-green btn-block" style="text-align:center" href="tel:+998935076473">Позвонить: +998 93 507-64-73</a>
+</div>
+<div class="form-card">
+<h3>Написать обращение ✉️</h3><br>
+<form id="helpForm" novalidate>
+<div><label>Имя *</label><input id="hName" placeholder="Например: Эдуард"><div class="err" id="heName"></div></div>
+<div><label>Телефон *</label><input id="hPhone" placeholder="+998 93 507-64-73"><div class="err" id="hePhone"></div></div>
+<div><label>Тема *</label><select id="hTopic"><option value="">— Выберите тему —</option><option>Доставка</option><option>Оплата</option><option>Возврат</option><option>Промокод</option><option>Другое</option></select><div class="err" id="heTopic"></div></div>
+<div><label>Сообщение *</label><textarea id="hMsg" rows="3" placeholder="Опишите вопрос (мин. 10 символов)"></textarea><div class="err" id="heMsg"></div></div>
+<button class="btn btn-accent btn-block" type="submit" style="margin-top:10px">Отправить обращение ✅</button>
+<div class="err" id="hOk" style="color:#16a34a;font-weight:700"></div>
+</form>
+</div>
+</section>
+</main>
+
+<footer class="footer"><div class="container footer__grid">
+<div><h4>🛍️ Bazaar</h4><p>Демо-маркетплейс: каталог + корзина + заказ.<br>Электроника • Одежда • Дом.<br>Ташкент, Узбекистан.</p></div>
+<div><h4>Навигация</h4><a href="index.html">Главная</a><a href="catalog.html">Каталог</a><a href="favorites.html">Избранное</a><a href="sellers.html">Продавцы</a><a href="promo.html">Акции</a><a href="help.html">Помощь</a><a href="cart.html">Корзина</a><a href="cabinet.html">Личный кабинет</a></div>
+<div><h4>Контакты</h4><a href="tel:+998935076473">+998 93 507-64-73</a><a href="#">t.me/mkdir16</a><p class="small">ДЕМО • Эдуард Журавлёв</p></div>
+</div></footer>
+<script src="script.js"></script>
+<script>
+(function(){
+  var f=document.getElementById('helpForm'); if(!f) return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault(); var ok=true;
+    var name=document.getElementById('hName'), phone=document.getElementById('hPhone'),
+        topic=document.getElementById('hTopic'), msg=document.getElementById('hMsg');
+    document.getElementById('heName').textContent=name.value.trim().length<2?'Введите имя (мин. 2 буквы)':''; if(name.value.trim().length<2)ok=false;
+    var digits=phone.value.replace(/\D/g,'');
+    document.getElementById('hePhone').textContent=digits.length<9?'Введите корректный телефон (+998 …)':''; if(digits.length<9)ok=false;
+    document.getElementById('heTopic').textContent=!topic.value?'Выберите тему обращения':''; if(!topic.value)ok=false;
+    document.getElementById('heMsg').textContent=msg.value.trim().length<10?'Сообщение слишком короткое (мин. 10 символов)':''; if(msg.value.trim().length<10)ok=false;
+    if(!ok){toast('Проверьте форму ⚠️');document.getElementById('hOk').textContent='';return;}
+    var box=[]; try{box=JSON.parse(localStorage.getItem('bazaar_help')||'[]')}catch(err){}
+    box.unshift({name:name.value.trim(),phone:phone.value.trim(),topic:topic.value,msg:msg.value.trim(),date:new Date().toLocaleString('ru-RU')});
+    localStorage.setItem('bazaar_help',JSON.stringify(box));
+    f.reset(); document.getElementById('hOk').textContent='✅ Обращение отправлено! Перезвоним в течение часа (9:00–21:00).';
+    toast('Обращение отправлено ✅');
+  });
+})();
+</script>
+</body>
+</html>

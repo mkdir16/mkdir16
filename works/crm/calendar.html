@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SotuvPro CRM — Календарь</title>
+<meta name="description" content="Календарь SotuvPro на текущий месяц: встречи, звонки, сделки.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brand-logo">📊</div><div><b>SotuvPro</b><small>CRM • Ташкент</small></div></div>
+    <nav class="nav">
+      <a href="index.html">📈 Дашборд</a>
+      <a href="leads.html">📋 Заявки</a>
+      <a href="deals.html">💼 Сделки</a>
+      <a href="clients.html">👥 Клиенты</a>
+      <a href="calendar.html" class="active">📅 Календарь</a>
+      <a href="reports.html">📊 Отчёты</a>
+      <a href="chat.html">💬 Чат</a>
+      <a href="tariffs.html">💳 Тарифы</a>
+      <a href="settings.html">⚙️ Настройки</a>
+      <a href="help.html">❓ Помощь</a>
+    </nav>
+    <div class="side-card"><h4>📞 Отдел продаж</h4><p>+998 93 507-64-73<br>Чиланзар, Ташкент</p><span class="demo-badge">ДЕМО</span></div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="burger" id="burger" aria-label="Меню">☰</button>
+      <div class="search">🔍 <input type="text" placeholder="Поиск события…" aria-label="Поиск"></div>
+      <span class="plaque">ДЕМО • CRM • дашборд + заявки • Эдуард Журавлёв t.me/mkdir16</span>
+      <div class="top-user"><div style="text-align:right"><b style="font-size:14px">Эдуард Журавлёв</b><small>Менеджер</small></div><div class="avatar">ЭЖ</div></div>
+    </header>
+
+    <main class="content">
+      <div class="page-title">
+        <div><h1>📅 Календарь</h1><p id="calTitle">Текущий месяц • Ташкент</p></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn green" data-open="modalEvent">+ Событие</button>
+          <button class="btn ghost" id="resetEvents">↺ Сбросить мои</button>
+        </div>
+      </div>
+
+      <section class="grid2">
+        <div class="card">
+          <h3>🗓️ Сетка месяца</h3>
+          <p class="sub">Строится скриптом под текущий месяц • сегодня подсвечено</p>
+          <div class="cal-grid" id="calGrid"></div>
+        </div>
+        <div class="card">
+          <h3>📌 События списком</h3>
+          <p class="sub" id="eventCount">Всего событий: …</p>
+          <div class="event-list" id="eventList"></div>
+          <p class="sub" style="margin:10px 0 0">💾 Свои события хранятся в localStorage.<br>📞 Напоминания: +998 93 507-64-73</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><span>© <span data-year>2026</span> SotuvPro • Ташкент</span><span>ДЕМО • CRM • дашборд + заявки • Эдуард Журавлёв t.me/mkdir16</span></footer>
+  </div>
+</div>
+
+<div class="modal" id="modalEvent">
+  <div class="modal-box">
+    <h3>➕ Новое событие</h3>
+    <p>День текущего месяца • появится в сетке и в списке.</p>
+    <form id="eventForm">
+      <div class="form-grid">
+        <div class="full"><label>Название<input type="text" name="title" required placeholder="Например: Звонок клиенту" maxlength="80"></label></div>
+        <div><label>Число месяца<input type="number" name="day" min="1" max="31" value="15" required></label></div>
+        <div><label>Время<input type="time" name="time" value="10:00" required></label></div>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn ghost" data-close>Отмена</button>
+        <button type="submit" class="btn green">Добавить →</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TransAsia — логистика в Ташкенте | Главная</title>
+  <meta name="description" content="TransAsia — грузовые перевозки из Ташкента: авто, авиа, ж/д, склад и таможня. Калькулятор доставки.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ДЕМО-плашка: только на главной, при натяжке на CMS удалить -->
+  <div class="demo-bar">ДЕМО • Многостраничник • главная 0,8–1,5 млн + внутр. 200–450 тыс • CMS-ready • Эдуард Журавлёв <a href="https://t.me/mkdir16">t.me/mkdir16</a></div>
+
+  <!-- сюда натянуть ACF: header — Options Page / Tilda Zero Block: Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="header__logo" href="index.html">Trans<span>Asia</span><small class="header__tag">логистика • Ташкент</small></a>
+      <nav class="nav header__nav" id="nav" aria-label="Основная навигация">
+        <a class="nav__link nav__link--active" href="index.html">Главная</a>
+        <a class="nav__link" href="services.html">Услуги</a>
+        <a class="nav__link" href="about.html">О компании</a>
+        <a class="nav__link" href="contacts.html">Контакты</a>
+      </nav>
+      <a class="header__phone" href="tel:+998935076473">+998 93 507-64-73</a>
+      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- сюда натянуть ACF: hero — Flexible Content главной -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <span class="hero__badge">Ташкент • с 2013 года • юр. лицам и ИП</span>
+        <h1 class="hero__title">Доставим груз из Ташкента <span>за 1–7 дней</span> без срывов</h1>
+        <p class="hero__text">Авто, авиа и ж/д перевозки по Узбекистану, СНГ и Азии. Склад, страховка и таможенное оформление под ключ.</p>
+        <div class="hero__actions">
+          <a class="btn" href="contacts.html">Оставить заявку</a>
+          <a class="btn btn--ghost" href="#calc">Рассчитать цену</a>
+        </div>
+      </div>
+      <div class="hero__card">
+        <h3>Ближайшие отправки</h3>
+        <!-- сюда натянуть ACF: hero__routes — Repeater -->
+        <ul class="hero__list">
+          <li>Ташкент → Москва — <b>ежедневно</b>, от 3 дней</li>
+          <li>Ташкент → Алматы — <b>пн / ср / пт</b>, от 1 дня</li>
+          <li>Ташкент → Стамбул (авиа) — <b>вт / сб</b>, от 2 дней</li>
+          <li>По Ташкенту — <b>день в день</b></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Цифры-счётчики -->
+  <div class="stats">
+    <div class="container stats__grid">
+      <!-- сюда натянуть ACF: stats — Repeater (число + подпись) -->
+      <div class="stats__item"><div class="stats__num"><span data-count="12">0</span><i>+</i></div><div class="stats__label">лет на рынке</div></div>
+      <div class="stats__item"><div class="stats__num"><span data-count="4800">0</span><i>+</i></div><div class="stats__label">доставок в год</div></div>
+      <div class="stats__item"><div class="stats__num"><span data-count="320">0</span><i>+</i></div><div class="stats__label">постоянных клиентов</div></div>
+      <div class="stats__item"><div class="stats__num"><span data-count="98">0</span><i>%</i></div><div class="stats__label">привозим в срок</div></div>
+    </div>
+  </div>
+
+  <!-- Услуги кратко -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title">Услуги коротко</h2>
+        <p class="section__sub">4 самых частых запроса. Все 6 направлений — на странице «Услуги».</p>
+      </div>
+      <div class="grid-4">
+        <!-- сюда натянуть ACF: services_preview — Relationship к услугам -->
+        <article class="card"><div class="card__icon">🚚</div><h3 class="card__title">Автоперевозки</h3><p class="card__text">Фуры и газели по Узбекистану и СНГ от 1 дня.</p><div class="card__price">от 450 000 сум</div><a class="card__link" href="services.html">Подробнее →</a></article>
+        <article class="card"><div class="card__icon">✈️</div><h3 class="card__title">Авиадоставка</h3><p class="card__text">Стамбул, Дубай, Пекин — от 2 дней с страховкой.</p><div class="card__price">от 120 000 сум/кг</div><a class="card__link" href="services.html">Подробнее →</a></article>
+        <article class="card"><div class="card__icon">🚂</div><h3 class="card__title">Ж/д и сборные</h3><p class="card__text">Выгодно для 500+ кг: Москва, Казань, Алматы.</p><div class="card__price">от 45 000 сум/кг</div><a class="card__link" href="services.html">Подробнее →</a></article>
+        <article class="card"><div class="card__icon">📦</div><h3 class="card__title">Склад + таможня</h3><p class="card__text">Хранение в Ташкенте и оформление ГТД за 1 день.</p><div class="card__price">от 300 000 сум</div><a class="card__link" href="services.html">Подробнее →</a></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Калькулятор -->
+  <section class="section" id="calc" style="padding-top:0">
+    <div class="container">
+      <div class="calc">
+        <div class="calc__form">
+          <h2 class="section__title section__title--light">Калькулятор доставки</h2>
+          <p style="color:#c9d6e8;font-size:14px">Цена считается live в сумах. Точный тариф подтвердит менеджер.</p>
+          <label class="calc__label" for="calcDir">Направление</label>
+          <select class="calc__select" id="calcDir">
+            <option value="15000|150000">По Ташкенту — 15 000 сум/кг</option>
+            <option value="45000|250000">Ташкент → Алматы — 45 000 сум/кг</option>
+            <option value="95000|350000" selected>Ташкент → Москва — 95 000 сум/кг</option>
+            <option value="120000|400000">Ташкент → Стамбул (авиа) — 120 000 сум/кг</option>
+            <option value="135000|450000">Ташкент → Пекин (авиа) — 135 000 сум/кг</option>
+          </select>
+          <label class="calc__label" for="calcWeight">Вес: <b id="calcWeightVal">100 кг</b></label>
+          <input class="calc__range" type="range" id="calcWeight" min="1" max="1000" value="100">
+          <label class="calc__label"><input type="checkbox" id="calcIns"> + страховка 2% от стоимости груза</label>
+        </div>
+        <div class="calc__result">
+          <div style="font-size:14px;color:var(--muted)">Предварительная цена</div>
+          <div class="calc__result-price" id="calcPrice">0 сум</div>
+          <div class="calc__note" id="calcNote">Срок: 3–4 дня • скидка 10% от 500 кг уже учтена</div>
+          <br><a class="btn" href="contacts.html">Заказать по этой цене</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Отзывы -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title">Отзывы клиентов</h2>
+        <p class="section__sub">При натяжке на WP — слайдер / ACF Repeater, на Tilda — Zero Block «Отзывы».</p>
+      </div>
+      <div class="grid-3">
+        <div class="review"><div class="review__stars">★★★★★</div><p class="review__text">«Везли 800 кг текстиля в Москву. Пришло за 3 дня, все коробки целы. Теперь только с ними.»</p><div class="review__author">Дилшод К. — оптовый склад, Ташкент</div></div>
+        <div class="review"><div class="review__stars">★★★★★</div><p class="review__text">«Срочно нужен был авиафрахт Стамбул–Ташкент. Посчитали за 10 минут, назавтра груз был у нас.»</p><div class="review__author">Anna P. — интернет-магазин</div></div>
+        <div class="review"><div class="review__stars">★★★★☆</div><p class="review__text">«Храним сезонный товар на их складе + они же развозят по городу. Удобно, один договор.»</p><div class="review__author">Тимур А. — дистрибуция</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="cta">
+        <div><h2 class="cta__title">Нужна доставка уже завтра?</h2><p class="cta__text">Позвоните — подберём машину и зафиксируем цену сегодня.</p></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="tel:+998935076473">+998 93 507-64-73</a>
+          <a class="btn btn--ghost" style="border-color:var(--primary);color:var(--primary)" href="contacts.html">Написать заявку</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- сюда натянуть ACF: footer — Options Page / Tilda Zero Block: Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div><a class="footer__logo" href="index.html">Trans<span>Asia</span></a><p style="font-size:14px;margin-top:8px">Логистика из Ташкента с 2013 года.<br>г. Ташкент, ул. Навои, 12</p></div>
+      <div><div class="footer__title">Навигация</div><ul class="footer__links"><li><a href="index.html">Главная</a></li><li><a href="services.html">Услуги</a></li><li><a href="about.html">О компании</a></li><li><a href="contacts.html">Контакты</a></li></ul></div>
+      <div><div class="footer__title">Связаться</div><ul class="footer__links"><li><a href="tel:+998935076473">+998 93 507-64-73</a></li><li><a href="mailto:info@transasia.uz">info@transasia.uz</a></li><li>Пн–Сб, 9:00–19:00</li></ul></div>
+    </div>
+    <div class="container footer__bottom"><span>© 2026 TransAsia • Демо-верстка</span><span>Эдуард Журавлёв • <a style="color:#fff" href="https://t.me/mkdir16">t.me/mkdir16</a></span></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

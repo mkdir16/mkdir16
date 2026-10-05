@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Курс HTML + CSS с нуля — SkillUp Ташкент. Программа из 8 модулей, тарифы, преподаватель, запись.">
+  <title>HTML + CSS с нуля — страница курса | SkillUp</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Навигация на 10 страниц: компактные ссылки + прокрутка мобильного меню */
+    .nav__link { padding: 10px 12px; font-size: 14px; }
+    .nav--open { max-height: calc(100vh - var(--header-h)); overflow-y: auto; }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="index.html" aria-label="SkillUp на главную">
+        <span class="logo__badge">🎓</span>
+        <span class="logo__text">SkillUp<small>Ташкент • LMS</small></span>
+      </a>
+      <nav class="nav" data-nav aria-label="Основная навигация">
+        <a class="nav__link" href="index.html">Главная</a>
+        <a class="nav__link" href="courses.html">Каталог</a>
+        <a class="nav__link nav__link--active" href="course.html">Курс</a>
+        <a class="nav__link" href="cabinet.html">Кабинет</a>
+        <a class="nav__link" href="teachers.html">Учителя</a>
+        <a class="nav__link" href="schedule.html">Расписание</a>
+        <a class="nav__link" href="news.html">Новости</a>
+        <a class="nav__link" href="about.html">О школе</a>
+        <a class="nav__link" href="contacts.html">Контакты</a>
+        <a class="nav__link" href="faq.html">FAQ</a>
+      </nav>
+      <a class="header__phone" href="tel:+998935076473">📞 +998 93 507-64-73</a>
+      <button class="burger" data-burger aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs"><a href="index.html">Главная</a> / <a href="courses.html">Каталог</a> / HTML + CSS</div>
+      <span class="eyebrow">🧱 Вёрстка • Beginner • Ташкент + онлайн</span>
+      <h1>HTML + CSS с нуля до Junior</h1>
+      <p style="color:#b9bde0; max-width:680px">4 месяца • 32 занятия • 5 сайтов в портфолио • помощь со стажировкой. Подходит школьникам, студентам и тем, кто меняет профессию.</p>
+      <p>
+        <span class="hero__chip">⏱ 4 месяца</span>
+        <span class="hero__chip">📊 С нуля</span>
+        <span class="hero__chip">👥 320 выпускников</span>
+        <span class="hero__chip">⭐ 4.9 / 5</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-2" style="align-items:start">
+      <div>
+        <h2 id="program">📖 Программа: 8 модулей</h2>
+        <p class="muted">Нажмите на модуль, чтобы раскрыть темы. Аккордеон на чистом JS (<code>data-acc</code>).</p>
+
+        <div class="accordion">
+          <div class="acc" data-acc>
+            <button class="acc__btn" data-acc-btn aria-expanded="false"><span>01 🧱 Основы HTML: семантика и формы</span><span class="acc__icon">＋</span></button>
+            <div class="acc__panel" data-acc-panel><div class="acc__inner">
+              <p>12 уроков • 2 недели. Учимся думать как верстальщик.</p>
+              <ul><li>Теги, атрибуты, семантика: header, main, section</li><li>Ссылки, картинки, таблицы, формы</li><li>Практика: страница-визитка + форма записи</li></ul>
+            </div></div>
+          </div>
+          <div class="acc" data-acc>
+            <button class="acc__btn" data-acc-btn aria-expanded="false"><span>02 🎨 Основы CSS: селекторы и каскад</span><span class="acc__icon">＋</span></button>
+            <div class="acc__panel" data-acc-panel><div class="acc__inner">
+              <p>10 уроков • 2 недели.</p>
+              <ul><li>Селекторы, специфичность, наследование</li><li>Шрифты, цвета, фон, единицы rem/em</li><li>Практика: стилизация лендинга SkillUp</li></ul>
+            </div></div>
+          </div>
+          <div class="acc" data-acc>
+            <button class="acc__btn" data-acc-btn aria-expanded="false"><span>03 📦 Блочная модель и позиционирование</span><span class="acc__icon">＋</span></button>
+            <div class="acc__panel" data-acc-panel><div class="acc__inner">
+              <p>8 уроков • 2 недели.</p>
+              <ul><li>margin / padding / border / box-sizing</li><li>position, z-index, sticky-шапки</li><li>Практика: карточки курсов + модалка</li></ul>
+            </div></div>
+          </div>
+          <div class="acc" data-acc>
+            <button class="acc__btn" data-acc-btn aria-expanded="false"><span>04 🌀 Flexbox и Grid с нуля до уверенности</span><span class="acc__icon">＋</span></button>
+            <div class="acc__panel" data-acc-panel><div class="acc__inner">
+              <p>12 уроков • 3 недели. Сердце современной вёрстки.</p>
+              <ul><li>Flex: оси, выравнивание, перенос</li><li>Grid: колонки, области, minmax()</li><li>Практика: каталог LMS + личный кабинет</li></ul>
+            </div></div>
+          </div>
+          <div class="acc" data-acc>
+            <button class="acc__btn" data-acc-btn aria-expanded="false"><span>05 📱 Адаптив: mobile-first и @media 768px</span><span class="acc__icon">＋</span></button>
+            <div class="acc__panel" data-acc-panel><div class="acc__inner">
+              <p>10 уроков • 2 недели.</p>
+              <ul><li>Viewport, медиазапросы, брейкпоинты</li><li>Бургер-меню на JS, резиновые сетки</li><li>Практика: адаптация 3 страниц LMS</li></ul>
+            </div></div>
+          </div>
+          <div class="acc" data-acc>
+            <button class="acc__btn" data-acc-btn aria-expanded="false"><span>06 ✨ Анимации, Bootstrap и БЭМ</span><span class="acc__icon">＋</span></button>
+            <div class="acc__panel" data-acc-panel><div class="acc__inner">
+              <p>8 уроков • 2 недели.</p>
+              <ul><li>transition, transform, keyframes</li><li>Bootstrap-сетка, компоненты</li><li>Методология БЭМ, организация CSS</li></ul>
+            </div></div>
+          </div>
+          <div class="acc" data-acc>
+            <button class="acc__btn" data-acc-btn aria-expanded="false"><span>07 ⚙️ JS для верстальщика + Git</span><span class="acc__icon">＋</span></button>
+            <div class="acc__panel" data-acc-panel><div class="acc__inner">
+              <p>10 уроков • 2 недели.</p>
+              <ul><li>Бургер, фильтры, поиск, аккордеон, localStorage</li><li>Git: коммиты, ветки, GitHub Pages</li><li>Практика: оживление всех страниц LMS</li></ul>
+            </div></div>
+          </div>
+          <div class="acc" data-acc>
+            <button class="acc__btn" data-acc-btn aria-expanded="false"><span>08 💼 Диплом и трудоустройство</span><span class="acc__icon">＋</span></button>
+            <div class="acc__panel" data-acc-panel><div class="acc__inner">
+              <p>2 недели: портфолио + карьера.</p>
+              <ul><li>5 сайтов: лендинг, каталог, LMS, магазин, портфолио</li><li>Резюме, Behance/GitHub, мок-собеседование</li><li>Стажировки у партнёров в Ташкенте</li></ul>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="cab-card mt">
+          <h3>🎯 Что получите на выходе</h3>
+          <ul class="muted">
+            <li>5 адаптивных сайтов в портфолио;</li>
+            <li>Уверенные Flexbox / Grid / @media;</li>
+            <li>Git + GitHub + деплой на хостинг;</li>
+            <li>Сертификат SkillUp + рекомендация.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <!-- ТАРИФЫ -->
+        <h2 id="tariffs">💳 Тарифы</h2>
+        <div class="tariffs" style="grid-template-columns:1fr">
+          <div class="tariff">
+            <h3>Стандарт 🧑‍💻</h3>
+            <div class="tariff__price">690 000 сум</div>
+            <p class="muted">или 172 500 сум × 4 мес • онлайн</p>
+            <ul>
+              <li>32 живых занятия (Zoom);</li>
+              <li>Проверка домашки за 24 часа;</li>
+              <li>Доступ к кабинету навсегда;</li>
+              <li>Чат группы + сертификат.</li>
+            </ul>
+            <a class="btn btn--ghost btn--block" href="#enroll">Выбрать Стандарт</a>
+          </div>
+          <div class="tariff tariff--hit">
+            <span class="tariff__badge">ХИТ • −15%</span>
+            <h3>Профи с наставником 🚀</h3>
+            <div class="tariff__price">1 190 000 сум <small style="font-size:14px; color:#6b7194"><s>1 400 000</s></small></div>
+            <p class="muted">или 198 000 сум × 6 мес • офлайн + онлайн</p>
+            <ul>
+              <li>Всё из «Стандарта»;</li>
+              <li>Личный наставник 1-на-1;</li>
+              <li>3 дополнительных проекта;</li>
+              <li>Гарантия стажировки в Ташкенте.</li>
+            </ul>
+            <a class="btn btn--primary btn--block" href="#enroll">Выбрать Профи</a>
+          </div>
+        </div>
+
+        <!-- ПРЕПОДАВАТЕЛЬ -->
+        <h2 class="mt">👨‍🏫 Преподаватель</h2>
+        <div class="teacher">
+          <div class="teacher__photo">👨‍💻</div>
+          <div>
+            <h3 style="margin-bottom:4px">Тимур Хакимов</h3>
+            <p class="muted" style="font-size:14px">Frontend-разработчик • 7 лет опыта • ex-Uzum</p>
+            <p>Сверстал 80+ сайтов, ведёт потоки с 2021 года. Ученики работают в Payme, Click, веб-студиях Ташкента.</p>
+            <p><span class="pill">⭐ 4.9 рейтинг</span> <span class="pill">👥 900+ учеников</span></p>
+          </div>
+        </div>
+
+        <!-- ЗАПИСЬ -->
+        <div class="cta__box mt" id="enroll" style="border:2px solid #e7e9f5">
+          <form class="form" data-demo-form>
+            <h3 style="margin-top:0">📝 Записаться на курс</h3>
+            <p class="muted" style="font-size:14px">Оставьте заявку — перезвоним с <b>+998 93 507-64-73</b> за 15 минут.</p>
+            <label for="enroll-name">Имя</label>
+            <input id="enroll-name" name="name" type="text" placeholder="Ваше имя" required>
+            <label for="enroll-phone">Телефон</label>
+            <input id="enroll-phone" name="phone" type="tel" placeholder="+998 __ ___-__-__" required>
+            <label for="enroll-tariff">Тариф</label>
+            <select id="enroll-tariff" name="tariff">
+              <option>Стандарт — 690 000 сум</option>
+              <option>Профи с наставником — 1 190 000 сум</option>
+            </select>
+            <button class="btn btn--primary btn--block mt" type="submit">Отправить заявку</button>
+            <p data-form-msg style="display:none; margin-top:12px; font-weight:700; color:#15803d"></p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Расписание -->
+  <section class="section section--dark">
+    <div class="container">
+      <h2>🗓 Ближайшие потоки в Ташкенте</h2>
+      <div class="numbers" style="grid-template-columns:repeat(3,1fr)">
+        <div class="number-card" style="text-align:left"><b style="font-size:20px">🌙 Вечерняя • онлайн</b><span>Старт 14 октября • Пн/Ср/Пт 19:00 • осталось 6 мест</span></div>
+        <div class="number-card" style="text-align:left"><b style="font-size:20px">☀️ Дневная • офлайн</b><span>Старт 21 октября • Вт/Чт/Сб 11:00 • кампус Амира Темура, 15</span></div>
+        <div class="number-card" style="text-align:left"><b style="font-size:20px">👶 Школьная • 12–16 лет</b><span>Старт 1 ноября • Сб/Вс 10:00 • осталось 9 мест</span></div>
+      </div>
+      <p class="mt"><a class="btn btn--accent" href="#enroll">Занять место</a> <a class="btn btn--light" href="cabinet.html">Посмотреть кабинет студента</a></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="logo" href="index.html" style="color:#fff"><span class="logo__badge">🎓</span><span class="logo__text" style="color:#fff">SkillUp<small style="color:#b9bde0">Ташкент • LMS</small></span></a>
+          <p style="margin-top:12px">Онлайн-школа: дизайн, вёрстка, Python, английский.</p>
+          <p>📞 <a href="tel:+998935076473">+998 93 507-64-73</a><br>📍 Ташкент, ул. Амира Темура, 15</p>
+        </div>
+        <div>
+          <h4>Навигация</h4>
+          <p><a href="index.html">Главная</a><br><a href="courses.html">Каталог</a><br><a href="course.html">Курс</a><br><a href="cabinet.html">Кабинет</a><br><a href="teachers.html">Учителя</a><br><a href="schedule.html">Расписание</a><br><a href="news.html">Новости</a><br><a href="about.html">О школе</a><br><a href="contacts.html">Контакты</a><br><a href="faq.html">FAQ</a></p>
+        </div>
+        <div>
+          <h4>Направления</h4>
+          <p><a href="courses.html">Дизайн</a><br><a href="courses.html">Вёрстка</a><br><a href="courses.html">Python</a><br><a href="courses.html">Английский</a></p>
+        </div>
+        <div>
+          <h4>Студентам</h4>
+          <p><a href="cabinet.html">Прогресс</a><br><a href="#tariffs">Тарифы</a><br><a href="#program">Программа</a><br><a href="tel:+998935076473">Поддержка</a></p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> SkillUp Ташкент • Демо-проект для портфолио</span>
+        <span>Вёрстка: Эдуард Журавлёв • t.me/mkdir16 • Цены в сумах (UZS)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

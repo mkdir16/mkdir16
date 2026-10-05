@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Личный кабинет студента SkillUp: прогресс курсов, продолжение уроков, достижения, настройки.">
+  <title>Личный кабинет — SkillUp</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Навигация на 10 страниц: компактные ссылки + прокрутка мобильного меню */
+    .nav__link { padding: 10px 12px; font-size: 14px; }
+    .nav--open { max-height: calc(100vh - var(--header-h)); overflow-y: auto; }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="index.html" aria-label="SkillUp на главную">
+        <span class="logo__badge">🎓</span>
+        <span class="logo__text">SkillUp<small>Ташкент • LMS</small></span>
+      </a>
+      <nav class="nav" data-nav aria-label="Основная навигация">
+        <a class="nav__link" href="index.html">Главная</a>
+        <a class="nav__link" href="courses.html">Каталог</a>
+        <a class="nav__link" href="course.html">Курс</a>
+        <a class="nav__link nav__link--active" href="cabinet.html">Кабинет</a>
+        <a class="nav__link" href="teachers.html">Учителя</a>
+        <a class="nav__link" href="schedule.html">Расписание</a>
+        <a class="nav__link" href="news.html">Новости</a>
+        <a class="nav__link" href="about.html">О школе</a>
+        <a class="nav__link" href="contacts.html">Контакты</a>
+        <a class="nav__link" href="faq.html">FAQ</a>
+      </nav>
+      <a class="header__phone" href="tel:+998935076473">📞 +998 93 507-64-73</a>
+      <button class="burger" data-burger aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs"><a href="index.html">Главная</a> / Личный кабинет</div>
+      <h1>👋 Привет, Эдуард! Продолжим?</h1>
+      <p style="color:#b9bde0">Общий прогресс: <b data-overall-label>0%</b> • streak: 🔥 12 дней • Ташкент, <span id="todayLabel">сегодня</span></p>
+      <div class="progress" style="max-width:520px; background:rgba(255,255,255,.2)">
+        <div class="progress__bar" data-overall-bar style="width:0%"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cab-grid">
+
+      <!-- Сайдбар -->
+      <aside class="cab-side">
+        <div class="cab-side__ava">🧑‍💻</div>
+        <h3 style="margin:12px 0 2px">Эдуард Журавлёв</h3>
+        <p class="muted" style="font-size:14px">Тариф «Профи» • Ташкент • t.me/mkdir16</p>
+        <p><span class="pill">🎓 2 курса активны</span></p>
+        <hr style="border:0; border-top:1px solid #e7e9f5; margin:16px 0">
+        <p><b>📞 Наставник:</b> Тимур Х.<br><span class="muted" style="font-size:14px">на связи в чате 10:00–19:00</span></p>
+        <p><b>💳 Баланс:</b> оплачено до 1 ноября<br><span class="muted" style="font-size:14px">следующий платёж 172 500 сум</span></p>
+        <a class="btn btn--primary btn--block btn--sm" href="courses.html">Купить курс</a>
+        <button class="btn btn--ghost btn--block btn--sm mt" data-reset-all type="button">↺ Сбросить весь прогресс</button>
+        <p class="muted mt" style="font-size:13px">Прогресс хранится в <code>localStorage</code> (ключ <code>skillup_progress_v1</code>). Обновите страницу — данные сохранятся.</p>
+      </aside>
+
+      <!-- Контент -->
+      <div>
+        <!-- Мои курсы -->
+        <div class="cab-card" data-progress-id="html-css">
+          <div style="display:flex; justify-content:space-between; gap:10px; align-items:center; flex-wrap:wrap">
+            <h3 style="margin:0">🧱 HTML + CSS с нуля — <span data-progress-label>0%</span></h3>
+            <span class="pill">идёт сейчас</span>
+          </div>
+          <div class="progress mt"><div class="progress__bar" data-progress-bar style="width:0%"></div></div>
+          <div class="lesson-row"><span>▶ Урок 13: Адаптивная вёрстка — @media 768px</span><button class="btn btn--dark btn--sm" data-continue="html-css" type="button">Продолжить (+10%)</button></div>
+          <div class="lesson-row"><span>✅ Урок 12: Grid-раскладка каталога</span><span class="muted">пройден</span></div>
+          <div class="lesson-row"><span>🔒 Урок 14: Бургер-меню на JS</span><button class="btn btn--ghost btn--sm" data-reset="html-css" type="button">Сбросить</button></div>
+        </div>
+
+        <div class="cab-card" data-progress-id="python-start">
+          <div style="display:flex; justify-content:space-between; gap:10px; align-items:center; flex-wrap:wrap">
+            <h3 style="margin:0">🐍 Python-разработка — <span data-progress-label>0%</span></h3>
+            <span class="pill">идёт сейчас</span>
+          </div>
+          <div class="progress mt"><div class="progress__bar" data-progress-bar style="width:0%"></div></div>
+          <div class="lesson-row"><span>▶ Урок 9: Циклы и функции</span><button class="btn btn--dark btn--sm" data-continue="python-start" type="button">Продолжить (+10%)</button></div>
+          <div class="lesson-row"><span>✅ Урок 8: Словари и множества</span><span class="muted">пройден</span></div>
+          <div class="lesson-row"><span>🔒 Урок 10: Telegram-бот: первый запуск</span><button class="btn btn--ghost btn--sm" data-reset="python-start" type="button">Сбросить</button></div>
+        </div>
+
+        <div class="cab-card" data-progress-id="figma-design">
+          <div style="display:flex; justify-content:space-between; gap:10px; align-items:center; flex-wrap:wrap">
+            <h3 style="margin:0">🎨 UX/UI в Figma — <span data-progress-label>0%</span></h3>
+            <span class="pill">почти готово</span>
+          </div>
+          <div class="progress mt"><div class="progress__bar" data-progress-bar style="width:0%"></div></div>
+          <div class="lesson-row"><span>▶ Урок 21: Прототип интернет-магазина</span><button class="btn btn--dark btn--sm" data-continue="figma-design" type="button">Продолжить (+10%)</button></div>
+          <div class="lesson-row"><span>✅ Урок 20: Автолейауты</span><span class="muted">пройден</span></div>
+          <div class="lesson-row"><span>🔒 Урок 22: Защита кейса</span><button class="btn btn--ghost btn--sm" data-reset="figma-design" type="button">Сбросить</button></div>
+        </div>
+
+        <div class="cab-card" data-progress-id="english-a2">
+          <div style="display:flex; justify-content:space-between; gap:10px; align-items:center; flex-wrap:wrap">
+            <h3 style="margin:0">🇬🇧 Английский для IT — <span data-progress-label>0%</span></h3>
+            <span class="pill">новый</span>
+          </div>
+          <div class="progress mt"><div class="progress__bar" data-progress-bar style="width:0%"></div></div>
+          <div class="lesson-row"><span>▶ Урок 4: Present Simple для stand-up'ов</span><button class="btn btn--dark btn--sm" data-continue="english-a2" type="button">Продолжить (+10%)</button></div>
+          <div class="lesson-row"><span>✅ Урок 3: IT-лексика: deploy, commit</span><span class="muted">пройден</span></div>
+          <div class="lesson-row"><span>🔒 Урок 5: Speaking Club: my project</span><button class="btn btn--ghost btn--sm" data-reset="english-a2" type="button">Сбросить</button></div>
+        </div>
+
+        <!-- Достижения -->
+        <div class="cab-card">
+          <h3>🏆 Достижения</h3>
+          <p class="muted">Собрано 4 из 8 • следующий: «Верстальщик 80%» — дожмите HTML + CSS!</p>
+          <div class="ach">
+            <div class="ach__item"><div class="ach__emoji">🔥</div><b>Streak 12</b><br><small class="muted">12 дней подряд</small></div>
+            <div class="ach__item"><div class="ach__emoji">🧱</div><b>Flex-мастер</b><br><small class="muted">10 сеток на Flex</small></div>
+            <div class="ach__item"><div class="ach__emoji">🐍</div><b>Первый бот</b><br><small class="muted">aiogram запущен</small></div>
+            <div class="ach__item"><div class="ach__emoji">🎨</div><b>Figma PRO</b><br><small class="muted">20 макетов</small></div>
+            <div class="ach__item ach__item--locked"><div class="ach__emoji">🚀</div><b>Верстальщик 80%</b><br><small class="muted">закрыто</small></div>
+            <div class="ach__item ach__item--locked"><div class="ach__emoji">💬</div><b>Speaker</b><br><small class="muted">закрыто</small></div>
+            <div class="ach__item ach__item--locked"><div class="ach__emoji">💼</div><b>Оффер</b><br><small class="muted">закрыто</small></div>
+            <div class="ach__item ach__item--locked"><div class="ach__emoji">👑</div><b>Fullstack</b><br><small class="muted">закрыто</small></div>
+          </div>
+        </div>
+
+        <!-- Расписание -->
+        <div class="cab-card">
+          <h3>🗓 Моё расписание</h3>
+          <div class="lesson-row"><span><b>Ср, 8 окт • 19:00</b> — Вёрстка: разбор домашки (Zoom)</span><span class="pill">онлайн</span></div>
+          <div class="lesson-row"><span><b>Чт, 9 окт • 18:00</b> — Python: функции (кампус, Амира Темура 15)</span><span class="pill">офлайн</span></div>
+          <div class="lesson-row"><span><b>Сб, 11 окт • 10:00</b> — Speaking Club (Zoom)</span><span class="pill">онлайн</span></div>
+        </div>
+
+        <!-- Настройки-заглушка -->
+        <div class="cab-card">
+          <h3>⚙️ Настройки (демо-заглушка)</h3>
+          <p class="muted">Форма никуда не отправляется — показывает уровень вёрстки форм для портфолио.</p>
+          <form class="form grid-2" data-demo-form>
+            <div>
+              <label for="set-name">Имя</label>
+              <input id="set-name" name="name" type="text" value="Эдуард">
+              <label for="set-city">Город</label>
+              <input id="set-city" name="city" type="text" value="Ташкент">
+              <label for="set-lang">Язык интерфейса</label>
+              <select id="set-lang" name="lang"><option>Русский</option><option>O'zbekcha</option><option>English</option></select>
+            </div>
+            <div>
+              <label for="set-phone">Телефон</label>
+              <input id="set-phone" name="phone" type="tel" value="+998 93 507-64-73">
+              <label for="set-goal">Цель</label>
+              <select id="set-goal" name="goal"><option>Трудоустройство</option><option>Фриланс</option><option>Для себя</option></select>
+              <label style="margin-top:14px"><input type="checkbox" checked style="width:auto"> Присылать напоминания об уроках</label>
+              <label><input type="checkbox" checked style="width:auto"> Показывать мой прогресс наставнику</label>
+            </div>
+            <div style="grid-column:1/-1">
+              <button class="btn btn--primary" type="submit">Сохранить настройки</button>
+              <p data-form-msg style="display:none; margin-top:12px; font-weight:700; color:#15803d"></p>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="logo" href="index.html" style="color:#fff"><span class="logo__badge">🎓</span><span class="logo__text" style="color:#fff">SkillUp<small style="color:#b9bde0">Ташкент • LMS</small></span></a>
+          <p style="margin-top:12px">Онлайн-школа: дизайн, вёрстка, Python, английский.</p>
+          <p>📞 <a href="tel:+998935076473">+998 93 507-64-73</a><br>📍 Ташкент, ул. Амира Темура, 15</p>
+        </div>
+        <div>
+          <h4>Навигация</h4>
+          <p><a href="index.html">Главная</a><br><a href="courses.html">Каталог</a><br><a href="course.html">Курс</a><br><a href="cabinet.html">Кабинет</a><br><a href="teachers.html">Учителя</a><br><a href="schedule.html">Расписание</a><br><a href="news.html">Новости</a><br><a href="about.html">О школе</a><br><a href="contacts.html">Контакты</a><br><a href="faq.html">FAQ</a></p>
+        </div>
+        <div>
+          <h4>Направления</h4>
+          <p><a href="courses.html">Дизайн</a><br><a href="courses.html">Вёрстка</a><br><a href="courses.html">Python</a><br><a href="courses.html">Английский</a></p>
+        </div>
+        <div>
+          <h4>Студентам</h4>
+          <p><a href="cabinet.html">Прогресс</a><br><a href="course.html#tariffs">Тарифы</a><br><a href="course.html#program">Программа</a><br><a href="tel:+998935076473">Поддержка</a></p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> SkillUp Ташкент • Демо-проект для портфолио</span>
+        <span>Вёрстка: Эдуард Журавлёв • t.me/mkdir16 • Цены в сумах (UZS)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Подпись даты в кабинете
+    (function () {
+      var el = document.getElementById('todayLabel');
+      if (el) {
+        try {
+          el.textContent = new Date().toLocaleDateString('ru-RU', { day: 'numeric', month: 'long' });
+        } catch (e) { el.textContent = 'сегодня'; }
+      }
+    })();
+  </script>
+</body>
+</html>

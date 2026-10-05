@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bazaar — Оформление заказа</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="demo">ДЕМО • Маркетплейс • каталог + корзина + заказ • Эдуард Журавлёв t.me/mkdir16</div>
+<header class="header"><div class="container header__inner">
+<a class="logo" href="index.html">🛍️ <span>Bazaar</span></a>
+<nav class="nav" id="nav">
+<a href="index.html">Главная</a><a href="catalog.html">Каталог</a><a href="product.html">Товар</a><a href="cart.html">Корзина</a><a href="checkout.html" class="active">Оформление</a><a href="cabinet.html">Кабинет</a><a href="favorites.html">Избранное</a><a href="sellers.html">Продавцы</a><a href="promo.html">Акции</a><a href="help.html">Помощь</a>
+</nav>
+<div class="header__right">
+<a class="phone" href="tel:+998935076473">+998 93 507-64-73</a>
+<a class="cart-btn" href="cart.html">🛒 <b id="cartCount">0</b></a>
+<button class="burger" id="burger">☰</button>
+</div></div></header>
+
+<main class="container">
+<section class="section" style="max-width:680px;margin-left:auto;margin-right:auto">
+<h2>Оформление заказа 📦</h2>
+<p class="small">К оплате: <b id="coTotal">0 сум</b></p><br>
+<form class="form-card" id="orderForm" novalidate>
+<div><label>Имя *</label><input id="cName" placeholder="Например: Эдуард"><div class="err" id="eName"></div></div>
+<div><label>Телефон *</label><input id="cPhone" placeholder="+998 93 507-64-73"><div class="err" id="ePhone"></div></div>
+<div><label>Адрес доставки *</label><textarea id="cAddr" rows="2" placeholder="Ташкент, ул. Амира Темура, дом 10, кв. 5"></textarea><div class="err" id="eAddr"></div></div>
+<div><label>Комментарий</label><input placeholder="Позвонить за час (необязательно)"></div>
+<h3 style="margin:12px 0 4px">Способ оплаты</h3>
+<div class="pay">
+<label class="on"><input type="radio" name="pay" value="Click" checked>💳<br>Click</label>
+<label><input type="radio" name="pay" value="Payme">💚<br>Payme</label>
+<label><input type="radio" name="pay" value="Наличные">💵<br>Наличные</label>
+</div>
+<div id="cardBox" style="display:block"><label>Карта (если Click/Payme)</label><input placeholder="8600 •••• •••• ••••"></div>
+<button class="btn btn-accent btn-block" style="margin-top:14px" type="submit">Подтвердить заказ ✅</button>
+<p class="small" style="margin-top:8px">Нажимая кнопку, вы соглашаетесь с демо-условиями. Валидация на JS: имя, телефон, адрес.</p>
+</form>
+</section>
+</main>
+
+<div class="modal" id="modal"><div class="modal__box">
+<i>🎉</i><h2>Заказ принят!</h2>
+<p>Номер заказа: <b id="orderNum">BZ-0000</b><br>Мы перезвоним на ваш номер в течение 15 минут.<br>Тел. магазина: +998 93 507-64-73</p><br>
+<button class="btn btn-primary btn-block" id="modalClose">Перейти в кабинет →</button>
+</div></div>
+
+<footer class="footer"><div class="container footer__grid">
+<div><h4>🛍️ Bazaar</h4><p>Оформление: валидация + модалка + сохранение в кабинет.</p></div>
+<div><h4>Навигация</h4><a href="cart.html">Корзина</a><a href="favorites.html">Избранное</a><a href="promo.html">Акции</a><a href="help.html">Помощь</a><a href="cabinet.html">Кабинет</a></div>
+<div><h4>Контакты</h4><a href="tel:+998935076473">+998 93 507-64-73</a><a href="#">t.me/mkdir16 • Эдуард Журавлёв</a></div>
+</div></footer>
+<script src="script.js"></script>
+</body>
+</html>

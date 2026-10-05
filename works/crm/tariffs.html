@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SotuvPro CRM — Тарифы | 0 / 299 000 / 790 000 сум</title>
+<meta name="description" content="Тарифы SotuvPro в сумах: Start 0, Pro 299 000, Biznes 790 000. Переключатель мес/год −20%.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brand-logo">📊</div><div><b>SotuvPro</b><small>CRM • Ташкент</small></div></div>
+    <nav class="nav">
+      <a href="index.html">📈 Дашборд</a>
+      <a href="leads.html">📋 Заявки</a>
+      <a href="deals.html">💼 Сделки</a>
+      <a href="clients.html">👥 Клиенты</a>
+      <a href="calendar.html">📅 Календарь</a>
+      <a href="reports.html">📊 Отчёты</a>
+      <a href="chat.html">💬 Чат</a>
+      <a href="tariffs.html" class="active">💳 Тарифы</a>
+      <a href="settings.html">⚙️ Настройки</a>
+      <a href="help.html">❓ Помощь</a>
+    </nav>
+    <div class="side-card"><h4>📞 Отдел продаж</h4><p>+998 93 507-64-73<br>Чиланзар, Ташкент</p><span class="demo-badge">ДЕМО</span></div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="burger" id="burger" aria-label="Меню">☰</button>
+      <div class="search">🔍 <input type="text" placeholder="Поиск тарифа…" aria-label="Поиск"></div>
+      <span class="plaque">ДЕМО • CRM • тарифы в сумах • Эдуард Журавлёв t.me/mkdir16</span>
+      <div class="top-user"><div style="text-align:right"><b style="font-size:14px">Эдуард Журавлёв</b><small>Менеджер</small></div><div class="avatar">ЭЖ</div></div>
+    </header>
+
+    <main class="content">
+      <div class="page-title">
+        <div><h1>💳 Тарифы SotuvPro</h1><p id="billNote">Оплата помесячно • в сумах • без скрытых комиссий</p></div>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <div class="bill-toggle" role="tablist">
+            <button class="active" data-bill="month">Помесячно</button>
+            <button data-bill="year">На год <span class="save-note">−20%</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="plans">
+          <div class="plan">
+            <h4>🟢 Start</h4>
+            <div class="price"><span data-price="start">0</span> <small data-per>сум / мес</small></div>
+            <ul><li>1 менеджер</li><li>100 заявок / мес</li><li>Дашборд + задачи</li><li>Канбан на 4 этапа</li><li>Поддержка: Telegram</li></ul>
+            <button class="btn ghost" data-tplan="Start" style="width:100%">Выбрать</button>
+          </div>
+          <div class="plan pop">
+            <div class="ribbon">ХИТ</div>
+            <h4>🔵 Pro</h4>
+            <div class="price"><span data-price="pro">299 000</span> <small data-per>сум / мес</small></div>
+            <ul><li>5 менеджеров</li><li>Безлимит заявок</li><li>Воронка + календарь + чат</li><li>Отчёты неделя/месяц/квартал</li><li>Напоминания + телефония</li><li>Поддержка: +998 93 507-64-73</li></ul>
+            <button class="btn green" data-tplan="Pro" style="width:100%">✅ Текущий</button>
+          </div>
+          <div class="plan">
+            <h4>🟣 Biznes</h4>
+            <div class="price"><span data-price="biz">790 000</span> <small data-per>сум / мес</small></div>
+            <ul><li>20 менеджеров</li><li>Всё из Pro</li><li>API + интеграции (Uzum, Payme, Click)</li><li>Сквозная аналитика</li><li>Персональный менеджер</li></ul>
+            <button class="btn ghost" data-tplan="Biznes" style="width:100%">Выбрать</button>
+          </div>
+        </div>
+        <p class="sub" id="saveHint" style="margin:12px 0 0">💡 Годовая оплата: Pro — 2 868 000 сум/год вместо 3 588 000 (экономия 720 000 сум).</p>
+      </div>
+
+      <section class="grid2" style="margin-top:14px">
+        <div class="card">
+          <h3>❓ Частый вопрос</h3>
+          <p class="sub">Как сменить тариф?</p>
+          <p style="color:var(--muted);font-size:14px;margin:0">Нажмите «Выбрать» под тарифом — выбор подсветится и запомнится в localStorage. Оплата в демо не списывается. По счёту для юрлиц звоните: <b style="color:var(--text)">+998 93 507-64-73</b> (Чиланзар, Ташкент).</p>
+        </div>
+        <div class="card">
+          <h3>🧾 Счёт за год</h3>
+          <p class="sub" id="billTotal">Pro • 12 мес • 2 868 000 сум</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button class="btn" id="billBtn">Выставить счёт (демо)</button>
+            <a href="help.html" class="btn ghost" style="text-decoration:none">Задать вопрос →</a>
+          </div>
+          <p class="sub" id="billMsg" style="margin:10px 0 0"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><span>© <span data-year>2026</span> SotuvPro • Ташкент</span><span>ДЕМО • CRM • тарифы в сумах • Эдуард Журавлёв t.me/mkdir16</span></footer>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+(function(){
+  "use strict";
+  const MONTH = {start:0, pro:299000, biz:790000};
+  const YEAR_M = {start:0, pro:239200, biz:632000}; // −20% в месяц при оплате за год
+  let bill = "month";
+  let plan = "Pro";
+  function fmt(n){ return n.toLocaleString("ru-RU"); }
+  function render(){
+    document.querySelectorAll("[data-bill]").forEach(b=>b.classList.toggle("active", b.getAttribute("data-bill")===bill));
+    const src = bill==="month" ? MONTH : YEAR_M;
+    document.querySelector("[data-price='start']").textContent = fmt(src.start);
+    document.querySelector("[data-price='pro']").textContent = fmt(src.pro);
+    document.querySelector("[data-price='biz']").textContent = fmt(src.biz);
+    document.querySelectorAll("[data-per]").forEach(el=>el.textContent = bill==="month" ? "сум / мес" : "сум / мес при оплате за год");
+    document.getElementById("billNote").textContent = bill==="month"
+      ? "Оплата помесячно • в сумах • без скрытых комиссий"
+      : "Оплата за год сразу • скидка −20% • в сумах";
+    const perYear = src[planKey()] * 12;
+    const perYearFull = MONTH[planKey()] * 12;
+    const save = perYearFull - perYear;
+    document.getElementById("saveHint").textContent = bill==="month"
+      ? "💡 Годовая оплата: Pro — 2 868 000 сум/год вместо 3 588 000 (экономия 720 000 сум)."
+      : "💡 Ваш выбор: " + plan + " — " + fmt(perYear) + " сум/год вместо " + fmt(perYearFull) + " (экономия " + fmt(save) + " сум).";
+    document.getElementById("billTotal").textContent = plan + " • " + (bill==="month" ? "1 мес • " + fmt(src[planKey()]) + " сум" : "12 мес • " + fmt(perYear) + " сум");
+  }
+  function planKey(){ return plan==="Start" ? "start" : plan==="Biznes" ? "biz" : "pro"; }
+  document.querySelectorAll("[data-bill]").forEach(b=>b.addEventListener("click", ()=>{ bill = b.getAttribute("data-bill"); render(); }));
+  document.querySelectorAll("[data-tplan]").forEach(b=>b.addEventListener("click", ()=>{
+    plan = b.getAttribute("data-tplan");
+    document.querySelectorAll("[data-tplan]").forEach(x=>{ x.className="btn ghost"; x.textContent="Выбрать"; x.style.width="100%"; });
+    b.className = "btn green"; b.textContent = "✅ Текущий"; b.style.width = "100%";
+    try{ localStorage.setItem("sotuvpro_tariff_v1", plan + "|" + bill); }catch{}
+    render();
+  }));
+  const bb = document.getElementById("billBtn");
+  if(bb) bb.addEventListener("click", ()=>{
+    document.getElementById("billMsg").textContent = "✅ Счёт на «" + plan + "» сформирован (демо) • " + new Date().toLocaleTimeString("ru-RU");
+  });
+  try{
+    const raw = localStorage.getItem("sotuvpro_tariff_v1");
+    if(raw){ const parts = raw.split("|"); if(parts[0]) plan = parts[0]; if(parts[1]) bill = parts[1];
+      document.querySelectorAll("[data-tplan]").forEach(x=>{
+        const on = x.getAttribute("data-tplan")===plan;
+        x.className = on ? "btn green" : "btn ghost"; x.textContent = on ? "✅ Текущий" : "Выбрать"; x.style.width="100%";
+      });
+    }
+  }catch{}
+  render();
+})();
+</script>
+</body>
+</html>

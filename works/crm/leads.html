@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SotuvPro CRM — Заявки | 10 сделок</title>
+<meta name="description" content="Заявки SotuvPro: фильтр по статусу, поиск, добавление новой заявки.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brand-logo">📊</div><div><b>SotuvPro</b><small>CRM • Ташкент</small></div></div>
+    <nav class="nav">
+      <a href="index.html">📈 Дашборд</a>
+      <a href="leads.html" class="active">📋 Заявки</a>
+      <a href="deals.html">💼 Сделки</a>
+      <a href="clients.html">👥 Клиенты</a>
+      <a href="calendar.html">📅 Календарь</a>
+      <a href="reports.html">📊 Отчёты</a>
+      <a href="chat.html">💬 Чат</a>
+      <a href="tariffs.html">💳 Тарифы</a>
+      <a href="settings.html">⚙️ Настройки</a>
+      <a href="help.html">❓ Помощь</a>
+    </nav>
+    <div class="side-card"><h4>📞 Отдел продаж</h4><p>+998 93 507-64-73<br>Чиланзар, Ташкент</p><span class="demo-badge">ДЕМО</span></div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="burger" id="burger" aria-label="Меню">☰</button>
+      <div class="search">🔍 <input type="text" id="leadSearch" placeholder="Поиск по заявкам…" aria-label="Поиск"></div>
+      <span class="plaque">ДЕМО • CRM • дашборд + заявки • Эдуард Журавлёв t.me/mkdir16</span>
+      <div class="top-user"><div style="text-align:right"><b style="font-size:14px">Эдуард Журавлёв</b><small>Менеджер</small></div><div class="avatar">ЭЖ</div></div>
+    </header>
+
+    <main class="content">
+      <div class="page-title">
+        <div><h1>📋 Заявки — 10 сделок</h1><p>Фильтр по статусу • поиск • добавление через модалку (JS)</p></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn green" data-open="modalLead">+ Новая заявка</button>
+          <button class="btn ghost" id="resetLeads">↺ Сбросить мои</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="filters">
+          <button class="chip active" data-filter="all">Все</button>
+          <button class="chip" data-filter="new">🆕 Новые</button>
+          <button class="chip" data-filter="work">🤝 Переговоры</button>
+          <button class="chip" data-filter="win">✅ Выигранные</button>
+          <button class="chip" data-filter="lose">❌ Проигранные</button>
+          <span class="sub" id="leadsCount" style="margin-left:auto;align-self:center">Показано: 10</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Клиент / источник</th><th>Телефон</th><th>Сумма</th><th>Дата</th><th>Статус</th><th>Менеджер</th></tr></thead>
+            <tbody id="leadsBody">
+              <tr data-status="work"><td><b>TexnoMart</b><br><small style="color:var(--muted)">Instagram</small></td><td>+998 93 507-64-73</td><td>12 500 000 сум</td><td>02.10.2026</td><td><span class="status st-work">🤝 Переговоры</span></td><td>Э. Журавлёв</td></tr>
+              <tr data-status="new"><td><b>ShifoMed</b><br><small style="color:var(--muted)">Сайт</small></td><td>+998 90 123-45-67</td><td>8 900 000 сум</td><td>04.10.2026</td><td><span class="status st-new">🆕 Новая</span></td><td>Д. Каримова</td></tr>
+              <tr data-status="win"><td><b>Chust Textile</b><br><small style="color:var(--muted)">Рекомендация</small></td><td>+998 91 555-34-21</td><td>21 300 000 сум</td><td>28.09.2026</td><td><span class="status st-win">✅ Выиграна</span></td><td>Э. Журавлёв</td></tr>
+              <tr data-status="work"><td><b>Oqtepa Lavash</b><br><small style="color:var(--muted)">Звонок</small></td><td>+998 97 444-88-11</td><td>4 200 000 сум</td><td>03.10.2026</td><td><span class="status st-work">🤝 Переговоры</span></td><td>С. Юсупов</td></tr>
+              <tr data-status="new"><td><b>IT-Park Resident</b><br><small style="color:var(--muted)">Telegram</small></td><td>+998 93 100-20-30</td><td>15 750 000 сум</td><td>05.10.2026</td><td><span class="status st-new">🆕 Новая</span></td><td>Д. Каримова</td></tr>
+              <tr data-status="lose"><td><b>Samarqand Mebel</b><br><small style="color:var(--muted)">OLX</small></td><td>+998 66 233-11-22</td><td>6 400 000 сум</td><td>25.09.2026</td><td><span class="status st-lose">❌ Проиграна</span></td><td>С. Юсупов</td></tr>
+              <tr data-status="win"><td><b>Paynet Agent</b><br><small style="color:var(--muted)">Сайт</small></td><td>+998 95 777-01-02</td><td>9 600 000 сум</td><td>20.09.2026</td><td><span class="status st-win">✅ Выиграна</span></td><td>Э. Журавлёв</td></tr>
+              <tr data-status="work"><td><b>Korzinca Retail</b><br><small style="color:var(--muted)">Выставка</small></td><td>+998 71 200-45-67</td><td>18 000 000 сум</td><td>01.10.2026</td><td><span class="status st-work">🤝 Переговоры</span></td><td>Д. Каримова</td></tr>
+              <tr data-status="new"><td><b>Milliy Taomlar</b><br><small style="color:var(--muted)">Instagram</small></td><td>+998 90 555-77-99</td><td>3 150 000 сум</td><td>05.10.2026</td><td><span class="status st-new">🆕 Новая</span></td><td>С. Юсупов</td></tr>
+              <tr data-status="win"><td><b>Uzum Seller</b><br><small style="color:var(--muted)">Telegram</small></td><td>11 200 000 сум</td><td>18.09.2026</td><td><span class="status st-win">✅ Выиграна</span></td><td>Э. Журавлёв</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sub" style="margin:10px 0 0">💡 Свои заявки сохраняются в localStorage. Телефон отдела: +998 93 507-64-73</p>
+      </div>
+    </main>
+
+    <footer class="footer"><span>© <span data-year>2026</span> SotuvPro • Ташкент</span><span>ДЕМО • CRM • дашборд + заявки • Эдуард Журавлёв t.me/mkdir16</span></footer>
+  </div>
+</div>
+
+<!-- Модалка -->
+<div class="modal" id="modalLead">
+  <div class="modal-box">
+    <h3>➕ Новая заявка</h3>
+    <p>Добавится в таблицу сверху через JS, без перезагрузки.</p>
+    <form id="leadForm">
+      <div class="form-grid">
+        <div class="full"><label>Клиент / компания<input type="text" name="name" required placeholder="Например: TexnoMart" maxlength="60"></label></div>
+        <div><label>Телефон<input type="tel" name="phone" placeholder="+998 93 507-64-73" value="+998 93 "></label></div>
+        <div><label>Сумма (сум)<input type="number" name="sum" min="0" step="100000" placeholder="12500000" required></label></div>
+        <div><label>Статус<select name="status"><option value="new">🆕 Новая</option><option value="work">🤝 Переговоры</option><option value="win">✅ Выиграна</option><option value="lose">❌ Проиграна</option></select></label></div>
+        <div><label>Источник<select name="src"><option>Сайт</option><option>Instagram</option><option>Telegram</option><option>Звонок</option><option>Рекомендация</option><option>OLX</option></select></label></div>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn ghost" data-close>Отмена</button>
+        <button type="submit" class="btn green">Добавить →</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

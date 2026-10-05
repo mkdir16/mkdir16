@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SotuvPro CRM — Настройки</title>
+<meta name="description" content="Настройки SotuvPro: профиль, тарифы в сумах, уведомления.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brand-logo">📊</div><div><b>SotuvPro</b><small>CRM • Ташкент</small></div></div>
+    <nav class="nav">
+      <a href="index.html">📈 Дашборд</a>
+      <a href="leads.html">📋 Заявки</a>
+      <a href="deals.html">💼 Сделки</a>
+      <a href="clients.html">👥 Клиенты</a>
+      <a href="calendar.html">📅 Календарь</a>
+      <a href="reports.html">📊 Отчёты</a>
+      <a href="chat.html">💬 Чат</a>
+      <a href="tariffs.html">💳 Тарифы</a>
+      <a href="settings.html" class="active">⚙️ Настройки</a>
+      <a href="help.html">❓ Помощь</a>
+    </nav>
+    <div class="side-card"><h4>📞 Отдел продаж</h4><p>+998 93 507-64-73<br>Чиланзар, Ташкент</p><span class="demo-badge">ДЕМО</span></div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="burger" id="burger" aria-label="Меню">☰</button>
+      <div class="search">🔍 <input type="text" placeholder="Поиск настроек…" aria-label="Поиск"></div>
+      <span class="plaque">ДЕМО • CRM • дашборд + заявки • Эдуард Журавлёв t.me/mkdir16</span>
+      <div class="top-user"><div style="text-align:right"><b style="font-size:14px">Эдуард Журавлёв</b><small>Менеджер</small></div><div class="avatar">ЭЖ</div></div>
+    </header>
+
+    <main class="content">
+      <div class="page-title">
+        <div><h1>⚙️ Настройки</h1><p>Профиль • тарифы в сумах • уведомления на JS (localStorage)</p></div>
+        <span class="sub" id="setHint" style="color:#86efac;font-size:13px">Изменения сохраняются автоматически</span>
+      </div>
+
+      <section class="grid2">
+        <div class="card">
+          <h3>👤 Профиль менеджера</h3>
+          <p class="sub">Данные отдела продаж, Ташкент</p>
+          <div class="form-grid">
+            <div><label>Имя<input type="text" value="Эдуард Журавлёв"></label></div>
+            <div><label>Телефон<input type="tel" value="+998 93 507-64-73"></label></div>
+            <div class="full"><label>Должность<input type="text" value="Менеджер по продажам • SotuvPro"></label></div>
+            <div class="full"><label>Telegram<input type="text" value="t.me/mkdir16"></label></div>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+            <button class="btn" onclick="document.getElementById('setHint').textContent='✅ Профиль сохранён (демо) • '+new Date().toLocaleTimeString('ru-RU')">💾 Сохранить</button>
+            <button class="btn ghost" onclick="localStorage.clear();document.getElementById('setHint').textContent='🧹 localStorage очищен'">🧹 Очистить демо-данные</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>🔔 Уведомления</h3>
+          <p class="sub">Тоглы на чистом JS • состояние в localStorage</p>
+          <div class="set-row"><div><b>📩 Новые заявки</b><br><small style="color:var(--muted)">Push + звук при новой сделке</small></div><label class="switch"><input type="checkbox" data-set="lead" checked><span class="knob"></span></label></div>
+          <div class="set-row"><div><b>📅 Напоминания календаря</b><br><small style="color:var(--muted)">За 30 минут до встречи</small></div><label class="switch"><input type="checkbox" data-set="cal" checked><span class="knob"></span></label></div>
+          <div class="set-row"><div><b>💰 Крупные сделки от 10 млн сум</b><br><small style="color:var(--muted)">Отдельный алерт руководителю</small></div><label class="switch"><input type="checkbox" data-set="big"><span class="knob"></span></label></div>
+          <div class="set-row"><div><b>📊 Еженедельный отчёт</b><br><small style="color:var(--muted)">Понедельник 09:00, Ташкент</small></div><label class="switch"><input type="checkbox" data-set="report" checked><span class="knob"></span></label></div>
+        </div>
+      </section>
+
+      <div class="card">
+        <h3>💳 Тарифы SotuvPro (в сумах)</h3>
+        <p class="sub">Демо-выбор • кнопка меняет состояние через JS</p>
+        <div class="plans">
+          <div class="plan">
+            <h4>🟢 Start</h4>
+            <div class="price">0 <small>сум / мес</small></div>
+            <ul><li>1 менеджер</li><li>100 заявок / мес</li><li>Дашборд + задачи</li><li>Поддержка: Telegram</li></ul>
+            <button class="btn ghost" data-plan="Start" style="width:100%">Выбрать</button>
+          </div>
+          <div class="plan pop">
+            <div class="ribbon">ХИТ</div>
+            <h4>🔵 Pro</h4>
+            <div class="price">299 000 <small>сум / мес</small></div>
+            <ul><li>5 менеджеров</li><li>Безлимит заявок</li><li>Воронка + календарь</li><li>Напоминания + отчёты</li><li>Телефония: +998 93 507-64-73</li></ul>
+            <button class="btn green" data-plan="Pro" style="width:100%">✅ Текущий</button>
+          </div>
+          <div class="plan">
+            <h4>🟣 Biznes</h4>
+            <div class="price">790 000 <small>сум / мес</small></div>
+            <ul><li>20 менеджеров</li><li>Всё из Pro</li><li>API + интеграции (Uzum, Payme)</li><li>Персональный менеджер</li></ul>
+            <button class="btn ghost" data-plan="Biznes" style="width:100%">Выбрать</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer"><span>© <span data-year>2026</span> SotuvPro • Ташкент • +998 93 507-64-73</span><span>ДЕМО • CRM • дашборд + заявки • Эдуард Журавлёв t.me/mkdir16</span></footer>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

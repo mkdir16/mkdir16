@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SotuvPro CRM — Сделки | Канбан-воронка</title>
+<meta name="description" content="Сделки SotuvPro: канбан 4 этапа, 12 сделок в сумах, перемещение кнопками, localStorage.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brand-logo">📊</div><div><b>SotuvPro</b><small>CRM • Ташкент</small></div></div>
+    <nav class="nav">
+      <a href="index.html">📈 Дашборд</a>
+      <a href="leads.html">📋 Заявки</a>
+      <a href="deals.html" class="active">💼 Сделки</a>
+      <a href="clients.html">👥 Клиенты</a>
+      <a href="calendar.html">📅 Календарь</a>
+      <a href="reports.html">📊 Отчёты</a>
+      <a href="chat.html">💬 Чат</a>
+      <a href="tariffs.html">💳 Тарифы</a>
+      <a href="settings.html">⚙️ Настройки</a>
+      <a href="help.html">❓ Помощь</a>
+    </nav>
+    <div class="side-card"><h4>📞 Отдел продаж</h4><p>+998 93 507-64-73<br>Чиланзар, Ташкент</p><span class="demo-badge">ДЕМО</span></div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="burger" id="burger" aria-label="Меню">☰</button>
+      <div class="search">🔍 <input type="text" id="dealSearch" placeholder="Поиск сделки…" aria-label="Поиск"></div>
+      <span class="plaque">ДЕМО • CRM • сделки-канбан • Эдуард Журавлёв t.me/mkdir16</span>
+      <div class="top-user"><div style="text-align:right"><b style="font-size:14px">Эдуард Журавлёв</b><small>Менеджер</small></div><div class="avatar">ЭЖ</div></div>
+    </header>
+
+    <main class="content">
+      <div class="page-title">
+        <div><h1>💼 Сделки — канбан</h1><p id="dealSummary">12 сделок • перемещение кнопками «→» • сохраняется в localStorage</p></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn ghost" id="resetDeals">↺ Сбросить воронку</button>
+          <a href="leads.html" class="btn" style="text-decoration:none">+ Новая заявка</a>
+        </div>
+      </div>
+
+      <div class="kanban" id="kanban">
+        <div class="kanban-col" data-stage="0">
+          <h4>🆕 Новые <span class="count" data-count>0</span></h4>
+          <p class="col-sum" data-sum></p>
+          <div data-list></div>
+        </div>
+        <div class="kanban-col" data-stage="1">
+          <h4>🤝 Переговоры <span class="count" data-count>0</span></h4>
+          <p class="col-sum" data-sum></p>
+          <div data-list></div>
+        </div>
+        <div class="kanban-col" data-stage="2">
+          <h4>💳 Оплата <span class="count" data-count>0</span></h4>
+          <p class="col-sum" data-sum></p>
+          <div data-list></div>
+        </div>
+        <div class="kanban-col" data-stage="3">
+          <h4>✅ Закрыты <span class="count" data-count>0</span></h4>
+          <p class="col-sum" data-sum></p>
+          <div data-list></div>
+        </div>
+      </div>
+      <p class="sub" style="color:var(--muted);font-size:13px;margin-top:12px">💡 Кнопка «→» двигает сделку вперёд по воронке, «←» — возвращает назад. Этапы хранятся в localStorage (<b>sotuvpro_deals_v1</b>). Телефон отдела: +998 93 507-64-73</p>
+    </main>
+
+    <footer class="footer"><span>© <span data-year>2026</span> SotuvPro • Ташкент</span><span>ДЕМО • CRM • сделки-канбан • Эдуард Журавлёв t.me/mkdir16</span></footer>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+(function(){
+  "use strict";
+  const KEY = "sotuvpro_deals_v1";
+  const DEFAULTS = [
+    {id:"d1", title:"TexnoMart — поставка техники", sub:"Instagram • Э. Журавлёв", sum:12500000, stage:1},
+    {id:"d2", title:"ShifoMed — CRM для клиники", sub:"Сайт • Д. Каримова", sum:8900000, stage:0},
+    {id:"d3", title:"Chust Textile — оптовый заказ", sub:"Рекомендация • Э. Журавлёв", sum:21300000, stage:3},
+    {id:"d4", title:"Oqtepa Lavash — автоматизация", sub:"Звонок • С. Юсупов", sum:4200000, stage:1},
+    {id:"d5", title:"IT-Park Resident — разработка", sub:"Telegram • Д. Каримова", sum:15750000, stage:0},
+    {id:"d6", title:"Samarqand Mebel — витрина", sub:"OLX • С. Юсупов", sum:6400000, stage:3},
+    {id:"d7", title:"Paynet Agent — интеграция", sub:"Сайт • Э. Журавлёв", sum:9600000, stage:2},
+    {id:"d8", title:"Korzinca Retail — пилот", sub:"Выставка • Д. Каримова", sum:18000000, stage:1},
+    {id:"d9", title:"Milliy Taomlar — доставка", sub:"Instagram • С. Юсупов", sum:3150000, stage:0},
+    {id:"d10", title:"Uzum Seller — аналитика", sub:"Telegram • Э. Журавлёв", sum:11200000, stage:2},
+    {id:"d11", title:"Artel Service — контракт", sub:"Звонок • Д. Каримова", sum:24700000, stage:2},
+    {id:"d12", title:"Click Merchant — эквайринг", sub:"Сайт • С. Юсупов", sum:5800000, stage:3}
+  ];
+  function fmt(n){ return n.toLocaleString("ru-RU") + " сум"; }
+  function load(){
+    try{ const raw = localStorage.getItem(KEY); if(!raw) return DEFAULTS.slice();
+      const arr = JSON.parse(raw); return Array.isArray(arr) && arr.length ? arr : DEFAULTS.slice();
+    }catch{ return DEFAULTS.slice(); }
+  }
+  function save(a){ try{ localStorage.setItem(KEY, JSON.stringify(a)); }catch{} }
+  let deals = load();
+  const search = document.getElementById("dealSearch");
+  function render(){
+    const q = (search && search.value || "").toLowerCase().trim();
+    document.querySelectorAll(".kanban-col").forEach(col=>{
+      const stage = Number(col.getAttribute("data-stage"));
+      const list = col.querySelector("[data-list]");
+      list.innerHTML = "";
+      const items = deals.filter(d=>d.stage===stage && (!q || (d.title+" "+d.sub).toLowerCase().includes(q)));
+      col.querySelector("[data-count]").textContent = items.length;
+      const total = deals.filter(d=>d.stage===stage).reduce((s,d)=>s+d.sum,0);
+      col.querySelector("[data-sum]").textContent = "Σ " + fmt(total);
+      items.forEach(d=>{
+        const card = document.createElement("div");
+        card.className = "deal";
+        card.innerHTML = "<b></b><small></small><span class='sum'></span><div class='deal-nav'><button data-back title='Назад'>←</button><button data-fwd title='Вперёд'>→</button></div>";
+        card.querySelector("b").textContent = d.title;
+        card.querySelector("small").textContent = d.sub;
+        card.querySelector(".sum").textContent = fmt(d.sum);
+        const bBack = card.querySelector("[data-back]");
+        const bFwd = card.querySelector("[data-fwd]");
+        bBack.disabled = (d.stage===0);
+        bFwd.disabled = (d.stage===3);
+        bBack.addEventListener("click", ()=>{ move(d.id,-1); });
+        bFwd.addEventListener("click", ()=>{ move(d.id,1); });
+        list.append(card);
+      });
+      if(!items.length){
+        const empty = document.createElement("p");
+        empty.style.cssText = "color:var(--muted);font-size:13px;text-align:center;padding:10px 0";
+        empty.textContent = q ? "Ничего не найдено" : "Пусто — двигайте сюда кнопкой →";
+        list.append(empty);
+      }
+    });
+    const totalAll = deals.reduce((s,d)=>s+d.sum,0);
+    const el = document.getElementById("dealSummary");
+    if(el) el.textContent = deals.length + " сделок • Σ " + fmt(totalAll) + " • кнопки «→ / ←» • localStorage";
+  }
+  function move(id, dir){
+    const d = deals.find(x=>x.id===id);
+    if(!d) return;
+    d.stage = Math.min(3, Math.max(0, d.stage + dir));
+    save(deals); render();
+  }
+  if(search) search.addEventListener("input", render);
+  const reset = document.getElementById("resetDeals");
+  if(reset) reset.addEventListener("click", ()=>{ try{localStorage.removeItem(KEY);}catch{} deals = DEFAULTS.slice(); render(); });
+  render();
+})();
+</script>
+</body>
+</html>

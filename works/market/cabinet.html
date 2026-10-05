@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bazaar — Личный кабинет</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="demo">ДЕМО • Маркетплейс • каталог + корзина + заказ • Эдуард Журавлёв t.me/mkdir16</div>
+<header class="header"><div class="container header__inner">
+<a class="logo" href="index.html">🛍️ <span>Bazaar</span></a>
+<nav class="nav" id="nav">
+<a href="index.html">Главная</a><a href="catalog.html">Каталог</a><a href="product.html">Товар</a><a href="cart.html">Корзина</a><a href="checkout.html">Оформление</a><a href="cabinet.html" class="active">Кабинет</a><a href="favorites.html">Избранное</a><a href="sellers.html">Продавцы</a><a href="promo.html">Акции</a><a href="help.html">Помощь</a>
+</nav>
+<div class="header__right">
+<a class="phone" href="tel:+998935076473">+998 93 507-64-73</a>
+<a class="cart-btn" href="cart.html">🛒 <b id="cartCount">0</b></a>
+<button class="burger" id="burger">☰</button>
+</div></div></header>
+
+<main class="container">
+<section class="section">
+<h2>Личный кабинет 👤</h2>
+<p class="small">Здравствуйте, гость! Заказы • избранное • адреса (localStorage)</p>
+</section>
+<div class="cab">
+<aside class="cab__menu">
+<a href="#orders">📦 Мои заказы</a>
+<a href="#fav">❤️ Избранное</a>
+<a href="#addr">📍 Адреса</a>
+<a href="catalog.html">🛍️ В каталог</a>
+<a href="tel:+998935076473">📞 +998 93 507-64-73</a>
+</aside>
+<div>
+<div class="form-card" id="ordersBox"><h3 id="orders-title">📦 Заказы-список</h3><br><div id="orders"></div></div><br>
+<div class="form-card"><h3>❤️ Избранное</h3><br><div id="favList"></div></div><br>
+<div class="form-card" id="addr"><h3>📍 Мои адреса</h3><br><div id="addrList"></div><br>
+<form id="addrForm" style="display:flex;gap:8px"><input id="newAddr" placeholder="Новый адрес: город, улица, дом"><button class="btn btn-primary" type="submit">+</button></form>
+</div>
+</div>
+</div>
+</main>
+
+<footer class="footer"><div class="container footer__grid">
+<div><h4>🛍️ Bazaar</h4><p>Кабинет: заказы после оформления появляются здесь.</p></div>
+<div><h4>Навигация</h4><a href="index.html">Главная</a><a href="catalog.html">Каталог</a><a href="favorites.html">Избранное</a><a href="sellers.html">Продавцы</a><a href="promo.html">Акции</a><a href="help.html">Помощь</a><a href="cart.html">Корзина</a></div>
+<div><h4>Контакты</h4><a href="tel:+998935076473">+998 93 507-64-73</a><a href="#">t.me/mkdir16 • Эдуард Журавлёв</a></div>
+</div></footer>
+<script src="script.js"></script>
+</body>
+</html>

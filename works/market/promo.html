@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bazaar — Акции</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="demo">ДЕМО • Маркетплейс • каталог + корзина + заказ • Эдуард Журавлёв t.me/mkdir16</div>
+<header class="header"><div class="container header__inner">
+<a class="logo" href="index.html">🛍️ <span>Bazaar</span></a>
+<nav class="nav" id="nav">
+<a href="index.html">Главная</a><a href="catalog.html">Каталог</a><a href="product.html">Товар</a><a href="cart.html">Корзина</a><a href="checkout.html">Оформление</a><a href="cabinet.html">Кабинет</a><a href="favorites.html">Избранное</a><a href="sellers.html">Продавцы</a><a href="promo.html" class="active">Акции</a><a href="help.html">Помощь</a>
+</nav>
+<div class="header__right">
+<a class="phone" href="tel:+998935076473">+998 93 507-64-73</a>
+<a class="cart-btn" href="cart.html">🛒 <b id="cartCount">0</b></a>
+<button class="burger" id="burger" aria-label="Меню">☰</button>
+</div></div></header>
+
+<main class="container">
+<section class="section">
+<div class="section__head"><div><h2>Акции 🎉</h2><p>3 предложения недели • цены в сумах</p></div><a class="btn btn-light" href="catalog.html">В каталог</a></div>
+
+<div class="promo" style="margin-bottom:14px">
+<div><span class="badge">⚡ Акция дня</span><h2 style="margin:8px 0">Скидки до −30% + промокод SKIDKA10</h2><p style="opacity:.85">Наушники за 450 000 сум вместо 590 000 сум. Промокод вводится в корзине и даёт −10% сверху.</p></div>
+<div class="timer" id="timer"><div><b>00</b><span>часов</span></div><div><b>00</b><span>минут</span></div><div><b>00</b><span>секунд</span></div></div>
+<a class="btn btn-accent" href="catalog.html">Забрать скидку</a>
+</div>
+
+<div class="promo" style="background:linear-gradient(90deg,#065f46,#16a34a);margin-bottom:14px">
+<div><span class="badge">📱 Рассрочка 0-0-12</span><h2 style="margin:8px 0">Телефон за 2 500 000 — по 208 400 в месяц</h2><p style="opacity:.85">Redmi Note 13 и ноутбуки в рассрочку без переплат. Оформление за 10 минут по телефону.</p></div>
+<a class="btn btn-accent" href="product.html?id=p1">Выбрать телефон →</a>
+</div>
+
+<div class="promo" style="background:linear-gradient(90deg,#7c2d12,#ff5a3c)">
+<div><span class="badge">🎁 2 = 3 для дома</span><h2 style="margin:8px 0">Пылесос + кофеварка — посуда в подарок</h2><p style="opacity:.85">Набор посуды за 890 000 сум — в подарок при заказе от 3 000 000 сум. Доставка по Ташкенту бесплатно.</p></div>
+<a class="btn btn-accent" href="catalog.html">Собрать набор →</a>
+</div>
+</section>
+
+<section class="section form-card">
+<h3>Условия акций 📋</h3><br>
+<p>1. Промокод <b>SKIDKA10</b> даёт −10% от суммы товаров, вводится в корзине. Не суммируется с рассрочкой 0-0-12.</p>
+<p>2. Таймер акции — до конца текущих суток (23:59). После полуночи скидки дня обновляются.</p>
+<p>3. Рассрочка 0-0-12: первый взнос 0 сум, 12 равных платежей. Нужен паспорт и карта Click / Payme.</p>
+<p>4. Подарок «2 = 3» добавляется автоматически при заказе от 3 000 000 сум. Количество подарков ограничено.</p>
+<p>5. Возврат акционных товаров — 14 дней, деньги возвращаем на карту за 1–3 дня.</p>
+<p class="small" style="margin-top:10px">Вопросы по акциям: <a href="tel:+998935076473"><b>+998 93 507-64-73</b></a> (9:00–21:00) • <a href="help.html"><u>Помощь</u></a></p>
+</section>
+</main>
+
+<footer class="footer"><div class="container footer__grid">
+<div><h4>🛍️ Bazaar</h4><p>Демо-маркетплейс: каталог + корзина + заказ.<br>Электроника • Одежда • Дом.<br>Ташкент, Узбекистан.</p></div>
+<div><h4>Навигация</h4><a href="index.html">Главная</a><a href="catalog.html">Каталог</a><a href="favorites.html">Избранное</a><a href="sellers.html">Продавцы</a><a href="promo.html">Акции</a><a href="help.html">Помощь</a><a href="cart.html">Корзина</a><a href="cabinet.html">Личный кабинет</a></div>
+<div><h4>Контакты</h4><a href="tel:+998935076473">+998 93 507-64-73</a><a href="#">t.me/mkdir16</a><p class="small">ДЕМО • Эдуард Журавлёв</p></div>
+</div></footer>
+<script src="script.js"></script>
+</body>
+</html>

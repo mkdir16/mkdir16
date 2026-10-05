@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Новости школы SkillUp Ташкент: новые потоки, хакатоны, speaking-клубы, скидки на курсы. Цены в сумах.">
+  <title>Новости школы — SkillUp Ташкент</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Навигация на 10 страниц: компактные ссылки + прокрутка мобильного меню */
+    .nav__link { padding: 10px 12px; font-size: 14px; }
+    .nav--open { max-height: calc(100vh - var(--header-h)); overflow-y: auto; }
+  </style>
+</head>
+<body>
+
+  <!-- ============ ШАПКА (единая для всех 10 страниц) ============ -->
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="index.html" aria-label="SkillUp на главную">
+        <span class="logo__badge">🎓</span>
+        <span class="logo__text">SkillUp<small>Ташкент • LMS</small></span>
+      </a>
+      <nav class="nav" data-nav aria-label="Основная навигация">
+        <a class="nav__link" href="index.html">Главная</a>
+        <a class="nav__link" href="courses.html">Каталог</a>
+        <a class="nav__link" href="course.html">Курс</a>
+        <a class="nav__link" href="cabinet.html">Кабинет</a>
+        <a class="nav__link" href="teachers.html">Учителя</a>
+        <a class="nav__link" href="schedule.html">Расписание</a>
+        <a class="nav__link nav__link--active" href="news.html">Новости</a>
+        <a class="nav__link" href="about.html">О школе</a>
+        <a class="nav__link" href="contacts.html">Контакты</a>
+        <a class="nav__link" href="faq.html">FAQ</a>
+      </nav>
+      <a class="header__phone" href="tel:+998935076473">📞 +998 93 507-64-73</a>
+      <button class="burger" data-burger aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs"><a href="index.html">Главная</a> / Новости</div>
+      <h1>Новости школы 📰</h1>
+      <p style="color:#b9bde0; max-width:680px">Новые потоки, хакатоны, скидки и жизнь кампуса на Амира Темура. Справки: <a href="tel:+998935076473" style="color:#fff">+998 93 507-64-73</a>.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="cab-card" id="n1">
+        <p><span class="pill">🔥 Главная новость • 20 сентября 2026</span></p>
+        <h2 style="margin-top:8px">Новый поток Python стартует 14 октября — скидка 15%</h2>
+        <p class="muted">Открываем вечернюю онлайн-группу и дневную офлайн-группу в кампусе. До 1 октября курс «Python-разработка» — <b>841 500 сум</b> вместо <s>990 000 сум</s>. В программе: синтаксис, ООП, Django и Telegram-бот в портфолио. Осталось 6 мест из 14.</p>
+        <p><a class="btn btn--primary btn--sm" href="courses.html">Выбрать Python-курс</a></p>
+      </div>
+
+      <div class="courses-grid mt">
+        <article class="course-card" id="n2">
+          <div class="course-card__cover course-card__cover--code">🏆<span class="course-card__tag">12 сен 2026</span></div>
+          <div class="course-card__body">
+            <h3 class="course-card__title">Хакатон «Ташкент верстает»</h3>
+            <p class="course-card__desc">48 часов, команды по 3 человека, призовой фонд 5 000 000 сум. Финал — в кампусе, жюри из Uzum и Payme.</p>
+            <div class="course-card__meta"><i>👥 20 команд</i><i>🎫 вход свободный</i></div>
+            <div class="course-card__foot"><div class="price">5 000 000 сум<small>призовой фонд</small></div><a class="btn btn--dark btn--sm" href="contacts.html">Участвую</a></div>
+          </div>
+        </article>
+
+        <article class="course-card" id="n3">
+          <div class="course-card__cover course-card__cover--english">💬<span class="course-card__tag">28 авг 2026</span></div>
+          <div class="course-card__body">
+            <h3 class="course-card__title">Speaking Club по субботам — бесплатно</h3>
+            <p class="course-card__desc">Каждую субботу в 10:00 разбираем IT-темы на английском. Открыто для всех студентов, уровень от A2.</p>
+            <div class="course-card__meta"><i>🕙 Сб 10:00</i><i>💻 онлайн</i></div>
+            <div class="course-card__foot"><div class="price">0 сум<small>для студентов</small></div><a class="btn btn--dark btn--sm" href="schedule.html">Расписание</a></div>
+          </div>
+        </article>
+
+        <article class="course-card" id="n4">
+          <div class="course-card__cover course-card__cover--design">🎓<span class="course-card__tag">15 авг 2026</span></div>
+          <div class="course-card__body">
+            <h3 class="course-card__title">Наш 2 400-й выпускник!</h3>
+            <p class="course-card__desc">Диёра защитила 4 кейса по UX/UI и получила оффер. 73% выпускников работают по специальности.</p>
+            <div class="course-card__meta"><i>🎨 UX/UI</i><i>💼 оффер за 3 недели</i></div>
+            <div class="course-card__foot"><div class="price">73%<small>трудоустройство</small></div><a class="btn btn--dark btn--sm" href="about.html">О школе</a></div>
+          </div>
+        </article>
+
+        <article class="course-card" id="n5">
+          <div class="course-card__cover course-card__cover--layout">🏫<span class="course-card__tag">2 авг 2026</span></div>
+          <div class="course-card__body">
+            <h3 class="course-card__title">Открыли вечерние офлайн-группы</h3>
+            <p class="course-card__desc">Новый кабинет 305 на 14 мест: тихо, быстрый интернет, чай и розетки у каждого стола. Вт/Чт 19:00.</p>
+            <div class="course-card__meta"><i>📍 Амира Темура, 15</i><i>🌙 вечер</i></div>
+            <div class="course-card__foot"><div class="price">от 490 000 сум<small>курсы в кампусе</small></div><a class="btn btn--dark btn--sm" href="courses.html">Каталог</a></div>
+          </div>
+        </article>
+
+        <article class="course-card" id="n6">
+          <div class="course-card__cover course-card__cover--python">🤖<span class="course-card__tag">20 июл 2026</span></div>
+          <div class="course-card__body">
+            <h3 class="course-card__title">Мини-курс «Telegram-боты» за 2 месяца</h3>
+            <p class="course-card__desc">aiogram, кнопки, оплата через Click и Payme, деплой на сервер. Своего бота запустите уже на 3-й неделе.</p>
+            <div class="course-card__meta"><i>⏱ 2 мес</i><i>🐍 с нуля</i></div>
+            <div class="course-card__foot"><div class="price">590 000 сум<small>295 000 × 2</small></div><a class="btn btn--dark btn--sm" href="course.html">Подробнее</a></div>
+          </div>
+        </article>
+
+        <article class="course-card" id="n7">
+          <div class="course-card__cover course-card__cover--figma">💳<span class="course-card__tag">5 июл 2026</span></div>
+          <div class="course-card__body">
+            <h3 class="course-card__title">Рассрочка 0-0-6 на все курсы</h3>
+            <p class="course-card__desc">Делим любой чек на 6 частей без банка и переплат: например, Fullstack PRO — по 237 500 сум в месяц.</p>
+            <div class="course-card__meta"><i>0% переплат</i><i>Click / Payme</i></div>
+            <div class="course-card__foot"><div class="price">0-0-6<small>рассрочка</small></div><a class="btn btn--dark btn--sm" href="course.html#tariffs">Тарифы</a></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="cta mt">
+        <div>
+          <h2>Подпишитесь на новости 📬</h2>
+          <p>Раз в месяц: новые потоки, скидки и бесплатные мастер-классы. Никакого спама. Отписаться можно в один клик.</p>
+          <p>📞 <b>+998 93 507-64-73</b> • 📍 Ташкент, ул. Амира Темура, 15</p>
+        </div>
+        <div class="cta__box">
+          <form class="form" data-demo-form>
+            <h3 style="margin-top:0">Хочу новости школы</h3>
+            <label for="news-name">Ваше имя</label>
+            <input id="news-name" name="name" type="text" placeholder="Например, Эдуард" required>
+            <label for="news-phone">Телефон или Telegram</label>
+            <input id="news-phone" name="phone" type="tel" placeholder="+998 __ ___-__-__" required>
+            <button class="btn btn--primary btn--block mt" type="submit">Подписаться</button>
+            <p data-form-msg style="display:none; margin-top:12px; font-weight:700; color:#15803d"></p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ ФУТЕР (единый для всех 10 страниц) ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="logo" href="index.html" style="color:#fff"><span class="logo__badge">🎓</span><span class="logo__text" style="color:#fff">SkillUp<small style="color:#b9bde0">Ташкент • LMS</small></span></a>
+          <p style="margin-top:12px">Онлайн-школа: дизайн, вёрстка, Python, английский. Учим с нуля до работы с 2021 года.</p>
+          <p>📞 <a href="tel:+998935076473">+998 93 507-64-73</a><br>📍 Ташкент, ул. Амира Темура, 15</p>
+        </div>
+        <div>
+          <h4>Навигация</h4>
+          <p><a href="index.html">Главная</a><br><a href="courses.html">Каталог</a><br><a href="course.html">Курс</a><br><a href="cabinet.html">Кабинет</a><br><a href="teachers.html">Учителя</a><br><a href="schedule.html">Расписание</a><br><a href="news.html">Новости</a><br><a href="about.html">О школе</a><br><a href="contacts.html">Контакты</a><br><a href="faq.html">FAQ</a></p>
+        </div>
+        <div>
+          <h4>Направления</h4>
+          <p><a href="courses.html">Дизайн</a><br><a href="courses.html">Вёрстка</a><br><a href="courses.html">Python</a><br><a href="courses.html">Английский</a></p>
+        </div>
+        <div>
+          <h4>Студентам</h4>
+          <p><a href="cabinet.html">Прогресс</a><br><a href="schedule.html">Расписание</a><br><a href="course.html#tariffs">Тарифы</a><br><a href="faq.html">Вопросы и ответы</a><br><a href="tel:+998935076473">Поддержка</a></p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> SkillUp Ташкент • Демо-проект для портфолио</span>
+        <span>Вёрстка: Эдуард Журавлёв • t.me/mkdir16 • Цены в сумах (UZS)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

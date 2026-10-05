@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SotuvPro CRM — Клиенты | 10 компаний</title>
+<meta name="description" content="Клиенты SotuvPro: 10 компаний Ташкента, поиск, фильтр по сфере, добавление через модалку.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brand-logo">📊</div><div><b>SotuvPro</b><small>CRM • Ташкент</small></div></div>
+    <nav class="nav">
+      <a href="index.html">📈 Дашборд</a>
+      <a href="leads.html">📋 Заявки</a>
+      <a href="deals.html">💼 Сделки</a>
+      <a href="clients.html" class="active">👥 Клиенты</a>
+      <a href="calendar.html">📅 Календарь</a>
+      <a href="reports.html">📊 Отчёты</a>
+      <a href="chat.html">💬 Чат</a>
+      <a href="tariffs.html">💳 Тарифы</a>
+      <a href="settings.html">⚙️ Настройки</a>
+      <a href="help.html">❓ Помощь</a>
+    </nav>
+    <div class="side-card"><h4>📞 Отдел продаж</h4><p>+998 93 507-64-73<br>Чиланзар, Ташкент</p><span class="demo-badge">ДЕМО</span></div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="burger" id="burger" aria-label="Меню">☰</button>
+      <div class="search">🔍 <input type="text" id="clientSearch" placeholder="Поиск клиента…" aria-label="Поиск"></div>
+      <span class="plaque">ДЕМО • CRM • клиенты • Эдуард Журавлёв t.me/mkdir16</span>
+      <div class="top-user"><div style="text-align:right"><b style="font-size:14px">Эдуард Журавлёв</b><small>Менеджер</small></div><div class="avatar">ЭЖ</div></div>
+    </header>
+
+    <main class="content">
+      <div class="page-title">
+        <div><h1>👥 Клиенты — 10 компаний</h1><p>Поиск • фильтр по сфере • добавление через модалку (JS)</p></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn green" data-open="modalClient">+ Новый клиент</button>
+          <button class="btn ghost" id="resetClients">↺ Сбросить моих</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="toolbar">
+          <div class="filters" style="margin:0">
+            <button class="chip active" data-cfilter="all">Все</button>
+            <button class="chip" data-cfilter="retail">🛒 Ритейл</button>
+            <button class="chip" data-cfilter="med">🏥 Медицина</button>
+            <button class="chip" data-cfilter="it">💻 IT</button>
+            <button class="chip" data-cfilter="prod">🏭 Производство</button>
+            <button class="chip" data-cfilter="food">🍜 Общепит</button>
+          </div>
+          <span class="sub" id="clientsCount" style="color:var(--muted);font-size:13px">Показано: 10</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Компания / сфера</th><th>Контакт</th><th>Телефон</th><th>Оборот</th><th>Статус</th></tr></thead>
+            <tbody id="clientsBody">
+              <tr data-cat="retail"><td><b>TexnoMart</b><br><small style="color:var(--muted)">Ритейл • техника</small></td><td>Тимур А. — директор</td><td>+998 93 507-64-73</td><td>12 500 000 сум</td><td><span class="status st-win">✅ Активный</span></td></tr>
+              <tr data-cat="med"><td><b>ShifoMed</b><br><small style="color:var(--muted)">Медицина • клиника</small></td><td>Н. Рахимова — главврач</td><td>+998 90 123-45-67</td><td>8 900 000 сум</td><td><span class="status st-new">🆕 Новый</span></td></tr>
+              <tr data-cat="prod"><td><b>Chust Textile</b><br><small style="color:var(--muted)">Производство • текстиль</small></td><td>О. Назаров — учредитель</td><td>+998 91 555-34-21</td><td>21 300 000 сум</td><td><span class="status st-win">✅ Активный</span></td></tr>
+              <tr data-cat="food"><td><b>Oqtepa Lavash</b><br><small style="color:var(--muted)">Общепит • сеть кафе</small></td><td>Менеджер сети</td><td>+998 97 444-88-11</td><td>4 200 000 сум</td><td><span class="status st-work">🤝 Переговоры</span></td></tr>
+              <tr data-cat="it"><td><b>IT-Park Resident</b><br><small style="color:var(--muted)">IT • софт</small></td><td>Д. Каримова — PM</td><td>+998 93 100-20-30</td><td>15 750 000 сум</td><td><span class="status st-new">🆕 Новый</span></td></tr>
+              <tr data-cat="prod"><td><b>Samarqand Mebel</b><br><small style="color:var(--muted)">Производство • мебель</small></td><td>Отдел закупок</td><td>+998 66 233-11-22</td><td>6 400 000 сум</td><td><span class="status st-lose">❌ Пауза</span></td></tr>
+              <tr data-cat="it"><td><b>Paynet Agent</b><br><small style="color:var(--muted)">IT • платежи</small></td><td>Техдиректор</td><td>+998 95 777-01-02</td><td>9 600 000 сум</td><td><span class="status st-win">✅ Активный</span></td></tr>
+              <tr data-cat="retail"><td><b>Korzinca Retail</b><br><small style="color:var(--muted)">Ритейл • супермаркет</small></td><td>Категорийный менеджер</td><td>+998 71 200-45-67</td><td>18 000 000 сум</td><td><span class="status st-work">🤝 Переговоры</span></td></tr>
+              <tr data-cat="food"><td><b>Milliy Taomlar</b><br><small style="color:var(--muted)">Общепит • ресторан</small></td><td>Владелец</td><td>+998 90 555-77-99</td><td>3 150 000 сум</td><td><span class="status st-new">🆕 Новый</span></td></tr>
+              <tr data-cat="retail"><td><b>Uzum Seller</b><br><small style="color:var(--muted)">Ритейл • маркетплейс</small></td><td>Продавец</td><td>+998 93 222-11-00</td><td>11 200 000 сум</td><td><span class="status st-win">✅ Активный</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sub" style="margin:10px 0 0">💡 Свои клиенты добавляются в начало таблицы и хранятся в localStorage. Звонки: +998 93 507-64-73</p>
+      </div>
+    </main>
+
+    <footer class="footer"><span>© <span data-year>2026</span> SotuvPro • Ташкент</span><span>ДЕМО • CRM • клиенты • Эдуард Журавлёв t.me/mkdir16</span></footer>
+  </div>
+</div>
+
+<div class="modal" id="modalClient">
+  <div class="modal-box">
+    <h3>➕ Новый клиент</h3>
+    <p>Добавится в таблицу сверху через JS, без перезагрузки.</p>
+    <form id="clientForm">
+      <div class="form-grid">
+        <div class="full"><label>Компания<input type="text" name="company" required placeholder="Например: TexnoMart" maxlength="60"></label></div>
+        <div><label>Контактное лицо<input type="text" name="contact" placeholder="Имя — должность" maxlength="60"></label></div>
+        <div><label>Телефон<input type="tel" name="phone" placeholder="+998 93 …" value="+998 93 "></label></div>
+        <div><label>Сфера<select name="cat"><option value="retail">🛒 Ритейл</option><option value="med">🏥 Медицина</option><option value="it">💻 IT</option><option value="prod">🏭 Производство</option><option value="food">🍜 Общепит</option></select></label></div>
+        <div><label>Оборот (сум)<input type="number" name="sum" min="0" step="100000" placeholder="5000000"></label></div>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn ghost" data-close>Отмена</button>
+        <button type="submit" class="btn green">Добавить →</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+(function(){
+  "use strict";
+  const KEY = "sotuvpro_clients_v1";
+  const body = document.getElementById("clientsBody");
+  const search = document.getElementById("clientSearch");
+  const chips = Array.from(document.querySelectorAll("[data-cfilter]"));
+  let cur = "all";
+  const CAT = {retail:"Ритейл", med:"Медицина", it:"IT", prod:"Производство", food:"Общепит"};
+  const ST = {retail:"st-win", med:"st-new", it:"st-win", prod:"st-work", food:"st-new"};
+  const STL = {retail:"✅ Активный", med:"🆕 Новый", it:"✅ Активный", prod:"🤝 Переговоры", food:"🆕 Новый"};
+  function apply(){
+    if(!body) return;
+    const q = (search.value||"").toLowerCase().trim();
+    let n = 0;
+    body.querySelectorAll("tr").forEach(tr=>{
+      const okF = cur==="all" || tr.getAttribute("data-cat")===cur;
+      const okQ = !q || tr.textContent.toLowerCase().includes(q);
+      const show = okF && okQ;
+      tr.style.display = show ? "" : "none";
+      if(show) n++;
+    });
+    const c = document.getElementById("clientsCount");
+    if(c) c.textContent = "Показано: " + n;
+  }
+  chips.forEach(ch=>ch.addEventListener("click", ()=>{
+    chips.forEach(x=>x.classList.remove("active")); ch.classList.add("active");
+    cur = ch.getAttribute("data-cfilter"); apply();
+  }));
+  if(search) search.addEventListener("input", apply);
+  function load(){ try{ return JSON.parse(localStorage.getItem(KEY)||"[]"); }catch{ return []; } }
+  function persist(o){ try{ const a=load(); a.push(o); localStorage.setItem(KEY, JSON.stringify(a)); }catch{} }
+  function addRow(o, toTop){
+    const tr = document.createElement("tr");
+    tr.setAttribute("data-cat", o.cat);
+    const sumTxt = o.sum ? Number(o.sum).toLocaleString("ru-RU") + " сум" : "—";
+    tr.innerHTML = "<td><b></b><br><small style='color:var(--muted)'></small></td><td></td><td></td><td></td><td><span class='status'></span></td>";
+    const tds = tr.querySelectorAll("td");
+    tds[0].querySelector("b").textContent = o.company;
+    tds[0].querySelector("small").textContent = (CAT[o.cat]||o.cat) + (o.catNote ? " • " + o.catNote : "");
+    tds[1].textContent = o.contact || "—";
+    tds[2].textContent = o.phone || "+998 93 507-64-73";
+    tds[3].textContent = sumTxt;
+    const st = tds[4].querySelector("span");
+    st.className = "status " + (ST[o.cat]||"st-new");
+    st.textContent = STL[o.cat]||"🆕 Новый";
+    if(toTop) body.prepend(tr); else body.append(tr);
+    apply();
+  }
+  load().forEach(o=>addRow(o, false));
+  const form = document.getElementById("clientForm");
+  if(form) form.addEventListener("submit", e=>{
+    e.preventDefault();
+    const fd = new FormData(form);
+    const o = {
+      company: (fd.get("company")||"").toString().trim() || "Без названия",
+      contact: (fd.get("contact")||"").toString().trim(),
+      phone: (fd.get("phone")||"").toString().trim(),
+      cat: (fd.get("cat")||"retail").toString(),
+      catNote: "добавлен вручную",
+      sum: Number(fd.get("sum")||0)||0
+    };
+    persist(o); addRow(o, true);
+    if(window.CRM) window.CRM.closeModal("modalClient");
+    form.reset();
+  });
+  const reset = document.getElementById("resetClients");
+  if(reset) reset.addEventListener("click", ()=>{ try{localStorage.removeItem(KEY);}catch{} location.reload(); });
+  apply();
+})();
+</script>
+</body>
+</html>

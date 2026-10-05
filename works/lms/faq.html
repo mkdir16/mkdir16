@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Частые вопросы о школе SkillUp Ташкент: цены в сумах, рассрочка, онлайн и офлайн, возврат, сертификат, трудоустройство.">
+  <title>Вопросы и ответы — SkillUp Ташкент</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Навигация на 10 страниц: компактные ссылки + прокрутка мобильного меню */
+    .nav__link { padding: 10px 12px; font-size: 14px; }
+    .nav--open { max-height: calc(100vh - var(--header-h)); overflow-y: auto; }
+  </style>
+</head>
+<body>
+
+  <!-- ============ ШАПКА (единая для всех 10 страниц) ============ -->
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="index.html" aria-label="SkillUp на главную">
+        <span class="logo__badge">🎓</span>
+        <span class="logo__text">SkillUp<small>Ташкент • LMS</small></span>
+      </a>
+      <nav class="nav" data-nav aria-label="Основная навигация">
+        <a class="nav__link" href="index.html">Главная</a>
+        <a class="nav__link" href="courses.html">Каталог</a>
+        <a class="nav__link" href="course.html">Курс</a>
+        <a class="nav__link" href="cabinet.html">Кабинет</a>
+        <a class="nav__link" href="teachers.html">Учителя</a>
+        <a class="nav__link" href="schedule.html">Расписание</a>
+        <a class="nav__link" href="news.html">Новости</a>
+        <a class="nav__link" href="about.html">О школе</a>
+        <a class="nav__link" href="contacts.html">Контакты</a>
+        <a class="nav__link nav__link--active" href="faq.html">FAQ</a>
+      </nav>
+      <a class="header__phone" href="tel:+998935076473">📞 +998 93 507-64-73</a>
+      <button class="burger" data-burger aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs"><a href="index.html">Главная</a> / Вопросы и ответы</div>
+      <h1>Частые вопросы ❓</h1>
+      <p style="color:#b9bde0; max-width:680px">Собрали 8 самых популярных вопросов. Не нашли свой? Звоните: <a href="tel:+998935076473" style="color:#fff">+998 93 507-64-73</a>.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width:860px">
+      <div class="section__head">
+        <span class="eyebrow">💬 FAQ</span>
+        <h2 class="section__title">Всё, что хотели спросить</h2>
+        <p class="section__subtitle">Нажмите на вопрос, чтобы раскрыть ответ. Аккордеон на чистом JS (<code>data-acc</code>).</p>
+      </div>
+
+      <div class="accordion">
+        <div class="acc" data-acc>
+          <button class="acc__btn" data-acc-btn aria-expanded="false"><span>1️⃣ Подойдёт ли мне, если я полный ноль?</span><span class="acc__icon">＋</span></button>
+          <div class="acc__panel" data-acc-panel><div class="acc__inner">
+            <p>Да! 7 из 10 студентов приходят с нуля. Программы построены от простого к сложному:</p>
+            <ul><li>первые 2 недели — база без жаргона;</li><li>наставник разбирает каждую ошибку лично;</li><li>можно начать с пробного бесплатного урока.</li></ul>
+          </div></div>
+        </div>
+        <div class="acc" data-acc>
+          <button class="acc__btn" data-acc-btn aria-expanded="false"><span>2️⃣ Сколько стоит обучение? Все цены — в сумах?</span><span class="acc__icon">＋</span></button>
+          <div class="acc__panel" data-acc-panel><div class="acc__inner">
+            <p>Да, все цены — в сумах (UZS): от <b>490 000 сум</b> («Английский для IT») до <b>1 900 000 сум</b> («Fullstack PRO»). Оплата — Click, Payme, Uzum Bank или наличные в кампусе.</p>
+            <ul><li>рассрочка 0-0-6: без банка и переплат;</li><li>скидка студентам −10%;</li><li>чеки на каждую оплату.</li></ul>
+          </div></div>
+        </div>
+        <div class="acc" data-acc>
+          <button class="acc__btn" data-acc-btn aria-expanded="false"><span>3️⃣ Онлайн или офлайн: что выбрать?</span><span class="acc__icon">＋</span></button>
+          <div class="acc__panel" data-acc-panel><div class="acc__inner">
+            <p>Оба формата живые (не записи): офлайн — кампус на ул. Амира Темура, 15, онлайн — Zoom с разбором экрана. Программа и наставники одни и те же.</p>
+            <ul><li>пропустили занятие — запись уже вечером в <a href="cabinet.html">кабинете</a>;</li><li>актуальное время групп — на странице <a href="schedule.html">расписания</a>.</li></ul>
+          </div></div>
+        </div>
+        <div class="acc" data-acc>
+          <button class="acc__btn" data-acc-btn aria-expanded="false"><span>4️⃣ Нужен ли свой ноутбук?</span><span class="acc__icon">＋</span></button>
+          <div class="acc__panel" data-acc-panel><div class="acc__inner">
+            <p>Для онлайна — да, подойдёт любой ноутбук последних 5–6 лет. Для офлайна компьютеры есть в кампусе, но со своим удобнее: все настройки и проекты остаются с вами.</p>
+          </div></div>
+        </div>
+        <div class="acc" data-acc>
+          <button class="acc__btn" data-acc-btn aria-expanded="false"><span>5️⃣ Как проверяют домашние задания?</span><span class="acc__icon">＋</span></button>
+          <div class="acc__panel" data-acc-panel><div class="acc__inner">
+            <p>Каждую домашку смотрит наставник в течение 24 часов: комментарии прямо в коде или макете + разбор типовых ошибок на следующем занятии. Прогресс виден в <a href="cabinet.html">личном кабинете</a>.</p>
+          </div></div>
+        </div>
+        <div class="acc" data-acc>
+          <button class="acc__btn" data-acc-btn aria-expanded="false"><span>6️⃣ А если мне не понравится? Можно ли вернуть деньги?</span><span class="acc__icon">＋</span></button>
+          <div class="acc__panel" data-acc-panel><div class="acc__inner">
+            <p>Да. Первые 2 недели — гарантия возврата 100% суммы без объяснения причин. Дальше — перерасчёт за непройденные занятия. Именно поэтому у нас 87% студентов доходят до конца.</p>
+          </div></div>
+        </div>
+        <div class="acc" data-acc>
+          <button class="acc__btn" data-acc-btn aria-expanded="false"><span>7️⃣ Выдают ли сертификат? Помогаете ли с работой?</span><span class="acc__icon">＋</span></button>
+          <div class="acc__panel" data-acc-panel><div class="acc__inner">
+            <p>Да: именной сертификат + рекомендация лучшим студентам. Плюс карьера «до оффера»:</p>
+            <ul><li>портфолио из 4–5 проектов;</li><li>резюме и мок-собеседования;</li><li>стажировки у партнёров в Ташкенте — 73% выпускников работают по специальности.</li></ul>
+          </div></div>
+        </div>
+        <div class="acc" data-acc>
+          <button class="acc__btn" data-acc-btn aria-expanded="false"><span>8️⃣ Как записаться на бесплатный пробный урок?</span><span class="acc__icon">＋</span></button>
+          <div class="acc__panel" data-acc-panel><div class="acc__inner">
+            <p>Три способа — выбирайте удобный:</p>
+            <ul><li>позвонить: <a href="tel:+998935076473"><b>+998 93 507-64-73</b></a> (9:00–20:00);</li><li>оставить заявку на <a href="index.html">главной</a> — перезвоним за 15 минут;</li><li>написать через форму на странице <a href="contacts.html">контактов</a>.</li></ul>
+          </div></div>
+        </div>
+      </div>
+
+      <div class="cab-card mt">
+        <h3>🤝 Остались вопросы?</h3>
+        <p class="muted">Позвоните нам — подскажем курс под ваш уровень и ответим про оплату в сумах, расписание и рассрочку.</p>
+        <p><b>📞 <a href="tel:+998935076473">+998 93 507-64-73</a></b> <span class="muted">• 📍 Ташкент, ул. Амира Темура, 15 • ежедневно 9:00–20:00</span></p>
+        <p><a class="btn btn--primary" href="courses.html">Выбрать курс</a> <a class="btn btn--ghost" href="contacts.html">Написать нам</a></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ ФУТЕР (единый для всех 10 страниц) ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="logo" href="index.html" style="color:#fff"><span class="logo__badge">🎓</span><span class="logo__text" style="color:#fff">SkillUp<small style="color:#b9bde0">Ташкент • LMS</small></span></a>
+          <p style="margin-top:12px">Онлайн-школа: дизайн, вёрстка, Python, английский. Учим с нуля до работы с 2021 года.</p>
+          <p>📞 <a href="tel:+998935076473">+998 93 507-64-73</a><br>📍 Ташкент, ул. Амира Темура, 15</p>
+        </div>
+        <div>
+          <h4>Навигация</h4>
+          <p><a href="index.html">Главная</a><br><a href="courses.html">Каталог</a><br><a href="course.html">Курс</a><br><a href="cabinet.html">Кабинет</a><br><a href="teachers.html">Учителя</a><br><a href="schedule.html">Расписание</a><br><a href="news.html">Новости</a><br><a href="about.html">О школе</a><br><a href="contacts.html">Контакты</a><br><a href="faq.html">FAQ</a></p>
+        </div>
+        <div>
+          <h4>Направления</h4>
+          <p><a href="courses.html">Дизайн</a><br><a href="courses.html">Вёрстка</a><br><a href="courses.html">Python</a><br><a href="courses.html">Английский</a></p>
+        </div>
+        <div>
+          <h4>Студентам</h4>
+          <p><a href="cabinet.html">Прогресс</a><br><a href="schedule.html">Расписание</a><br><a href="course.html#tariffs">Тарифы</a><br><a href="faq.html">Вопросы и ответы</a><br><a href="tel:+998935076473">Поддержка</a></p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> SkillUp Ташкент • Демо-проект для портфолио</span>
+        <span>Вёрстка: Эдуард Журавлёв • t.me/mkdir16 • Цены в сумах (UZS)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

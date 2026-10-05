@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SotuvPro CRM — Отчёты | Неделя / месяц / квартал</title>
+<meta name="description" content="Отчёты SotuvPro: переключение периода, пересчёт цифр на JS, SVG-график, топ-5 менеджеров.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brand-logo">📊</div><div><b>SotuvPro</b><small>CRM • Ташкент</small></div></div>
+    <nav class="nav">
+      <a href="index.html">📈 Дашборд</a>
+      <a href="leads.html">📋 Заявки</a>
+      <a href="deals.html">💼 Сделки</a>
+      <a href="clients.html">👥 Клиенты</a>
+      <a href="calendar.html">📅 Календарь</a>
+      <a href="reports.html" class="active">📊 Отчёты</a>
+      <a href="chat.html">💬 Чат</a>
+      <a href="tariffs.html">💳 Тарифы</a>
+      <a href="settings.html">⚙️ Настройки</a>
+      <a href="help.html">❓ Помощь</a>
+    </nav>
+    <div class="side-card"><h4>📞 Отдел продаж</h4><p>+998 93 507-64-73<br>Чиланзар, Ташкент</p><span class="demo-badge">ДЕМО</span></div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="burger" id="burger" aria-label="Меню">☰</button>
+      <div class="search">🔍 <input type="text" placeholder="Поиск отчёта…" aria-label="Поиск"></div>
+      <span class="plaque">ДЕМО • CRM • отчёты • Эдуард Журавлёв t.me/mkdir16</span>
+      <div class="top-user"><div style="text-align:right"><b style="font-size:14px">Эдуард Журавлёв</b><small>Менеджер</small></div><div class="avatar">ЭЖ</div></div>
+    </header>
+
+    <main class="content">
+      <div class="page-title">
+        <div><h1>📊 Отчёты продаж</h1><p>Ташкент • пересчёт цифр по периоду на JS • без библиотек</p></div>
+        <div class="tabs" role="tablist">
+          <button class="tab-btn" data-period="week">Неделя</button>
+          <button class="tab-btn active" data-period="month">Месяц</button>
+          <button class="tab-btn" data-period="quarter">Квартал</button>
+        </div>
+      </div>
+
+      <section class="kpi-grid">
+        <div class="kpi" style="--c:#4f8cff"><span>💰 Выручка</span><b id="rRevenue">0</b><i class="up" id="rRevDelta"></i></div>
+        <div class="kpi" style="--c:#22c55e"><span>🤝 Сделок закрыто</span><b id="rDeals">0</b><i class="up" id="rDealsDelta"></i></div>
+        <div class="kpi" style="--c:#f59e0b"><span>📋 Новых заявок</span><b id="rLeads">0</b><i class="up" id="rLeadsDelta"></i></div>
+        <div class="kpi" style="--c:#8b5cf6"><span>📊 Конверсия</span><b id="rConv">0</b><i class="down" id="rConvDelta"></i></div>
+      </section>
+
+      <section class="grid2">
+        <div class="card">
+          <h3 id="rChartTitle">📊 Динамика выручки (млн сум)</h3>
+          <p class="sub" id="rChartSub">Октябрь • чистый SVG, бары перестраиваются скриптом</p>
+          <div class="chart-wrap">
+            <svg viewBox="0 0 560 220" role="img" aria-label="График выручки">
+              <g stroke="#223047" stroke-width="1">
+                <line x1="40" y1="20" x2="40" y2="180"/><line x1="40" y1="180" x2="550" y2="180"/>
+                <line x1="40" y1="140" x2="550" y2="140" stroke-dasharray="4 4"/>
+                <line x1="40" y1="100" x2="550" y2="100" stroke-dasharray="4 4"/>
+                <line x1="40" y1="60" x2="550" y2="60" stroke-dasharray="4 4"/>
+              </g>
+              <g fill="#8b98ad" font-size="11">
+                <text x="4" y="64">15</text><text x="4" y="104">10</text><text x="8" y="144">5</text><text x="8" y="184">0</text>
+              </g>
+              <g id="rBars"></g>
+              <polyline id="rLine" points="" fill="none" stroke="#4f8cff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <g id="rLabels" fill="#8b98ad" font-size="11" text-anchor="middle"></g>
+              <defs><linearGradient id="rg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f8cff"/><stop offset="1" stop-color="#24407a"/></linearGradient></defs>
+            </svg>
+          </div>
+          <div class="legend"><span><i class="dot" style="background:#4f8cff"></i>Выручка периода</span><span id="rBest"></span></div>
+        </div>
+
+        <div class="card">
+          <h3>🏆 Топ-5 менеджеров</h3>
+          <p class="sub" id="rTopSub">Октябрь • сумма закрытых сделок</p>
+          <div id="rTop"></div>
+          <p class="sub" style="margin:10px 0 0">📞 Лучший отдел в Ташкенте: +998 93 507-64-73</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><span>© <span data-year>2026</span> SotuvPro • Ташкент</span><span>ДЕМО • CRM • отчёты • Эдуард Журавлёв t.me/mkdir16</span></footer>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+(function(){
+  "use strict";
+  const DATA = {
+    week: {label:"Неделя • 29 сен — 5 окт", revenue:12500000, deals:8, leads:14, conv:34,
+      dRev:"▲ +12% к прошлой", dDeals:"+2 сделки", dLeads:"+3 заявки", dConv:"▲ +1%",
+      bars:[3.2,5.1,4.4,6.8,7.9,6.2,12.5], names:["Пн","Вт","Ср","Чт","Пт","Сб","Вс"], best:"Пик: Вс — 12 500 000 сум",
+      top:[["Э. Журавлёв",5200000],["Д. Каримова",3100000],["С. Юсупов",2200000],["Н. Алиева",1200000],["К. Тоиров",800000]]},
+    month: {label:"Октябрь 2026", revenue:48750000, deals:34, leads:62, conv:32,
+      dRev:"▲ +18% к сентябрю", dDeals:"+6 сделок", dLeads:"+9 заявок", dConv:"▼ −2% — жмём!",
+      bars:[6,8,7,10,11.5,10.5,13.5,12.5], names:["1 нед","2 нед","3 нед","4 нед","5 нед","6 нед","7 нед","8 нед"], best:"Пик: 7 нед — 13 500 000 сум",
+      top:[["Э. Журавлёв",18900000],["Д. Каримова",13400000],["С. Юсупов",9800000],["Н. Алиева",4200000],["К. Тоиров",2450000]]},
+    quarter: {label:"III квартал • июл — сен", revenue:132400000, deals:96, leads:178, conv:35,
+      dRev:"▲ +24% к II кв.", dDeals:"+21 сделка", dLeads:"+34 заявки", dConv:"▲ +3%",
+      bars:[28,34,31,42,48,45,52,49,55,58,54,62], names:["И1","И2","И3","И4","А1","А2","А3","А4","С1","С2","С3","С4"], best:"Пик: конец сентября — 62 млн сум",
+      top:[["Э. Журавлёв",51200000],["Д. Каримова",36800000],["С. Юсупов",27400000],["Н. Алиева",10400000],["К. Тоиров",6600000]]}
+  };
+  const AVA = ["linear-gradient(135deg,#22c55e,#0ea5e9)","linear-gradient(135deg,#8b5cf6,#ec4899)","linear-gradient(135deg,#f59e0b,#ef4444)","linear-gradient(135deg,#4f8cff,#22d3ee)","linear-gradient(135deg,#64748b,#0f172a)"];
+  const INI = ["ЭЖ","ДК","СЮ","НА","КТ"];
+  function fmt(n){ return n.toLocaleString("ru-RU"); }
+  function setPeriod(p){
+    const d = DATA[p]; if(!d) return;
+    document.querySelectorAll("[data-period]").forEach(b=>b.classList.toggle("active", b.getAttribute("data-period")===p));
+    document.getElementById("rRevenue").textContent = fmt(d.revenue) + " сум";
+    document.getElementById("rDeals").textContent = d.deals;
+    document.getElementById("rLeads").textContent = d.leads;
+    document.getElementById("rConv").textContent = d.conv + "%";
+    document.getElementById("rRevDelta").textContent = d.dRev;
+    document.getElementById("rDealsDelta").textContent = d.dDeals;
+    document.getElementById("rLeadsDelta").textContent = d.dLeads;
+    document.getElementById("rConvDelta").textContent = d.dConv;
+    document.getElementById("rChartSub").textContent = d.label + " • чистый SVG, бары перестраиваются скриптом";
+    document.getElementById("rBest").textContent = d.best;
+    document.getElementById("rTopSub").textContent = d.label + " • сумма закрытых сделок";
+    // график
+    const max = Math.max.apply(null, d.bars) * 1.15;
+    const n = d.bars.length;
+    const W = 510, x0 = 40, gap = W / n;
+    const bw = Math.min(44, gap * 0.62);
+    const barsG = document.getElementById("rBars");
+    const labelsG = document.getElementById("rLabels");
+    barsG.innerHTML = ""; labelsG.innerHTML = "";
+    const NS = "http://www.w3.org/2000/svg";
+    let pts = [];
+    d.bars.forEach((v,i)=>{
+      const h = Math.max(8, (v / max) * 150);
+      const x = x0 + gap*i + (gap-bw)/2;
+      const y = 180 - h;
+      const r = document.createElementNS(NS,"rect");
+      r.setAttribute("x", x.toFixed(1)); r.setAttribute("y", y.toFixed(1));
+      r.setAttribute("width", bw.toFixed(1)); r.setAttribute("height", h.toFixed(1));
+      r.setAttribute("rx", 7);
+      r.setAttribute("fill", i===n-1 ? "#22c55e" : "url(#rg)");
+      barsG.appendChild(r);
+      const cx = x0 + gap*i + gap/2, cy = y - 5;
+      pts.push(cx.toFixed(1)+","+cy.toFixed(1));
+      const t = document.createElementNS(NS,"text");
+      t.setAttribute("x", cx.toFixed(1)); t.setAttribute("y", 196);
+      t.textContent = d.names[i] || "";
+      labelsG.appendChild(t);
+    });
+    document.getElementById("rLine").setAttribute("points", pts.join(" "));
+    // топ-5
+    const topEl = document.getElementById("rTop");
+    topEl.innerHTML = "";
+    const m = d.top[0][1];
+    d.top.forEach((row,i)=>{
+      const div = document.createElement("div");
+      div.className = "mgr";
+      const pct = Math.round(row[1]/m*100);
+      div.innerHTML = "<div class='ava'></div><div style='min-width:110px'><b></b><br><small style='color:var(--muted)'></small></div><div class='bar'><i></i></div><b></b>";
+      div.querySelector(".ava").style.background = AVA[i % AVA.length];
+      div.querySelector(".ava").textContent = INI[i];
+      const names = div.querySelectorAll("b");
+      names[0].textContent = (i+1) + ". " + row[0];
+      names[1].textContent = fmt(row[1]) + " сум";
+      div.querySelector("small").textContent = pct + "% от лидера";
+      div.querySelector(".bar i").style.width = pct + "%";
+      topEl.appendChild(div);
+    });
+  }
+  document.querySelectorAll("[data-period]").forEach(b=>b.addEventListener("click", ()=>setPeriod(b.getAttribute("data-period"))));
+  setPeriod("month");
+})();
+</script>
+</body>
+</html>

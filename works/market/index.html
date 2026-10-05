@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bazaar — маркетплейс Ташкента | Главная</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="demo">ДЕМО • Маркетплейс • каталог + корзина + заказ • Эдуард Журавлёв t.me/mkdir16</div>
+<header class="header"><div class="container header__inner">
+<a class="logo" href="index.html">🛍️ <span>Bazaar</span></a>
+<nav class="nav" id="nav">
+<a href="index.html" class="active">Главная</a><a href="catalog.html">Каталог</a><a href="product.html">Товар</a><a href="cart.html">Корзина</a><a href="checkout.html">Оформление</a><a href="cabinet.html">Кабинет</a><a href="favorites.html">Избранное</a><a href="sellers.html">Продавцы</a><a href="promo.html">Акции</a><a href="help.html">Помощь</a>
+</nav>
+<div class="header__right">
+<a class="phone" href="tel:+998935076473">+998 93 507-64-73</a>
+<a class="cart-btn" href="cart.html">🛒 <b id="cartCount">0</b></a>
+<button class="burger" id="burger" aria-label="Меню">☰</button>
+</div></div></header>
+
+<main class="container">
+<section class="hero">
+<div>
+<span class="badge">📍 Ташкент • доставка за 24 часа</span>
+<h1>Маркетплейс Bazaar — всё для дома и жизни</h1>
+<p>Электроника, одежда и товары для дома. Цены в сумах, оплата Click / Payme / наличные. Скидки до −30% каждый день.</p>
+<p style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+<a class="btn btn-accent" href="catalog.html">Перейти в каталог →</a>
+<a class="btn btn-light" href="cart.html">Корзина 🛒</a>
+</p>
+<p class="small" style="color:#fff;margin-top:10px;opacity:.9">Телефон: 2 500 000 сум • Наушники: 450 000 сум • Рассрочка 0-0-12</p>
+</div>
+<div class="hero__art">
+<div class="mini-card"><i>📱</i>Смартфоны<br>от 2 500 000</div>
+<div class="mini-card"><i>👟</i>Одежда<br>от 320 000</div>
+<div class="mini-card"><i>☕</i>Для дома<br>от 350 000</div>
+<div class="mini-card"><i>🚚</i>Доставка<br>по Узбекистану</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section__head"><div><h2>Категории</h2><p>8 направлений — выбирайте своё</p></div><a class="btn btn-light" href="catalog.html">Все товары</a></div>
+<div class="grid cats">
+<a class="cat" href="catalog.html"><i>📱</i>Электроника<small>1240 товаров</small></a>
+<a class="cat" href="catalog.html"><i>👕</i>Одежда<small>860 товаров</small></a>
+<a class="cat" href="catalog.html"><i>🏠</i>Дом<small>540 товаров</small></a>
+<a class="cat" href="catalog.html"><i>💅</i>Красота<small>320 товаров</small></a>
+<a class="cat" href="catalog.html"><i>🏋️</i>Спорт<small>210 товаров</small></a>
+<a class="cat" href="catalog.html"><i>🧸</i>Детям<small>430 товаров</small></a>
+<a class="cat" href="catalog.html"><i>🍎</i>Продукты<small>980 товаров</small></a>
+<a class="cat" href="catalog.html"><i>🚗</i>Авто<small>150 товаров</small></a>
+</div>
+</section>
+
+<section class="section">
+<div class="section__head"><div><h2>🔥 Хиты продаж</h2><p>8 товаров, которые берут чаще всего</p></div><a class="btn btn-light" href="catalog.html">Каталог</a></div>
+<div class="grid products">
+<article class="card"><div class="thumb g1">📱<span class="hit">ХИТ −16%</span><button class="fav" data-fav="p1">♡</button></div><div class="card__body"><div class="card__cat">Электроника</div><a class="card__title" href="product.html?id=p1">Смартфон Redmi Note 13 8/256 ГБ</a><div class="rating">★★★★★ 4.9</div><div class="price">2 500 000 сум <s>2 990 000 сум</s></div><div class="card__btns"><button class="btn btn-primary" style="flex:1" data-add="p1">В корзину</button><a class="btn btn-light" href="product.html?id=p1">→</a></div></div></article>
+<article class="card"><div class="thumb g2">🎧<span class="hit">ХИТ −24%</span><button class="fav" data-fav="p2">♡</button></div><div class="card__body"><div class="card__cat">Электроника</div><a class="card__title" href="product.html?id=p2">Наушники JBL Tune 510BT</a><div class="rating">★★★★☆ 4.7</div><div class="price">450 000 сум <s>590 000 сум</s></div><div class="card__btns"><button class="btn btn-primary" style="flex:1" data-add="p2">В корзину</button><a class="btn btn-light" href="product.html?id=p2">→</a></div></div></article>
+<article class="card"><div class="thumb g5">💻<span class="hit">ХИТ</span><button class="fav" data-fav="p3">♡</button></div><div class="card__body"><div class="card__cat">Электроника</div><a class="card__title" href="product.html?id=p3">Ноутбук Lenovo IdeaPad Slim 15</a><div class="rating">★★★★★ 4.8</div><div class="price">8 900 000 сум <s>9 500 000 сум</s></div><div class="card__btns"><button class="btn btn-primary" style="flex:1" data-add="p3">В корзину</button><a class="btn btn-light" href="product.html?id=p3">→</a></div></div></article>
+<article class="card"><div class="thumb g6">🧥<span class="hit">ХИТ −21%</span><button class="fav" data-fav="p6">♡</button></div><div class="card__body"><div class="card__cat">Одежда</div><a class="card__title" href="product.html?id=p6">Куртка зимняя мужская</a><div class="rating">★★★★★ 4.9</div><div class="price">750 000 сум <s>950 000 сум</s></div><div class="card__btns"><button class="btn btn-primary" style="flex:1" data-add="p6">В корзину</button><a class="btn btn-light" href="product.html?id=p6">→</a></div></div></article>
+<article class="card"><div class="thumb g1">👟<button class="fav" data-fav="p7">♡</button></div><div class="card__body"><div class="card__cat">Одежда</div><a class="card__title" href="product.html?id=p7">Кроссовки Air Run</a><div class="rating">★★★★★ 4.8</div><div class="price">1 200 000 сум <s>1 450 000 сум</s></div><div class="card__btns"><button class="btn btn-primary" style="flex:1" data-add="p7">В корзину</button><a class="btn btn-light" href="product.html?id=p7">→</a></div></div></article>
+<article class="card"><div class="thumb g3">🧹<button class="fav" data-fav="p10">♡</button></div><div class="card__body"><div class="card__cat">Дом</div><a class="card__title" href="product.html?id=p10">Пылесос Samsung 2000W</a><div class="rating">★★★★★ 4.8</div><div class="price">1 800 000 сум <s>2 100 000 сум</s></div><div class="card__btns"><button class="btn btn-primary" style="flex:1" data-add="p10">В корзину</button><a class="btn btn-light" href="product.html?id=p10">→</a></div></div></article>
+<article class="card"><div class="thumb g6">☕<button class="fav" data-fav="p11">♡</button></div><div class="card__body"><div class="card__cat">Дом</div><a class="card__title" href="product.html?id=p11">Кофеварка DeLonghi</a><div class="rating">★★★★★ 4.9</div><div class="price">2 100 000 сум <s>2 400 000 сум</s></div><div class="card__btns"><button class="btn btn-primary" style="flex:1" data-add="p11">В корзину</button><a class="btn btn-light" href="product.html?id=p11">→</a></div></div></article>
+<article class="card"><div class="thumb g7">🍳<button class="fav" data-fav="p12">♡</button></div><div class="card__body"><div class="card__cat">Дом</div><a class="card__title" href="product.html?id=p12">Набор посуды 12 предметов</a><div class="rating">★★★★☆ 4.7</div><div class="price">890 000 сум <s>1 090 000 сум</s></div><div class="card__btns"><button class="btn btn-primary" style="flex:1" data-add="p12">В корзину</button><a class="btn btn-light" href="product.html?id=p12">→</a></div></div></article>
+</div>
+</section>
+
+<section class="section">
+<div class="promo">
+<div><span class="badge">⚡ Акция дня</span><h2 style="margin:8px 0">Скидки до −30% + промокод SKIDKA10</h2><p style="opacity:.85">Успей до конца дня. Промокод вводится в корзине и даёт −10% сверху.</p></div>
+<div class="timer" id="timer"><div><b>00</b><span>часов</span></div><div><b>00</b><span>минут</span></div><div><b>00</b><span>секунд</span></div></div>
+<a class="btn btn-accent" href="catalog.html">Забрать скидку</a>
+</div>
+</section>
+
+<section class="section">
+<div class="section__head"><div><h2>Отзывы покупателей</h2><p>Нас уже выбрали 12 000+ жителей Ташкента</p></div></div>
+<div class="grid reviews">
+<div class="rev"><b>⭐⭐⭐⭐⭐ Сардор, Ташкент</b><p>«Заказал телефон за 2 500 000, привезли за 3 часа в коробке с подарком. Оплатил Click’ом. Топ!»</p></div>
+<div class="rev"><b>⭐⭐⭐⭐⭐ Малика, Чиланзар</b><p>«Наушники за 450 000 — оригинал, чек и гарантия. Промокод SKIDKA10 реально сработал.»</p></div>
+<div class="rev"><b>⭐⭐⭐⭐☆ Тимур, Юнусабад</b><p>«Брал пылесос и кофеварку. Поддержка на русском, помогли с выбором. Буду брать ещё.»</p></div>
+</div>
+</section>
+
+<section class="section form-card" style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between">
+<div><h3>Остались вопросы? Позвоните 📞</h3><p class="small">Ежедневно 9:00–21:00 • Ташкент</p></div>
+<a class="btn btn-green" href="tel:+998935076473">+998 93 507-64-73</a>
+</section>
+</main>
+
+<footer class="footer"><div class="container footer__grid">
+<div><h4>🛍️ Bazaar</h4><p>Демо-маркетплейс: каталог + корзина + заказ.<br>Электроника • Одежда • Дом.<br>Ташкент, Узбекистан.</p></div>
+<div><h4>Навигация</h4><a href="index.html">Главная</a><a href="catalog.html">Каталог</a><a href="favorites.html">Избранное</a><a href="sellers.html">Продавцы</a><a href="promo.html">Акции</a><a href="help.html">Помощь</a><a href="cart.html">Корзина</a><a href="cabinet.html">Личный кабинет</a></div>
+<div><h4>Контакты</h4><a href="tel:+998935076473">+998 93 507-64-73</a><a href="#">t.me/mkdir16</a><p class="small">ДЕМО • Эдуард Журавлёв</p></div>
+</div></footer>
+<script src="script.js"></script>
+</body>
+</html>

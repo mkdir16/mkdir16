@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Каталог курсов SkillUp Ташкент: дизайн, вёрстка, Python, английский. Фильтры и поиск. Цены в сумах.">
+  <title>Каталог курсов — SkillUp Ташкент</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Навигация на 10 страниц: компактные ссылки + прокрутка мобильного меню */
+    .nav__link { padding: 10px 12px; font-size: 14px; }
+    .nav--open { max-height: calc(100vh - var(--header-h)); overflow-y: auto; }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="index.html" aria-label="SkillUp на главную">
+        <span class="logo__badge">🎓</span>
+        <span class="logo__text">SkillUp<small>Ташкент • LMS</small></span>
+      </a>
+      <nav class="nav" data-nav aria-label="Основная навигация">
+        <a class="nav__link" href="index.html">Главная</a>
+        <a class="nav__link nav__link--active" href="courses.html">Каталог</a>
+        <a class="nav__link" href="course.html">Курс</a>
+        <a class="nav__link" href="cabinet.html">Кабинет</a>
+        <a class="nav__link" href="teachers.html">Учителя</a>
+        <a class="nav__link" href="schedule.html">Расписание</a>
+        <a class="nav__link" href="news.html">Новости</a>
+        <a class="nav__link" href="about.html">О школе</a>
+        <a class="nav__link" href="contacts.html">Контакты</a>
+        <a class="nav__link" href="faq.html">FAQ</a>
+      </nav>
+      <a class="header__phone" href="tel:+998935076473">📞 +998 93 507-64-73</a>
+      <button class="burger" data-burger aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs"><a href="index.html">Главная</a> / Каталог курсов</div>
+      <h1>Каталог курсов 📚</h1>
+      <p style="color:#b9bde0; max-width:640px">9 программ: дизайн, вёрстка, Python, английский. Фильтруйте по направлению или ищите по названию. Все цены — в сумах.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="Фильтр по категориям">
+          <button class="filter-btn filter-btn--active" data-filter="all">Все (9)</button>
+          <button class="filter-btn" data-filter="design">🎨 Дизайн</button>
+          <button class="filter-btn" data-filter="code">🧱 Вёрстка</button>
+          <button class="filter-btn" data-filter="python">🐍 Python</button>
+          <button class="filter-btn" data-filter="english">🇬🇧 Английский</button>
+        </div>
+        <div class="search">
+          <span aria-hidden="true">🔍</span>
+          <input type="search" data-search placeholder="Поиск по названию… (например, Python)" aria-label="Поиск по названию курса">
+          <button class="btn btn--dark btn--sm" data-search-clear type="button">✕</button>
+        </div>
+      </div>
+
+      <p class="muted" data-count>Показано курсов: 9 из 9</p>
+
+      <div class="courses-grid mt" id="catalogGrid">
+
+        <article class="course-card" data-category="code">
+          <div class="course-card__cover course-card__cover--layout">🧱<span class="course-card__tag">Вёрстка</span></div>
+          <div class="course-card__body">
+            <h3 class="course-card__title" data-title>HTML + CSS с нуля</h3>
+            <p class="course-card__desc">Семантика, Flexbox, Grid, адаптив под 768px, Git. 5 сайтов в портфолио.</p>
+            <div class="course-card__meta"><i>⏱ 4 мес</i><i>📊 Beginner</i><i>⭐ 4.9</i></div>
+            <div class="course-card__foot">
+              <div class="price">690 000 сум<small>рассрочка 172 500 × 4</small></div>
+              <a class="btn btn--dark btn--sm" href="course.html">Открыть</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="course-card" data-category="code">
+          <div class="course-card__cover course-card__cover--code">⚡<span class="course-card__tag">Frontend</span></div>
+          <div class="course-card__body">
+            <h3 class="course-card__title" data-title>JavaScript + React</h3>
+            <p class="course-card__desc">DOM, асинхронность, fetch, React, хуки, роутинг. 3 SPA + мок-собеседования.</p>
+            <div class="course-card__meta"><i>⏱ 6 мес</i><i>📊 Junior+</i><i>⭐ 4.8</i></div>
+            <div class="course-card__foot">
+              <div class="price">1 190 000 сум<small>рассрочка 198 000 × 6</small></div>
+              <a class="btn btn--dark btn--sm" href="course.html">Открыть</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="course-card" data-category="python">
+          <div class="course-card__cover course-card__cover--python">🐍<span class="course-card__tag">Python</span></div>
+          <div class="course-card__body">
+            <h3 class="course-card__title" data-title>Python-разработка</h3>
+            <p class="course-card__desc">Синтаксис, ООП, файлы, API, Django basics, Telegram-боты на aiogram.</p>
+            <div class="course-card__meta"><i>⏱ 6 мес</i><i>📊 С нуля</i><i>⭐ 4.9</i></div>
+            <div class="course-card__foot">
+              <div class="price">990 000 сум<small>рассрочка 165 000 × 6</small></div>
+              <a class="btn btn--dark btn--sm" href="course.html">Открыть</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="course-card" data-category="design">
+          <div class="course-card__cover course-card__cover--design">🎨<span class="course-card__tag">Дизайн</span></div>
+          <div class="course-card__body">
+            <h3 class="course-card__title" data-title>UX/UI в Figma</h3>
+            <p class="course-card__desc">Композиция, сетки, типографика, автолейауты, прототипы, 4 кейса.</p>
+            <div class="course-card__meta"><i>⏱ 5 мес</i><i>📊 С нуля</i><i>⭐ 4.9</i></div>
+            <div class="course-card__foot">
+              <div class="price">890 000 сум<small>рассрочка 178 000 × 5</small></div>
+              <a class="btn btn--dark btn--sm" href="course.html">Открыть</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="course-card" data-category="english">
+          <div class="course-card__cover course-card__cover--english">🇬🇧<span class="course-card__tag">Английский</span></div>
+          <div class="course-card__body">
+            <h3 class="course-card__title" data-title>Английский для IT</h3>
+            <p class="course-card__desc">A2→B2: грамматика, speaking-клубы, переписка, лексика для интервью.</p>
+            <div class="course-card__meta"><i>⏱ 8 мес</i><i>📊 A2–B2</i><i>⭐ 4.7</i></div>
+            <div class="course-card__foot">
+              <div class="price">490 000 сум<small>рассрочка 61 000 × 8</small></div>
+              <a class="btn btn--dark btn--sm" href="course.html">Открыть</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="course-card" data-category="design">
+          <div class="course-card__cover course-card__cover--figma">✨<span class="course-card__tag">Дизайн</span></div>
+          <div class="course-card__body">
+            <h3 class="course-card__title" data-title>Графический дизайн</h3>
+            <p class="course-card__desc">Photoshop + Illustrator + Figma: соцсети, айдентика, полиграфия.</p>
+            <div class="course-card__meta"><i>⏱ 4 мес</i><i>📊 С нуля</i><i>⭐ 4.8</i></div>
+            <div class="course-card__foot">
+              <div class="price">790 000 сум<small>рассрочка 197 500 × 4</small></div>
+              <a class="btn btn--dark btn--sm" href="course.html">Открыть</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="course-card" data-category="code">
+          <div class="course-card__cover course-card__cover--layout">📱<span class="course-card__tag">Вёрстка</span></div>
+          <div class="course-card__body">
+            <h3 class="course-card__title" data-title>Адаптивная вёрстка PRO</h3>
+            <p class="course-card__desc">Mobile-first, Bootstrap, БЭМ, Pixel Perfect, скорость и доступность.</p>
+            <div class="course-card__meta"><i>⏱ 3 мес</i><i>📊 Junior</i><i>⭐ 4.8</i></div>
+            <div class="course-card__foot">
+              <div class="price">750 000 сум<small>рассрочка 250 000 × 3</small></div>
+              <a class="btn btn--dark btn--sm" href="course.html">Открыть</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="course-card" data-category="python">
+          <div class="course-card__cover course-card__cover--python">🤖<span class="course-card__tag">Python</span></div>
+          <div class="course-card__body">
+            <h3 class="course-card__title" data-title>Telegram-боты на Python</h3>
+            <p class="course-card__desc">Мини-курс: aiogram, кнопки, оплаты Click/Payme, деплой на сервер.</p>
+            <div class="course-card__meta"><i>⏱ 2 мес</i><i>📊 С нуля</i><i>⭐ 4.9</i></div>
+            <div class="course-card__foot">
+              <div class="price">590 000 сум<small>рассрочка 295 000 × 2</small></div>
+              <a class="btn btn--dark btn--sm" href="course.html">Открыть</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="course-card" data-category="english">
+          <div class="course-card__cover course-card__cover--english">💬<span class="course-card__tag">Английский</span></div>
+          <div class="course-card__body">
+            <h3 class="course-card__title" data-title>Speaking Club + IELTS</h3>
+            <p class="course-card__desc">Разговорная практика 3× в неделю + подготовка к IELTS 6.5+.</p>
+            <div class="course-card__meta"><i>⏱ 6 мес</i><i>📊 B1–C1</i><i>⭐ 4.9</i></div>
+            <div class="course-card__foot">
+              <div class="price">650 000 сум<small>рассрочка 108 000 × 6</small></div>
+              <a class="btn btn--dark btn--sm" href="course.html">Открыть</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="empty mt" data-empty style="display:none">
+        <div style="font-size:48px">🔎</div>
+        <h3>Ничего не найдено</h3>
+        <p>Попробуйте другой запрос или сбросьте фильтры. Например: «Python», «Figma», «Английский».</p>
+      </div>
+
+      <!-- Подвал каталога -->
+      <div class="grid-2 mt">
+        <div class="cab-card">
+          <h3>❓ Не знаете, с чего начать?</h3>
+          <p class="muted">Пройдите бесплатную консультацию: определим уровень, подберём направление и составим план на 6 месяцев.</p>
+          <p><b>📞 +998 93 507-64-73</b><br><span class="muted">Ташкент, ул. Амира Темура, 15 • ежедневно 9:00–20:00</span></p>
+          <a class="btn btn--primary" href="course.html#enroll">Получить консультацию</a>
+        </div>
+        <div class="cab-card">
+          <h3>💳 Оплата и рассрочка</h3>
+          <ul class="muted">
+            <li>Цены в сумах: от <b>490 000</b> до <b>1 900 000 сум</b> за курс;</li>
+            <li>Click, Payme, Uzum Bank, наличные в кампусе;</li>
+            <li>Рассрочка 0% до 6 месяцев без банка;</li>
+            <li>Возврат в первые 2 недели — полностью.</li>
+          </ul>
+          <p><span class="pill">0-0-6 рассрочка</span> <span class="pill">🎓 скидка студентам −10%</span></p>
+        </div>
+      </div>
+
+      <div class="cab-card mt">
+        <h3>🛠 Как работают фильтры и поиск (для ревью кода)</h3>
+        <p class="muted">Категории — через <code>data-filter</code> / <code>data-category</code>, поиск — через <code>data-search</code> по <code>data-title</code>. Счётчик — <code>data-count</code>, пустое состояние — <code>data-empty</code>. Всё на чистом JS в <code>script.js</code>, без библиотек.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="logo" href="index.html" style="color:#fff"><span class="logo__badge">🎓</span><span class="logo__text" style="color:#fff">SkillUp<small style="color:#b9bde0">Ташкент • LMS</small></span></a>
+          <p style="margin-top:12px">Онлайн-школа: дизайн, вёрстка, Python, английский.</p>
+          <p>📞 <a href="tel:+998935076473">+998 93 507-64-73</a><br>📍 Ташкент, ул. Амира Темура, 15</p>
+        </div>
+        <div>
+          <h4>Навигация</h4>
+          <p><a href="index.html">Главная</a><br><a href="courses.html">Каталог</a><br><a href="course.html">Курс</a><br><a href="cabinet.html">Кабинет</a><br><a href="teachers.html">Учителя</a><br><a href="schedule.html">Расписание</a><br><a href="news.html">Новости</a><br><a href="about.html">О школе</a><br><a href="contacts.html">Контакты</a><br><a href="faq.html">FAQ</a></p>
+        </div>
+        <div>
+          <h4>Направления</h4>
+          <p><a href="courses.html">Дизайн</a><br><a href="courses.html">Вёрстка</a><br><a href="courses.html">Python</a><br><a href="courses.html">Английский</a></p>
+        </div>
+        <div>
+          <h4>Студентам</h4>
+          <p><a href="cabinet.html">Прогресс</a><br><a href="course.html#tariffs">Тарифы</a><br><a href="course.html#program">Программа</a><br><a href="tel:+998935076473">Поддержка</a></p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> SkillUp Ташкент • Демо-проект для портфолио</span>
+        <span>Вёрстка: Эдуард Журавлёв • t.me/mkdir16 • Цены в сумах (UZS)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

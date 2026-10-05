@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SotuvPro CRM — Дашборд | Отдел продаж, Ташкент</title>
+<meta name="description" content="SotuvPro — демо CRM для отдела продаж в Ташкенте. Дашборд, KPI, график продаж, заявки, задачи.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <!-- САЙДБАР -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-logo">📊</div>
+      <div><b>SotuvPro</b><small>CRM • Ташкент</small></div>
+    </div>
+    <nav class="nav">
+      <a href="index.html" class="active">📈 Дашборд</a>
+      <a href="leads.html">📋 Заявки</a>
+      <a href="deals.html">💼 Сделки</a>
+      <a href="clients.html">👥 Клиенты</a>
+      <a href="calendar.html">📅 Календарь</a>
+      <a href="reports.html">📊 Отчёты</a>
+      <a href="chat.html">💬 Чат</a>
+      <a href="tariffs.html">💳 Тарифы</a>
+      <a href="settings.html">⚙️ Настройки</a>
+      <a href="help.html">❓ Помощь</a>
+    </nav>
+    <div class="side-card">
+      <h4>📞 Отдел продаж</h4>
+      <p>+998 93 507-64-73<br>Чиланзар, Ташкент<br>пн–сб 9:00–19:00</p>
+      <span class="demo-badge">ДЕМО</span>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- КОНТЕНТ -->
+  <div class="main">
+    <header class="topbar">
+      <button class="burger" id="burger" aria-label="Меню">☰</button>
+      <div class="search">🔍 <input type="text" placeholder="Поиск: клиент, сделка, телефон…" aria-label="Поиск"></div>
+      <span class="plaque">ДЕМО • CRM • дашборд + заявки • Эдуард Журавлёв t.me/mkdir16</span>
+      <div class="top-user">
+        <div style="text-align:right"><b style="font-size:14px">Эдуард Журавлёв</b><small>Менеджер продаж</small></div>
+        <div class="avatar">ЭЖ</div>
+      </div>
+    </header>
+
+    <main class="content">
+      <span class="plaque mob" style="margin-bottom:10px;display:inline-block">ДЕМО • CRM • дашборд + заявки • Эдуард Журавлёв t.me/mkdir16</span>
+      <div class="page-title">
+        <div>
+          <h1>📈 Дашборд продаж</h1>
+          <p>Ташкент • Октябрь 2026 • обновлено сегодня в 09:40</p>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <a href="leads.html" class="btn" style="text-decoration:none">+ Новая заявка</a>
+          <a href="calendar.html" class="btn ghost" style="text-decoration:none">📅 Календарь</a>
+        </div>
+      </div>
+
+      <!-- KPI -->
+      <section class="kpi-grid">
+        <div class="kpi" style="--c:#4f8cff">
+          <span>💰 Выручка за месяц</span>
+          <b data-count="48750000" data-suffix=" сум">0</b>
+          <i class="up">▲ +18% к сентябрю</i>
+        </div>
+        <div class="kpi" style="--c:#22c55e">
+          <span>🤝 Сделок закрыто</span>
+          <b data-count="34" data-suffix="">0</b>
+          <i class="up">▲ +6 сделок</i>
+        </div>
+        <div class="kpi" style="--c:#f59e0b">
+          <span>📋 Активных заявок</span>
+          <b data-count="27" data-suffix="">0</b>
+          <i class="up">▲ +4 новых</i>
+        </div>
+        <div class="kpi" style="--c:#8b5cf6">
+          <span>📊 Конверсия в продажу</span>
+          <b data-count="32" data-suffix="%">0</b>
+          <i class="down">▼ −2% — жмём!</i>
+        </div>
+      </section>
+
+      <section class="grid2">
+        <!-- График на чистом SVG -->
+        <div class="card">
+          <h3>📊 Продажи по неделям (млн сум)</h3>
+          <p class="sub">Сентябрь → октябрь • без библиотек, чистый SVG</p>
+          <div class="chart-wrap">
+            <svg viewBox="0 0 560 220" role="img" aria-label="График продаж">
+              <!-- сетка -->
+              <g stroke="#223047" stroke-width="1">
+                <line x1="40" y1="20" x2="40" y2="180"/><line x1="40" y1="180" x2="550" y2="180"/>
+                <line x1="40" y1="140" x2="550" y2="140" stroke-dasharray="4 4"/>
+                <line x1="40" y1="100" x2="550" y2="100" stroke-dasharray="4 4"/>
+                <line x1="40" y1="60" x2="550" y2="60" stroke-dasharray="4 4"/>
+              </g>
+              <g fill="#8b98ad" font-size="11">
+                <text x="4" y="64">15</text><text x="4" y="104">10</text><text x="8" y="144">5</text><text x="8" y="184">0</text>
+              </g>
+              <!-- бары -->
+              <g>
+                <rect x="70" y="120" width="44" height="60" rx="7" fill="#2b3b58"/>
+                <rect x="130" y="100" width="44" height="80" rx="7" fill="#2b3b58"/>
+                <rect x="190" y="110" width="44" height="70" rx="7" fill="#2b3b58"/>
+                <rect x="250" y="80" width="44" height="100" rx="7" fill="url(#g1)"/>
+                <rect x="310" y="65" width="44" height="115" rx="7" fill="url(#g1)"/>
+                <rect x="370" y="75" width="44" height="105" rx="7" fill="url(#g1)"/>
+                <rect x="430" y="45" width="44" height="135" rx="7" fill="url(#g1)"/>
+                <rect x="490" y="55" width="44" height="125" rx="7" fill="#22c55e"/>
+              </g>
+              <!-- линия тренда -->
+              <polyline points="92,115 152,95 212,105 272,75 332,60 392,70 452,40 512,50"
+                fill="none" stroke="#4f8cff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <g fill="#4f8cff">
+                <circle cx="452" cy="40" r="5"/><circle cx="512" cy="50" r="5" fill="#22c55e"/>
+              </g>
+              <g fill="#8b98ad" font-size="11" text-anchor="middle">
+                <text x="92" y="196">1 нед</text><text x="152" y="196">2 нед</text><text x="212" y="196">3 нед</text><text x="272" y="196">4 нед</text>
+                <text x="332" y="196">5 нед</text><text x="392" y="196">6 нед</text><text x="452" y="196">7 нед</text><text x="512" y="196">8 нед</text>
+              </g>
+              <defs>
+                <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#4f8cff"/><stop offset="1" stop-color="#24407a"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="legend">
+            <span><i class="dot" style="background:#4f8cff"></i>Продажи</span>
+            <span><i class="dot" style="background:#22c55e"></i>Текущая неделя: 12 500 000 сум</span>
+            <span><i class="dot" style="background:#2b3b58"></i>Прошлый месяц</span>
+          </div>
+        </div>
+
+        <!-- Задачи -->
+        <div class="card">
+          <h3>✅ Задачи на сегодня</h3>
+          <p class="sub" id="todoCount">Осталось: …</p>
+          <div class="todo" id="todoList"></div>
+          <form class="todo-form" id="todoForm">
+            <input type="text" id="todoInput" placeholder="Новая задача… (сохранится)" maxlength="120">
+            <button class="btn" type="submit">+</button>
+          </form>
+          <p class="sub" style="margin:10px 0 0">💾 Хранится в localStorage — переживает перезагрузку.</p>
+        </div>
+      </section>
+
+      <!-- Последние заявки -->
+      <div class="card">
+        <div class="toolbar">
+          <div><h3 style="margin:0">🧾 Последние заявки</h3><p class="sub" style="margin:2px 0 0">6 свежих • всего 27 активных</p></div>
+          <a href="leads.html" class="btn ghost" style="text-decoration:none">Все заявки →</a>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Клиент</th><th>Телефон</th><th>Сумма</th><th>Статус</th><th>Менеджер</th></tr></thead>
+            <tbody>
+              <tr><td><b>TexnoMart</b><br><small style="color:var(--muted)">Бытовая техника</small></td><td>+998 93 507-64-73</td><td>12 500 000 сум</td><td><span class="status st-work">🤝 Переговоры</span></td><td>Э. Журавлёв</td></tr>
+              <tr><td><b>ShifoMed</b><br><small style="color:var(--muted)">Клиника</small></td><td>+998 90 123-45-67</td><td>8 900 000 сум</td><td><span class="status st-new">🆕 Новая</span></td><td>Д. Каримова</td></tr>
+              <tr><td><b>Chust Textile</b><br><small style="color:var(--muted)">Текстиль</small></td><td>+998 91 555-34-21</td><td>21 300 000 сум</td><td><span class="status st-win">✅ Выиграна</span></td><td>Э. Журавлёв</td></tr>
+              <tr><td><b>Oqtepa Lavash</b><br><small style="color:var(--muted)">Сеть кафе</small></td><td>+998 97 444-88-11</td><td>4 200 000 сум</td><td><span class="status st-work">🤝 Переговоры</span></td><td>С. Юсупов</td></tr>
+              <tr><td><b>IT-Park Resident</b><br><small style="color:var(--muted)">Софт</small></td><td>+998 93 100-20-30</td><td>15 750 000 сум</td><td><span class="status st-new">🆕 Новая</span></td><td>Д. Каримова</td></tr>
+              <tr><td><b>Samarqand Mebel</b><br><small style="color:var(--muted)">Мебель</small></td><td>+998 66 233-11-22</td><td>6 400 000 сум</td><td><span class="status st-lose">❌ Проиграна</span></td><td>С. Юсупов</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <span>© <span data-year>2026</span> SotuvPro • Ташкент • +998 93 507-64-73</span>
+      <span>ДЕМО • CRM • дашборд + заявки • Эдуард Журавлёв t.me/mkdir16</span>
+    </footer>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SotuvPro CRM — Чат | Внутренняя переписка</title>
+<meta name="description" content="Внутренний чат SotuvPro: 5 диалогов отдела продаж, отправка сообщений на JS, localStorage.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brand-logo">📊</div><div><b>SotuvPro</b><small>CRM • Ташкент</small></div></div>
+    <nav class="nav">
+      <a href="index.html">📈 Дашборд</a>
+      <a href="leads.html">📋 Заявки</a>
+      <a href="deals.html">💼 Сделки</a>
+      <a href="clients.html">👥 Клиенты</a>
+      <a href="calendar.html">📅 Календарь</a>
+      <a href="reports.html">📊 Отчёты</a>
+      <a href="chat.html" class="active">💬 Чат</a>
+      <a href="tariffs.html">💳 Тарифы</a>
+      <a href="settings.html">⚙️ Настройки</a>
+      <a href="help.html">❓ Помощь</a>
+    </nav>
+    <div class="side-card"><h4>📞 Отдел продаж</h4><p>+998 93 507-64-73<br>Чиланзар, Ташкент</p><span class="demo-badge">ДЕМО</span></div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="burger" id="burger" aria-label="Меню">☰</button>
+      <div class="search">🔍 <input type="text" placeholder="Поиск по чату…" aria-label="Поиск"></div>
+      <span class="plaque">ДЕМО • CRM • внутренний чат • Эдуард Журавлёв t.me/mkdir16</span>
+      <div class="top-user"><div style="text-align:right"><b style="font-size:14px">Эдуард Журавлёв</b><small>Менеджер</small></div><div class="avatar">ЭЖ</div></div>
+    </header>
+
+    <main class="content">
+      <div class="page-title">
+        <div><h1>💬 Внутренний чат</h1><p>5 диалогов отдела • отправка на JS • история в localStorage</p></div>
+        <button class="btn ghost" id="resetChat">🧹 Очистить мои сообщения</button>
+      </div>
+
+      <div class="chat-layout">
+        <div class="card" style="padding:12px">
+          <h3 style="margin:0 0 10px">Диалоги</h3>
+          <div class="dialogs" id="dialogs"></div>
+        </div>
+        <div class="chat-box">
+          <div class="chat-head"><b id="chatTitle">—</b><br><small id="chatSub" style="color:var(--muted)">—</small></div>
+          <div class="chat-msgs" id="chatMsgs"></div>
+          <form class="chat-form" id="chatForm">
+            <input type="text" id="chatInput" placeholder="Сообщение… (Enter — отправить)" maxlength="500" autocomplete="off">
+            <button class="btn" type="submit">➤</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer"><span>© <span data-year>2026</span> SotuvPro • Ташкент</span><span>ДЕМО • CRM • внутренний чат • Эдуард Журавлёв t.me/mkdir16</span></footer>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+(function(){
+  "use strict";
+  const KEY = "sotuvpro_chat_v1";
+  const DIALOGS = [
+    {id:"team", name:"📢 Отдел продаж", role:"5 участников • Ташкент", last:"План на октябрь выполнен на 78%"},
+    {id:"dilorom", name:"Д. Каримова", role:"Менеджер • online", last:"Скинула КП для ShifoMed"},
+    {id:"sardor", name:"С. Юсупов", role:"Менеджер • был 10 мин назад", last:"Еду к Oqtepa Lavash"},
+    {id:"boss", name:"👔 Руководитель", role:"Директор • online", last:"Жду отчёт до 17:00"},
+    {id:"support", name:"🛟 Поддержка SotuvPro", role:"Отвечаем 9:00–19:00", last:"Чем помочь?"}
+  ];
+  const SEED = {
+    team:[{me:false,t:"Всем привет! План на октябрь — 48 750 000 сум, идём с опережением 📈",time:"09:12"},{me:false,t:"Напоминаю: воронку обновить до 12:00",time:"09:15"}],
+    dilorom:[{me:false,t:"Привет! Отправила КП клинике ShifoMed на 8 900 000 сум 💊",time:"10:02"},{me:true,t:"Отлично, набери им после обеда и зафиксируй в deals",time:"10:05"}],
+    sardor:[{me:false,t:"Еду на встречу с Oqtepa Lavash, нужен прайс 🍜",time:"11:20"}],
+    boss:[{me:false,t:"Эдуард, жду отчёт по сделкам до 17:00 📊",time:"09:40"}],
+    support:[{me:false,t:"Здравствуйте! Это поддержка SotuvPro. Чем помочь? 🛟",time:"09:00"}]
+  };
+  const AUTO = {
+    team:"Принято! Обновлю воронку 👍",
+    dilorom:"Поняла, наберу сегодня ✅",
+    sardor:"Прайс уже в чате, удачи на встрече! 🤝",
+    boss:"Отчёт будет к 16:30 📊",
+    support:"Спасибо за обращение! Ответим в течение 15 минут ⏳"
+  };
+  function load(){ try{ const r = localStorage.getItem(KEY); return r ? JSON.parse(r) : {}; }catch{ return {}; } }
+  function save(o){ try{ localStorage.setItem(KEY, JSON.stringify(o)); }catch{} }
+  let store = load();
+  let cur = "team";
+  const dlgEl = document.getElementById("dialogs");
+  const msgsEl = document.getElementById("chatMsgs");
+  function msgs(id){ return (store[id] || []).concat(SEED[id] ? [] : []); }
+  function allMsgs(id){ const base = SEED[id] || []; const extra = store[id] || []; return base.concat(extra); }
+  function now(){ return new Date().toLocaleTimeString("ru-RU",{hour:"2-digit",minute:"2-digit"}); }
+  function renderDialogs(){
+    dlgEl.innerHTML = "";
+    DIALOGS.forEach(d=>{
+      const b = document.createElement("button");
+      b.className = "dialog" + (d.id===cur ? " active" : "");
+      const lastArr = allMsgs(d.id);
+      const last = lastArr.length ? lastArr[lastArr.length-1].t : d.last;
+      b.innerHTML = "<b></b><small></small>";
+      b.querySelector("b").textContent = d.name;
+      b.querySelector("small").textContent = last;
+      b.addEventListener("click", ()=>{ cur = d.id; renderDialogs(); renderMsgs(); });
+      dlgEl.append(b);
+    });
+  }
+  function renderMsgs(){
+    const d = DIALOGS.find(x=>x.id===cur);
+    document.getElementById("chatTitle").textContent = d.name;
+    document.getElementById("chatSub").textContent = d.role;
+    msgsEl.innerHTML = "";
+    allMsgs(cur).forEach(m=>{
+      const el = document.createElement("div");
+      el.className = "msg " + (m.me ? "me" : "them");
+      el.innerHTML = "<span></span><small></small>";
+      el.querySelector("span").textContent = m.t;
+      el.querySelector("small").textContent = m.time + (m.me ? " • ✓" : "");
+      msgsEl.append(el);
+    });
+    msgsEl.scrollTop = msgsEl.scrollHeight;
+  }
+  const form = document.getElementById("chatForm");
+  const input = document.getElementById("chatInput");
+  if(form) form.addEventListener("submit", e=>{
+    e.preventDefault();
+    const v = (input.value||"").trim();
+    if(!v) return;
+    if(!store[cur]) store[cur] = [];
+    store[cur].push({me:true, t:v, time:now()});
+    save(store); input.value = "";
+    renderDialogs(); renderMsgs();
+    // демо-автоответ через 1 сек
+    setTimeout(()=>{
+      if(!store[cur]) store[cur] = [];
+      store[cur].push({me:false, t:AUTO[cur]||"Ок 👍", time:now()});
+      save(store); renderDialogs(); renderMsgs();
+    }, 900);
+  });
+  const reset = document.getElementById("resetChat");
+  if(reset) reset.addEventListener("click", ()=>{ try{localStorage.removeItem(KEY);}catch{} store = {}; renderDialogs(); renderMsgs(); });
+  renderDialogs(); renderMsgs();
+})();
+</script>
+</body>
+</html>

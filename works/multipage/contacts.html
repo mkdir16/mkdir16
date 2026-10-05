@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TransAsia — Контакты</title>
+  <meta name="description" content="Контакты TransAsia: Ташкент, ул. Навои 12, +998 93 507-64-73. Форма заявки.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="header__logo" href="index.html">Trans<span>Asia</span><small class="header__tag">логистика • Ташкент</small></a>
+      <nav class="nav header__nav" id="nav" aria-label="Основная навигация">
+        <a class="nav__link" href="index.html">Главная</a>
+        <a class="nav__link" href="services.html">Услуги</a>
+        <a class="nav__link" href="about.html">О компании</a>
+        <a class="nav__link nav__link--active" href="contacts.html">Контакты</a>
+      </nav>
+      <a class="header__phone" href="tel:+998935076473">+998 93 507-64-73</a>
+      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero__crumbs"><a href="index.html">Главная</a> / Контакты</div>
+      <h1 class="page-hero__title">Контакты</h1>
+      <p style="color:#c9d6e8">Отвечаем за 10 минут в рабочее время: Пн–Сб, 9:00–19:00.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contacts-grid">
+      <!-- сюда натянуть ACF: contacts — Options Page (адрес, телефон, реквизиты) -->
+      <div class="contact-card">
+        <h2 style="color:var(--primary);margin-bottom:10px">Реквизиты</h2>
+        <div class="contact-card__row">📍 <b>г. Ташкент, ул. Навои, 12</b>, офис 305</div>
+        <div class="contact-card__row">📞 <a href="tel:+998935076473"><b>+998 93 507-64-73</b></a> — Эдуард, заявки</div>
+        <div class="contact-card__row">✉️ <a href="mailto:info@transasia.uz">info@transasia.uz</a></div>
+        <div class="contact-card__row">🏢 ООО «TransAsia Logistics», ИНН 123 456 789</div>
+        <div class="contact-card__row">🕘 Пн–Сб: 9:00–19:00, вс — дежурный в Telegram</div>
+        <!-- сюда натянуть карту: Tilda Zero Block «Карта» / WP: iframe Яндекс.Карт -->
+        <div class="map-dummy">🗺️ Карта-заглушка<br>Здесь будет Яндекс/Google-карта<br><small>ул. Навои, 12 — Ташкент (iframe при натяжке CMS)</small></div>
+      </div>
+
+      <!-- сюда натянуть: WP — Contact Form 7 / Tilda — Zero Block «Форма» -->
+      <div class="contact-card">
+        <h2 style="color:var(--primary);margin-bottom:10px">Оставить заявку</h2>
+        <p style="font-size:14px;color:var(--muted);margin-bottom:14px">Перезвоним за 10 минут и зафиксируем цену.</p>
+        <form class="form" id="leadForm" novalidate>
+          <div>
+            <label class="form__label" for="fName">Имя *</label>
+            <input class="form__input" id="fName" name="name" type="text" placeholder="Как к вам обращаться" autocomplete="name">
+            <span class="form__error" id="eName">Введите имя (минимум 2 буквы)</span>
+          </div>
+          <div>
+            <label class="form__label" for="fPhone">Телефон *</label>
+            <input class="form__input" id="fPhone" name="phone" type="tel" placeholder="+998 __ ___-__-__" autocomplete="tel">
+            <span class="form__error" id="ePhone">Введите корректный телефон (минимум 7 цифр)</span>
+          </div>
+          <div>
+            <label class="form__label" for="fMsg">Что везём?</label>
+            <textarea class="form__textarea" id="fMsg" name="message" rows="4" placeholder="Например: 300 кг текстиля, Ташкент → Москва"></textarea>
+          </div>
+          <button class="btn" type="submit" style="width:100%">Отправить заявку</button>
+          <small style="color:var(--muted)">Нажимая кнопку, вы соглашаетесь с политикой обработки данных.</small>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Модалка успеха -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
+    <div class="modal__box">
+      <div class="modal__icon">✅</div>
+      <h3 class="modal__title">Заявка отправлена!</h3>
+      <p style="color:var(--muted);font-size:15px" id="modalText">Спасибо! Менеджер перезвонит за 10 минут.</p>
+      <br><button class="btn" id="modalClose">Хорошо</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div><a class="footer__logo" href="index.html">Trans<span>Asia</span></a><p style="font-size:14px;margin-top:8px">Логистика из Ташкента с 2013 года.<br>г. Ташкент, ул. Навои, 12</p></div>
+      <div><div class="footer__title">Навигация</div><ul class="footer__links"><li><a href="index.html">Главная</a></li><li><a href="services.html">Услуги</a></li><li><a href="about.html">О компании</a></li><li><a href="contacts.html">Контакты</a></li></ul></div>
+      <div><div class="footer__title">Связаться</div><ul class="footer__links"><li><a href="tel:+998935076473">+998 93 507-64-73</a></li><li><a href="mailto:info@transasia.uz">info@transasia.uz</a></li><li>Пн–Сб, 9:00–19:00</li></ul></div>
+    </div>
+    <div class="container footer__bottom"><span>© 2026 TransAsia • Демо-верстка</span><span>Эдуард Журавлёв • <a style="color:#fff" href="https://t.me/mkdir16">t.me/mkdir16</a></span></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

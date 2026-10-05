@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Преподаватели SkillUp Ташкент: 6 наставников-практиков — вёрстка, JavaScript, Python, дизайн, английский. Опыт, курсы, рейтинг.">
+  <title>Преподаватели — SkillUp Ташкент</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Навигация на 10 страниц: компактные ссылки + прокрутка мобильного меню */
+    .nav__link { padding: 10px 12px; font-size: 14px; }
+    .nav--open { max-height: calc(100vh - var(--header-h)); overflow-y: auto; }
+  </style>
+</head>
+<body>
+
+  <!-- ============ ШАПКА (единая для всех 10 страниц) ============ -->
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="index.html" aria-label="SkillUp на главную">
+        <span class="logo__badge">🎓</span>
+        <span class="logo__text">SkillUp<small>Ташкент • LMS</small></span>
+      </a>
+      <nav class="nav" data-nav aria-label="Основная навигация">
+        <a class="nav__link" href="index.html">Главная</a>
+        <a class="nav__link" href="courses.html">Каталог</a>
+        <a class="nav__link" href="course.html">Курс</a>
+        <a class="nav__link" href="cabinet.html">Кабинет</a>
+        <a class="nav__link nav__link--active" href="teachers.html">Учителя</a>
+        <a class="nav__link" href="schedule.html">Расписание</a>
+        <a class="nav__link" href="news.html">Новости</a>
+        <a class="nav__link" href="about.html">О школе</a>
+        <a class="nav__link" href="contacts.html">Контакты</a>
+        <a class="nav__link" href="faq.html">FAQ</a>
+      </nav>
+      <a class="header__phone" href="tel:+998935076473">📞 +998 93 507-64-73</a>
+      <button class="burger" data-burger aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs"><a href="index.html">Главная</a> / Преподаватели</div>
+      <h1>Наши преподаватели 👨‍🏫</h1>
+      <p style="color:#b9bde0; max-width:680px">6 наставников-практиков из IT-компаний Ташкента. Средний опыт — 7 лет, средний рейтинг — 4.9 из 5. Группы от 490 000 сум.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="display:grid; gap:18px">
+
+      <div class="teacher">
+        <div class="teacher__photo">👨‍💻</div>
+        <div>
+          <h3 style="margin-bottom:4px">Тимур Хакимов</h3>
+          <p class="muted" style="font-size:14px">Frontend / Вёрстка • 7 лет опыта • ex-Uzum</p>
+          <p>Сверстал 80+ коммерческих сайтов. Ведёт потоки с 2021 года, ученики работают в Payme, Click и веб-студиях Ташкента.</p>
+          <p><span class="pill">⭐ 4.9 рейтинг</span> <span class="pill">👥 900+ учеников</span></p>
+          <p class="muted" style="font-size:14px">Ведёт: <a href="course.html">HTML + CSS с нуля — 690 000 сум</a> • <a href="courses.html">Адаптивная вёрстка PRO — 750 000 сум</a></p>
+        </div>
+      </div>
+
+      <div class="teacher">
+        <div class="teacher__photo">👩‍🎨</div>
+        <div>
+          <h3 style="margin-bottom:4px">Азиза Юсупова</h3>
+          <p class="muted" style="font-size:14px">UX/UI-дизайн • 6 лет опыта • ex-Beeline Uzbekistan</p>
+          <p>Проектировала приложения с миллионной аудиторией. Учит композиции, типографике и защите кейсов на Behance.</p>
+          <p><span class="pill">⭐ 4.9 рейтинг</span> <span class="pill">👥 600+ учеников</span></p>
+          <p class="muted" style="font-size:14px">Ведёт: <a href="courses.html">UX/UI в Figma — 890 000 сум</a> • <a href="courses.html">Графический дизайн — 790 000 сум</a></p>
+        </div>
+      </div>
+
+      <div class="teacher">
+        <div class="teacher__photo">🐍</div>
+        <div>
+          <h3 style="margin-bottom:4px">Сардор Каримов</h3>
+          <p class="muted" style="font-size:14px">Python-разработка • 8 лет опыта • backend-практик</p>
+          <p>Пишет высоконагруженные сервисы и Telegram-ботов на aiogram. Объясняет сложное просто: ООП, Django, API, деплой.</p>
+          <p><span class="pill">⭐ 4.8 рейтинг</span> <span class="pill">👥 700+ учеников</span></p>
+          <p class="muted" style="font-size:14px">Ведёт: <a href="courses.html">Python-разработка — 990 000 сум</a> • <a href="courses.html">Telegram-боты — 590 000 сум</a></p>
+        </div>
+      </div>
+
+      <div class="teacher">
+        <div class="teacher__photo">🇬🇧</div>
+        <div>
+          <h3 style="margin-bottom:4px">Елена Пак</h3>
+          <p class="muted" style="font-size:14px">Английский для IT • 10 лет опыта • IELTS 8.0</p>
+          <p>Готовит к собеседованиям в международные компании: speaking-клубы, переписка, лексика для stand-up'ов и code review.</p>
+          <p><span class="pill">⭐ 4.9 рейтинг</span> <span class="pill">👥 1 100+ учеников</span></p>
+          <p class="muted" style="font-size:14px">Ведёт: <a href="courses.html">Английский для IT — 490 000 сум</a> • <a href="courses.html">Speaking Club + IELTS — 650 000 сум</a></p>
+        </div>
+      </div>
+
+      <div class="teacher">
+        <div class="teacher__photo">⚡</div>
+        <div>
+          <h3 style="margin-bottom:4px">Отабек Юлдашев</h3>
+          <p class="muted" style="font-size:14px">JavaScript / React • 6 лет опыта • SPA и fintech</p>
+          <p>Разрабатывает интерфейсы платёжных сервисов. Учит DOM, асинхронности, React-хукам и прохождению собеседований.</p>
+          <p><span class="pill">⭐ 4.8 рейтинг</span> <span class="pill">👥 450+ учеников</span></p>
+          <p class="muted" style="font-size:14px">Ведёт: <a href="courses.html">JavaScript + React — 1 190 000 сум</a> • <a href="course.html">JS для верстальщика</a></p>
+        </div>
+      </div>
+
+      <div class="teacher">
+        <div class="teacher__photo">📱</div>
+        <div>
+          <h3 style="margin-bottom:4px">Дильшод Ахмедов</h3>
+          <p class="muted" style="font-size:14px">Адаптивная вёрстка • 5 лет опыта • mobile-first</p>
+          <p>Специалист по Pixel Perfect и скорости загрузки. Учит БЭМ, Bootstrap, доступности и сдаче проектов заказчику.</p>
+          <p><span class="pill">⭐ 4.8 рейтинг</span> <span class="pill">👥 380+ учеников</span></p>
+          <p class="muted" style="font-size:14px">Ведёт: <a href="courses.html">Адаптивная вёрстка PRO — 750 000 сум</a> • <a href="course.html">HTML + CSS с нуля — 690 000 сум</a></p>
+        </div>
+      </div>
+
+      <div class="cab-card">
+        <h3>🤝 Хотите к нам на пробный урок?</h3>
+        <p class="muted">Познакомитесь с наставником, посмотрите кампус на ул. Амира Темура, 15 и получите план обучения. Звоните: <b><a href="tel:+998935076473">+998 93 507-64-73</a></b> — ежедневно 9:00–20:00.</p>
+        <p><a class="btn btn--primary" href="courses.html">Выбрать курс</a> <a class="btn btn--ghost" href="schedule.html">Смотреть расписание</a></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ ФУТЕР (единый для всех 10 страниц) ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="logo" href="index.html" style="color:#fff"><span class="logo__badge">🎓</span><span class="logo__text" style="color:#fff">SkillUp<small style="color:#b9bde0">Ташкент • LMS</small></span></a>
+          <p style="margin-top:12px">Онлайн-школа: дизайн, вёрстка, Python, английский. Учим с нуля до работы с 2021 года.</p>
+          <p>📞 <a href="tel:+998935076473">+998 93 507-64-73</a><br>📍 Ташкент, ул. Амира Темура, 15</p>
+        </div>
+        <div>
+          <h4>Навигация</h4>
+          <p><a href="index.html">Главная</a><br><a href="courses.html">Каталог</a><br><a href="course.html">Курс</a><br><a href="cabinet.html">Кабинет</a><br><a href="teachers.html">Учителя</a><br><a href="schedule.html">Расписание</a><br><a href="news.html">Новости</a><br><a href="about.html">О школе</a><br><a href="contacts.html">Контакты</a><br><a href="faq.html">FAQ</a></p>
+        </div>
+        <div>
+          <h4>Направления</h4>
+          <p><a href="courses.html">Дизайн</a><br><a href="courses.html">Вёрстка</a><br><a href="courses.html">Python</a><br><a href="courses.html">Английский</a></p>
+        </div>
+        <div>
+          <h4>Студентам</h4>
+          <p><a href="cabinet.html">Прогресс</a><br><a href="schedule.html">Расписание</a><br><a href="course.html#tariffs">Тарифы</a><br><a href="faq.html">Вопросы и ответы</a><br><a href="tel:+998935076473">Поддержка</a></p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> SkillUp Ташкент • Демо-проект для портфолио</span>
+        <span>Вёрстка: Эдуард Журавлёв • t.me/mkdir16 • Цены в сумах (UZS)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
